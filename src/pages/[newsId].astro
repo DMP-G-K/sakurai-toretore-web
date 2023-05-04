@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { News, getNews, getNewsDetail } from "../library/microcms";
+
+// 詳細記事ページの全パスを取得
+export async function getStaticPaths() {
+  const news = await getNews({ fields: ["id"] });
+  type PickedNews = Pick<News, "id">;
+  return news.contents.map((content: PickedNews) => ({
+    params: {
+      newsId: content.id,
+    },
+  }));
+}
+
+//記事の詳細情報を取得
+const { newsId } = Astro.params;
+if (!newsId) throw new Error("newsId is required");
+const news = await getNewsDetail(newsId);
+---
+
+<Layout title="My first blog with Astro">
+  <main>
+    <h1 class="title">{news.title}</h1>
+    <p class="publishedAt">公開日時：{news.publishedAt}</p>
+    <div class="post" set:html={news.content} />
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1em;
+    max-width: 60ch;
+  }
+</style>
