@@ -1,36 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-// microCMS呼び出し
-import { News, getNews } from "../library/microcms";
-
-const response = await getNews({ fields: ["id", "title", "eyecatch"] });
-type PickedNews = Pick<News, "id" | "title" | "eyecatch">;
 ---
 
 <Layout title="My first blog with Astro">
   <main>
-    <ul>
-      {
-        response.contents.map((content: PickedNews) => (
-          <>
-            <li>
-              <a href={content.id}>{content.title}</a>
-            </li>
-            <div>
-              <img src={content.eyecatch.url} width="200" alt="アイキャッチ画像" />
-            </div>
-          </>
-        ))
-      }
-    </ul>
+    <h1 class="text-xl font-bold">トップページ</h1>
+    <a href="/news" class="text-purple">ニュース</a>
   </main>
 </Layout>
-
-<style>
-  main {
-    margin: auto;
-    padding: 1em;
-    max-width: 60ch;
-  }
-</style>
