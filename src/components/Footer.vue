@@ -33,6 +33,8 @@
         </li>
       </ul>
     </div>
-    <p>Copyright © 2018-2023 さくらいとれとれ市場 All rights reserved.</p>
+    <small>
+      Copyright © 2018-2023 さくらいとれとれ市場 All rights reserved.
+    </small>
   </div>
 </template>
