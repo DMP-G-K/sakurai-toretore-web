@@ -3,7 +3,7 @@
     <div>
       <div>
         <div>
-          <a href="#"><img src="public/svgs/logo.svg" alt="logo" /></a>
+          <a href="#"><img src="/svgs/logo.svg" alt="logo" /></a>
         </div>
         <div>
           <p>さくらいとれとれ市場</p>
@@ -33,8 +33,6 @@
         </li>
       </ul>
     </div>
-    <small>
-      Copyright © 2018-2023 さくらいとれとれ市場 All rights reserved.
-    </small>
+    <small> Copyright © 2018-2023 さくらいとれとれ市場 All rights reserved. </small>
   </div>
 </template>
