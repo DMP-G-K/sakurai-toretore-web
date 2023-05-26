@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bar">
+    <div class="footer-main">
       <div>
         <div class="logo">
           <div class="logo-icon">
@@ -47,7 +47,7 @@
         </ul>
       </div>
     </div>
-    <div class="foo">
+    <div class="footer-sub">
       <div class="address">
         <p class="address-text">〒633-0062</p>
         <p class="address-text">奈良県桜井市大字粟殿72番地</p>
@@ -66,10 +66,10 @@
 </template>
 
 <style>
-.bar {
+.footer-main {
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
   height: 7rem;
   font-family: var(--noto-sans);
   margin: 0 7%;
@@ -78,7 +78,7 @@
 .logo {
   display: flex;
   justify-content: space-around;
-  align-items: end;
+  align-items: flex-end;
 }
 
 .logo-icon {
@@ -96,6 +96,8 @@
   font-size: 0.9rem;
   color: #5f8934;
   font-family: var(--josefin-sans);
+  font-weight: 400;
+  letter-spacing: 0.03rem;
 }
 
 .nav {
@@ -107,15 +109,18 @@
   font-weight: 500;
   font-size: 1rem;
   text-align: center;
+  letter-spacing: 0.06rem;
 }
 
 .nav-text-sub {
   font-family: var(--josefin-sans);
   font-size: 0.6rem;
   color: #5f8934;
+  letter-spacing: 0.08rem;
+  font-weight: 400;
 }
 
-.foo {
+.footer-sub {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -125,6 +130,7 @@
 .address {
   font-size: 0.9rem;
   font-family: var(--noto-sans);
+  font-weight: 400;
 }
 
 .address-text {
