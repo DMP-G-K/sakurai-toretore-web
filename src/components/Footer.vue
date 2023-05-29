@@ -164,7 +164,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .bar {
+  .footer-main {
     display: block;
     height: auto;
   }
