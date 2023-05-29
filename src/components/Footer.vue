@@ -65,7 +65,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .footer-main {
   display: flex;
   justify-content: space-between;
