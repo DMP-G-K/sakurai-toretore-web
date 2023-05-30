@@ -1,0 +1,67 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.vue";
+---
+
+<Layout title="inquiry">
+  <main>
+    <div>
+      <div>
+        <h1>お問い合わせ</h1>
+        <p>CONTACT US</p>
+        <nav>
+          <p>
+            <a href="#">トップ</a>
+            <span>＞</span>
+          </p>
+          <p>
+            <span>お問い合わせ</span>
+          </p>
+        </nav>
+      </div>
+      <div>
+        <img src="" />
+      </div>
+    </div>
+    <div>
+      <h2>お問い合わせ</h2>
+      <div>
+        <label>お名前</label>
+        <input type="text" name="name" />
+      </div>
+      <div>
+        <label>ふりがな</label>
+        <input type="text" name="kana" />
+      </div>
+      <div>
+        <label>郵便番号</label>
+        <div>
+          〒 <input type="text" name="zip_code1" /> - <input
+            type="text"
+            name="zip_code2"
+          />
+        </div>
+      </div>
+      <div>
+        <label>住所</label>
+        <input type="text" name="address" />
+      </div>
+      <div>
+        <label>電話番号</label>
+        <input type="text" name="email" />
+      </div>
+      <div>
+        <label>確認用メールアドレス</label>
+        <input type="text" name="email_confirm" />
+      </div>
+      <div>
+        <label>お問い合わせ内容</label>
+        <input type="text" name="content" />
+      </div>
+      <div>
+        <a href="#">入力内容確認</a>
+      </div>
+    </div>
+    <Footer client:load />
+  </main>
+</Layout>
