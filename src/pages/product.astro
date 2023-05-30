@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import TableOfContents from "../components/TableOfContents.astro";
 import Footer from "../components/Footer.vue";
+
+const contents = ["夏野菜", "冬野菜", "地元特産品"];
 ---
 
 <Layout title="product">
@@ -23,21 +26,12 @@ import Footer from "../components/Footer.vue";
         <img src="" />
       </div>
     </div>
-    <div>
-      <p>目録</p>
-      <ul>
-        <li>夏野菜</li>
-        <li>冬野菜</li>
-        <li>地元特産品</li>
-      </ul>
-    </div>
+    <TableOfContents contents={contents} />
     <div>
       <h2>旬の野菜</h2>
-      <div>
+      <div id="section-0">
         <h3>夏野菜</h3>
-        <p>
-          これらの夏野菜は、さくらいとれとれ市場で新鮮な状態で提供されています。夏の味覚をお楽しみください。
-        </p>
+        <p>これらの夏野菜は、さくらいとれとれ市場で新鮮な状態で提供されています。夏の味覚をお楽しみください。</p>
         <div>
           <div>
             <img src="" />
@@ -52,9 +46,7 @@ import Footer from "../components/Footer.vue";
           <div>
             <img src="" />
             <p>ナス</p>
-            <p>
-              夏野菜の定番で、焼きナスや煮物、カレーなど様々な料理に使われます。
-            </p>
+            <p>夏野菜の定番で、焼きナスや煮物、カレーなど様々な料理に使われます。</p>
           </div>
           <div>
             <img src="" />
@@ -64,23 +56,17 @@ import Footer from "../components/Footer.vue";
           <div>
             <img src="" />
             <p>ズッキーニ</p>
-            <p>
-              さっぱりとした味わいで、炒め物やスープ、グリル料理などに向いています。
-            </p>
+            <p>さっぱりとした味わいで、炒め物やスープ、グリル料理などに向いています。</p>
           </div>
           <div>
             <img src="" />
             <p>オクラ</p>
-            <p>
-              ネバネバとした食感が特徴で、サラダや煮物、天ぷらなどで楽しめます。
-            </p>
+            <p>ネバネバとした食感が特徴で、サラダや煮物、天ぷらなどで楽しめます。</p>
           </div>
           <div>
             <img src="" />
             <p>トウモロコシ</p>
-            <p>
-              甘みが強く、茹ででそのまま食べるのはもちろん、炒め物やスープにも適しています。
-            </p>
+            <p>甘みが強く、茹ででそのまま食べるのはもちろん、炒め物やスープにも適しています。</p>
           </div>
         </div>
         <div>
@@ -88,7 +74,7 @@ import Footer from "../components/Footer.vue";
         </div>
       </div>
       <div>
-        <h3>冬野菜</h3>
+        <h3 id="section-1">冬野菜</h3>
         <p>
           これらの冬野菜は、寒さによって甘みが増し、栄養価が高まります。さくらいとれとれ市場で新鮮な冬野菜をお楽しみください。
         </p>
@@ -96,9 +82,7 @@ import Footer from "../components/Footer.vue";
           <div>
             <img src="" />
             <p>ダイコン</p>
-            <p>
-              冬の定番野菜で、煮物やサラダ、おでんなど幅広い料理に利用されます。
-            </p>
+            <p>冬の定番野菜で、煮物やサラダ、おでんなど幅広い料理に利用されます。</p>
           </div>
           <div>
             <img src="" />
@@ -123,23 +107,17 @@ import Footer from "../components/Footer.vue";
           <div>
             <img src="" />
             <p>ゴボウ</p>
-            <p>
-              ほくほくとした食感が特徴で、煮物やきんぴら、天ぷらなどで楽しめます。
-            </p>
+            <p>ほくほくとした食感が特徴で、煮物やきんぴら、天ぷらなどで楽しめます。</p>
           </div>
           <div>
             <img src="" />
             <p>ホウレンソウ</p>
-            <p>
-              桜井産は栄養価が高く、炒め物やおひたし、和え物などで食べられます。
-            </p>
+            <p>桜井産は栄養価が高く、炒め物やおひたし、和え物などで食べられます。</p>
           </div>
           <div>
             <img src="" />
             <p>イチゴ</p>
-            <p>
-              イチゴのなかでも、古都華は行列ができるほどの人気商品となっています。
-            </p>
+            <p>イチゴのなかでも、古都華は行列ができるほどの人気商品となっています。</p>
           </div>
         </div>
         <div>
@@ -147,7 +125,7 @@ import Footer from "../components/Footer.vue";
         </div>
       </div>
     </div>
-    <div>
+    <div id="section-2">
       <h2>地元特産品</h2>
       <p>
         さくらいとれとれ市場では地元の野菜のほか、三輪そうめん、奈良漬け、<br
