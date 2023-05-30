@@ -1,0 +1,29 @@
+---
+export interface Props {
+  contents: string[];
+}
+
+const { contents } = Astro.props;
+---
+
+<div class="max-w-6xl rounded-xl p-5">
+  <p class="text-primary text-xl font-semibold mb-3 font-sans">目録</p>
+  <ul class="flex gap-6">
+    {
+      contents.map((item, index) => (
+        <li class="items-center">
+          <a href={`#section-${index}`}>
+            <img class="inline" src="svgs/down-arrow.svg" alt="" />
+            {item}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  .font-sans {
+    font-family: var(--noto-sans);
+  }
+</style>
