@@ -6,4 +6,9 @@ html {
   --noto-sans: "Noto Sans JP", sans-serif;
   --m-plus-rounded-1c: "M PLUS Rounded 1c", sans-serif;
   --josefin-sans: "Josefin Sans", sans-serif;
+  --primary-color: #5f8934;
+  --primary-variant-color: #154b15;
+  --gray-color: #969696;
+  --black-color: #464646;
+  --white-color: #ffffff;
 }
