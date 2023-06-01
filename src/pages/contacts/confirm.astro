@@ -1,7 +1,69 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.vue";
 ---
 
-<Layout title="My first blog with Astro">
-  <h1>お問い合わせ完了ページ</h1>
+<Layout title="inquiry">
+  <main>
+    <div>
+      <div>
+        <h1>お問い合わせ</h1>
+        <p>CONTACT US</p>
+        <nav>
+          <p>
+            <a href="#">トップ</a>
+            <span>＞</span>
+          </p>
+          <p>
+            <span>お問い合わせ</span>
+          </p>
+        </nav>
+      </div>
+      <div>
+        <img src="" />
+      </div>
+    </div>
+    <div>
+      <h2>お問い合わせ</h2>
+      <div>
+        <label>お名前</label>
+        <p>お名前が入ります。</p>
+      </div>
+      <div>
+        <label>ふりがな</label>
+        <p>ふりがなが入ります。</p>
+      </div>
+      <div>
+        <label>郵便番号</label>
+        <p>〒 0000 - 0000</p>
+      </div>
+      <div>
+        <label>住所</label>
+        <p>住所が入ります。</p>
+      </div>
+      <div>
+        <label>電話番号</label>
+        <p>0000000</p>
+      </div>
+      <div>
+        <label>メールアドレス</label>
+        <p>XXXXX@gmail.com</p>
+      </div>
+      <div>
+        <label>確認用メールアドレス</label>
+        <p>XXXXX@gmail.com</p>
+      </div>
+      <div>
+        <label>お問い合わせ内容</label>
+        <p>
+          お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。
+        </p>
+      </div>
+      <div>
+        <a href="#">修正する</a>
+        <a href="#">確認する</a>
+      </div>
+    </div>
+    <Footer client:load />
+  </main>
 </Layout>
