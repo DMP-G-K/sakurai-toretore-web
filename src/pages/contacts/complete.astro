@@ -1,7 +1,45 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.vue";
 ---
 
-<Layout title="My first blog with Astro">
-  <h1>入力確認ページ</h1>
+<Layout title="inquiry">
+  <main>
+    <div>
+      <div>
+        <h1>お問い合わせ</h1>
+        <p>CONTACT US</p>
+        <nav>
+          <p>
+            <a href="#">トップ</a>
+            <span>＞</span>
+          </p>
+          <p>
+            <span>お問い合わせ</span>
+          </p>
+        </nav>
+      </div>
+      <div>
+        <img src="" />
+      </div>
+    </div>
+    <div>
+      <h2>お問い合わせ</h2>
+      <p>お問い合わせフォームの送信を完了致しました。</p>
+      <p>
+        この度はお問い合わせいただきまして誠にありがとうございます。<br
+        />ご確認メールをお送りしておりますのでご確認ください。
+      </p>
+      <p>
+        ※ご送信後、ご確認メールが届かない場合は、フォームご入力のメールアドレスの謝り、<br
+        />もしくはシステム等の不具合が考えられます。その際にはお手数ですが<br
+        />もう一度ご送信下さいますか、<br
+        />お電話にてお問い合わせくださいますようお願い申し上げます。<br
+        />また、まれに迷惑メールフォルダへ入っている場合がございますので、<br
+        />合わせてご確認ください。
+      </p>
+      <a href="#">トップページへ戻る</a>
+    </div>
+    <Footer client:load />
+  </main>
 </Layout>
