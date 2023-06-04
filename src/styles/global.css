@@ -11,4 +11,15 @@ html {
   --gray-color: #969696;
   --black-color: #464646;
   --white-color: #ffffff;
+  --background-color: #fff9e0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }

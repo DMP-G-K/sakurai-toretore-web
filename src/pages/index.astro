@@ -1,14 +1,14 @@
 ---
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
+import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
 ---
 
 <Layout title="My first blog with Astro">
   <main>
     <!-- ここからTOP -->
-    <Header />
+    <Header client:load />
     <div>
       <div>
         <img src="" />
@@ -67,9 +67,7 @@ import Footer from "../components/Footer.vue";
         <div>
           <img src="" />
           <p>夏野菜</p>
-          <p>
-            これらの夏野菜は、さくらいとれとれ市場で新鮮な状態で提供されています。夏の味覚をお楽しみください。
-          </p>
+          <p>これらの夏野菜は、さくらいとれとれ市場で新鮮な状態で提供されています。夏の味覚をお楽しみください。</p>
           <a href="#">詳しくはこちら</a>
         </div>
         <div>
