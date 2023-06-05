@@ -2,15 +2,24 @@
 import Layout from "../layouts/Layout.astro";
 import TableOfContents from "../components/TableOfContents.astro";
 import Footer from "../components/Footer.vue";
-import { Products, getProducts } from "../library/microcms";
+import { Product, getProducts } from "../library/microcms";
 
 const contents = ["夏野菜", "冬野菜", "地元特産品"];
 
-const summerVegetable = await getProducts({ fields: ["id", "name", "mainVisual", "content"], filters: "category[contains]野菜[and]type[contains]夏野菜"});
-const winterVegetable = await getProducts({ fields: ["id", "name", "mainVisual", "content"], filters: "category[contains]野菜[and]type[contains]冬野菜"});
-const specialProduct = await getProducts({ fields: ["id", "name", "mainVisual", "content"], filters: "category[contains]地元特産品"});
-type PickedProducts = Pick<Products, "id" | "name" | "mainVisual" | "content">;
-type PickedSpecialProducts = Pick<Products, "mainVisual">;
+const summerVegetable = await getProducts({
+  fields: ["id", "name", "mainVisual", "content"],
+  filters: "category[contains]野菜[and]type[contains]夏野菜",
+});
+const winterVegetable = await getProducts({
+  fields: ["id", "name", "mainVisual", "content"],
+  filters: "category[contains]野菜[and]type[contains]冬野菜",
+});
+const specialProduct = await getProducts({
+  fields: ["id", "name", "mainVisual", "content"],
+  filters: "category[contains]地元特産品",
+});
+type PickedProduct = Pick<Product, "id" | "name" | "mainVisual" | "content">;
+type PickedSpecialProduct = Pick<Product, "mainVisual">;
 ---
 
 <Layout title="product">
@@ -38,12 +47,18 @@ type PickedSpecialProducts = Pick<Products, "mainVisual">;
       <h2>旬の野菜</h2>
       <div id="section-0">
         <h3>夏野菜</h3>
-        <p>これらの夏野菜は、さくらいとれとれ市場で新鮮な状態で提供されています。夏の味覚をお楽しみください。</p>
+        <p>
+          これらの夏野菜は、さくらいとれとれ市場で新鮮な状態で提供されています。夏の味覚をお楽しみください。
+        </p>
         <div>
           {
-            summerVegetable.contents.map((content: PickedProducts) => (
+            summerVegetable.contents.map((content: PickedProduct) => (
               <div>
-                <img src={content.mainVisual.url} width="200" alt="メインビジュアル" />
+                <img
+                  src={content.mainVisual.url}
+                  width="200"
+                  alt="メインビジュアル"
+                />
                 <p>{content.name}</p>
                 <article set:html={content.content} />
               </div>
@@ -61,11 +76,15 @@ type PickedSpecialProducts = Pick<Products, "mainVisual">;
         </p>
         <div>
           {
-            winterVegetable.contents.map((content: PickedProducts) => (
+            winterVegetable.contents.map((content: PickedProduct) => (
               <div>
-                <img src={content.mainVisual.url} width="200" alt="メインビジュアル" />
+                <img
+                  src={content.mainVisual.url}
+                  width="200"
+                  alt="メインビジュアル"
+                />
                 <p>{content.name}</p>
-                <p>{content.content}</p>
+                <article set:html={content.content} />
               </div>
             ))
           }
@@ -83,8 +102,12 @@ type PickedSpecialProducts = Pick<Products, "mainVisual">;
       </p>
       <div>
         {
-          specialProduct.contents.map((content: PickedSpecialProducts) => (
-            <img src={content.mainVisual.url} width="200" alt="メインビジュアル" />
+          specialProduct.contents.map((content: PickedSpecialProduct) => (
+            <img
+              src={content.mainVisual.url}
+              width="200"
+              alt="メインビジュアル"
+            />
           ))
         }
       </div>

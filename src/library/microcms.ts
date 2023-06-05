@@ -31,7 +31,7 @@ export const getNewsDetail = async (contentId: string, queries?: MicroCMSQueries
   });
 };
 
-export type Products = {
+export type Product = {
   id: string;
   createdAt: string;
   updatedAt: string;
@@ -45,5 +45,5 @@ export type Products = {
 };
 
 export const getProducts = async (queries?: MicroCMSQueries) => {
-  return await client.get<MicroCMSListResponse<Products>>({ endpoint: "products", queries });
+  return await client.get<MicroCMSListResponse<Product>>({ endpoint: "products", queries });
 };
