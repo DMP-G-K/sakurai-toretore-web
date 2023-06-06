@@ -2,8 +2,24 @@
 import Layout from "../layouts/Layout.astro";
 import TableOfContents from "../components/TableOfContents.astro";
 import Footer from "../components/Footer.vue";
+import { Product, getProducts } from "../library/microcms";
 
 const contents = ["夏野菜", "冬野菜", "地元特産品"];
+
+const summerVegetable = await getProducts({
+  fields: ["id", "name", "mainVisual", "content"],
+  filters: "category[contains]野菜[and]type[contains]夏野菜",
+});
+const winterVegetable = await getProducts({
+  fields: ["id", "name", "mainVisual", "content"],
+  filters: "category[contains]野菜[and]type[contains]冬野菜",
+});
+const specialProduct = await getProducts({
+  fields: ["id", "name", "mainVisual", "content"],
+  filters: "category[contains]地元特産品",
+});
+type PickedProduct = Pick<Product, "id" | "name" | "mainVisual" | "content">;
+type PickedSpecialProduct = Pick<Product, "mainVisual">;
 ---
 
 <Layout title="product">
@@ -31,43 +47,23 @@ const contents = ["夏野菜", "冬野菜", "地元特産品"];
       <h2>旬の野菜</h2>
       <div id="section-0">
         <h3>夏野菜</h3>
-        <p>これらの夏野菜は、さくらいとれとれ市場で新鮮な状態で提供されています。夏の味覚をお楽しみください。</p>
+        <p>
+          これらの夏野菜は、さくらいとれとれ市場で新鮮な状態で提供されています。夏の味覚をお楽しみください。
+        </p>
         <div>
-          <div>
-            <img src="" />
-            <p>トマト</p>
-            <p>夏の野菜で、甘みと酸味のバランスが絶妙です。</p>
-          </div>
-          <div>
-            <img src="" />
-            <p>キュウリ</p>
-            <p>シャキシャキとした食感が特徴で、暑い夏にぴったりな野菜です。</p>
-          </div>
-          <div>
-            <img src="" />
-            <p>ナス</p>
-            <p>夏野菜の定番で、焼きナスや煮物、カレーなど様々な料理に使われます。</p>
-          </div>
-          <div>
-            <img src="" />
-            <p>ピーマン</p>
-            <p>緑色のビタミン豊富な野菜で、肉詰めや炒め物などで使われます。</p>
-          </div>
-          <div>
-            <img src="" />
-            <p>ズッキーニ</p>
-            <p>さっぱりとした味わいで、炒め物やスープ、グリル料理などに向いています。</p>
-          </div>
-          <div>
-            <img src="" />
-            <p>オクラ</p>
-            <p>ネバネバとした食感が特徴で、サラダや煮物、天ぷらなどで楽しめます。</p>
-          </div>
-          <div>
-            <img src="" />
-            <p>トウモロコシ</p>
-            <p>甘みが強く、茹ででそのまま食べるのはもちろん、炒め物やスープにも適しています。</p>
-          </div>
+          {
+            summerVegetable.contents.map((content: PickedProduct) => (
+              <div>
+                <img
+                  src={content.mainVisual.url}
+                  width="200"
+                  alt="メインビジュアル"
+                />
+                <p>{content.name}</p>
+                <article set:html={content.content} />
+              </div>
+            ))
+          }
         </div>
         <div>
           <a href="#">購入はこちら</a>
@@ -79,46 +75,19 @@ const contents = ["夏野菜", "冬野菜", "地元特産品"];
           これらの冬野菜は、寒さによって甘みが増し、栄養価が高まります。さくらいとれとれ市場で新鮮な冬野菜をお楽しみください。
         </p>
         <div>
-          <div>
-            <img src="" />
-            <p>ダイコン</p>
-            <p>冬の定番野菜で、煮物やサラダ、おでんなど幅広い料理に利用されます。</p>
-          </div>
-          <div>
-            <img src="" />
-            <p>カボチャ</p>
-            <p>甘みが強く、スープや煮物、デザートなどにも使われます。</p>
-          </div>
-          <div>
-            <img src="" />
-            <p>ネギ</p>
-            <p>風味が良く、鍋物や炒め物、汁物などで利用されます。</p>
-          </div>
-          <div>
-            <img src="" />
-            <p>ハクサイ</p>
-            <p>葉が柔らかく、鍋物や漬物、炒め物などで使われます。</p>
-          </div>
-          <div>
-            <img src="" />
-            <p>ニンジン</p>
-            <p>甘みがあり、煮物やスープ、サラダなどに適しています。</p>
-          </div>
-          <div>
-            <img src="" />
-            <p>ゴボウ</p>
-            <p>ほくほくとした食感が特徴で、煮物やきんぴら、天ぷらなどで楽しめます。</p>
-          </div>
-          <div>
-            <img src="" />
-            <p>ホウレンソウ</p>
-            <p>桜井産は栄養価が高く、炒め物やおひたし、和え物などで食べられます。</p>
-          </div>
-          <div>
-            <img src="" />
-            <p>イチゴ</p>
-            <p>イチゴのなかでも、古都華は行列ができるほどの人気商品となっています。</p>
-          </div>
+          {
+            winterVegetable.contents.map((content: PickedProduct) => (
+              <div>
+                <img
+                  src={content.mainVisual.url}
+                  width="200"
+                  alt="メインビジュアル"
+                />
+                <p>{content.name}</p>
+                <article set:html={content.content} />
+              </div>
+            ))
+          }
         </div>
         <div>
           <a href="#">購入はこちら</a>
@@ -132,9 +101,15 @@ const contents = ["夏野菜", "冬野菜", "地元特産品"];
         />大和高原ピクルスなど地元の特産品も多く取り扱っています。
       </p>
       <div>
-        <img src="" />
-        <img src="" />
-        <img src="" />
+        {
+          specialProduct.contents.map((content: PickedSpecialProduct) => (
+            <img
+              src={content.mainVisual.url}
+              width="200"
+              alt="メインビジュアル"
+            />
+          ))
+        }
       </div>
       <div>
         <a href="#">購入はこちら</a>

@@ -30,3 +30,20 @@ export const getNewsDetail = async (contentId: string, queries?: MicroCMSQueries
     queries,
   });
 };
+
+export type Product = {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  pulishedAt: string;
+  revisedAt: string;
+  name: string;
+  mainVisual: MicroCMSImage;
+  content: string;
+  category: string[];
+  type: string[];
+};
+
+export const getProducts = async (queries?: MicroCMSQueries) => {
+  return await client.get<MicroCMSListResponse<Product>>({ endpoint: "products", queries });
+};
