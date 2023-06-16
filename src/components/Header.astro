@@ -1,7 +1,8 @@
 ---
+const { bgColor } = Astro.props;
 ---
 
-<header>
+<header style={`${bgColor ? `background-color:${bgColor}` : ""}`}>
   <div class="logo">
     <div class="logo-icon">
       <a href="#"><img src="/svgs/logo.svg" alt="logo" /></a>
@@ -51,13 +52,13 @@
     align-items: center;
     height: 6rem;
     font-family: var(--noto-sans);
-    margin-left: 7%;
   }
 
   .logo {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-left: 7%;
   }
   .logo-icon {
     width: 5rem;
