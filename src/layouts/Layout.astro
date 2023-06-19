@@ -23,19 +23,17 @@ const { title } = Astro.props;
 <style is:global>
   :root {
     --accent: 124, 58, 237;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      #da62c4 30%,
-      white 60%
-    );
+    --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
   }
   html {
-    font-family: system-ui, sans-serif;
-    background-color: #f6f6f6;
+    font-family: var(--noto-sans);
+    background-color: #fff9e0;
+    color: #464646;
   }
   code {
-    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+    font-family: var(--noto-sans);
+  }
+  main {
+    font-family: var(--noto-sans);
   }
 </style>
