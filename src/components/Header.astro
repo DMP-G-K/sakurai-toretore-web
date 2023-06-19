@@ -50,6 +50,7 @@ const { bgColor } = Astro.props;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     height: 6rem;
     font-family: var(--noto-sans);
   }
@@ -105,9 +106,11 @@ const { bgColor } = Astro.props;
 
   @media screen and (max-width: 767px) {
     .logo-text {
+      display: none;
       font-size: 15px;
     }
     .logo-text-sub {
+      display: none;
       font-size: 9px;
     }
     .nav {
