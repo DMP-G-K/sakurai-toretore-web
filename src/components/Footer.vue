@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <footer>
     <div class="footer-main">
       <div>
         <div class="logo">
@@ -58,14 +58,15 @@
       </div>
     </div>
     <div class="copyright">
-      <small>
-        Copyright © 2018-2023 さくらいとれとれ市場 All rights reserved.
-      </small>
+      <small> Copyright © 2018-2023 さくらいとれとれ市場 All rights reserved. </small>
     </div>
-  </div>
+  </footer>
 </template>
 
 <style scoped>
+footer {
+  background-color: white;
+}
 .footer-main {
   display: flex;
   justify-content: space-between;

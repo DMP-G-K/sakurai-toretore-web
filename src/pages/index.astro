@@ -8,57 +8,133 @@ import Footer from "../components/Footer.vue";
 <Layout title="My first blog with Astro">
   <main>
     <!-- ここからTOP -->
-    <Header client:load />
-    <div>
-      <div>
+    <div class="sp-header">
+      <Header cliant:laod />
+    </div>
+    <div class="hero">
+      <div class="hero-slideShow">
         <img src="" />
+        <div class="hero-slideShow-scroll">
+          <p class="hero-slideShow-scroll-text">SCROLL</p>
+          <span class="hero-slideShow-scroll-line"></span>
+        </div>
       </div>
-      <div>
+      <div class="hero-nav">
+        <div class="hero-nav-title">
+          <div class="hero-nav-title-logo">
+            <img src="/svgs/logo.svg" alt="#" />
+          </div>
+          <p class="hero-nav-title-en">Sakurai Toretore Market</p>
+          <p class="hero-nav-title-discription">
+            <span class="hero-nav-title-discription-decoration"> 新鮮な野菜</span>の恵みを家庭にお届け！
+          </p>
+          <div class="hero-nav-title-png">
+            <img src="/images/4d0939b9579d64f2.png" alt="" />
+            <span class="hero-nav-title-png-underbar"></span>
+          </div>
+        </div>
+        <ul class="hero-nav-list">
+          <li class="hero-nav-list-item">
+            <a href="#">店舗情報<p class="hero-nav-list-item-sub">INFOMATION</p></a>
+          </li>
+          <li class="hero-nav-list-item">
+            <a href="#">取り扱い商品<p class="hero-nav-list-item-sub">PRODUCT</p></a>
+          </li>
+          <li class="hero-nav-list-item">
+            <a href="#">お知らせ<p class="hero-nav-list-item-sub">NEWS</p></a>
+          </li>
+          <li class="hero-nav-list-item">
+            <a href="#">出品者募集<p class="hero-nav-list-item-sub">SHIPPERS</p></a>
+          </li>
+          <li class="hero-nav-list-item">
+            <a href="#">お問い合わせ<p class="hero-nav-list-item-sub">CONTACT US</p></a>
+          </li>
+        </ul>
+
+        <!-- 装飾画像 -->
         <div>
-          <p>Sakurai Toretore Market</p>
-          <p>新鮮な野菜の恵みを家庭にお届け！</p>
-          <h1>さくらいとれとれ市場</h1>
-          <ul>
-            <li>店舗情報</li>
-            <li>取り扱い商品</li>
-            <li>お知らせ</li>
-            <li>出荷者募集</li>
-            <li>お問い合わせ</li>
-          </ul>
+          <div class="blue-flower-right">
+            <img width="50px" src="/svgs/blue-flower.svg" alt="#" />
+          </div>
+          <div class="blue-flower-left">
+            <img width="50px" src="/svgs/blue-flower.svg" alt="#" />
+          </div>
+          <div class="pink-flower">
+            <img width="150px" src="/svgs/pink-flower.svg" alt="#" />
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="pc-header">
+      <Header bgColor="white" />
+    </div>
+
     <!-- 当店の特徴 -->
-    <div>
-      <p>FEATURES</p>
-      <h2>当店の特徴</h2>
-      <div>
-        <!-- 当店の特徴_新鮮な野菜 -->
-        <div>
-          <p>FRESH VEGETABLES</p>
-          <h3>新鮮な野菜</h3>
-          <p>
+    <div class="features">
+      <div class="features-heading">
+        <p class="features-heading-sub">FEATURES</p>
+        <h2>当店の特徴</h2>
+      </div>
+      <!-- 新鮮な野菜 -->
+      <div class="features-block">
+        <div class="features-block-left">
+          <img class="features-block-left-image" src="/images/fresh-vegitable.png" alt="" />
+        </div>
+        <div class="features-block-right rounded-t-2xl">
+          <div class="features-block-right-heading">
+            <p class="features-block-right-heading-icon">01</p>
+            <div class="features-block-right-heading-title">
+              <p class="features-block-right-heading-title-en">FRESH VEGETABLES</p>
+              <h3 class="features-block-right-heading-title-ja">新鮮な野菜</h3>
+            </div>
+          </div>
+          <p class="features-block-right-article">
             地元の農家と緊密に連携し、旬の野菜を中心に、品質にこだわった商品をお客様にお届けしております。また、市場では地域の特産品や季節の山菜など、さまざまな野菜を取り揃えています。これらの新鮮な野菜を使った料理やサラダを楽しむことで、健康や美容にも貢献できます。さくらいとれとれ市場では、お客様に最高の食材を提供することを目指して、日々努力しております。
           </p>
+          <img class="blue_flowers" src="/svgs/blue-flowers.svg" alt="#" />
         </div>
-        <!-- 当店の特徴_農家直送 -->
-        <div>
-          <p>FARMER DIRECT DELIVERY</p>
-          <h3>農家直送</h3>
-          <p>
+      </div>
+      <!-- 農家直送 -->
+      <div class="features-block">
+        <div class="features-block-left">
+          <img class="features-block-left-image" src="/images/direct-delivery.png" alt="" />
+        </div>
+        <div class="features-block-right rounded-b-2xl">
+          <div class="features-block-right-heading">
+            <p class="features-block-right-heading-icon">02</p>
+            <div class="features-block-right-heading-title">
+              <p class="features-block-right-heading-title-en">FARMER DIRECT DELIVERY</p>
+              <h3 class="features-block-right-heading-title-ja">農家直送</h3>
+            </div>
+          </div>
+          <p class="features-block-right-article">
             お客様に提供するほとんどの野菜が農家直送となっています。新鮮で栄養価が高く、味が格別であること、地域支援による経済活動の活性化、安全の確保、旬の味覚の提供、そして独自の品揃えで地元ならではの珍しい品種や季節限定の山菜を提供しています。
           </p>
+          <img class="gray_flowers" src="/svgs/gray-flower.svg" alt="#" />
         </div>
-        <!-- 当店の特徴_地域密着 -->
-        <div>
-          <p>COMMUNITY-BASED</p>
-          <h3>地域密着</h3>
-          <p>
+      </div>
+      <!-- 地域密着 -->
+      <div class="features-block rounded-t-2xl">
+        <div class="features-block-left">
+          <img class="features-block-left-image" src="/images/community-based.png" alt="" />
+        </div>
+        <div class="features-block-right">
+          <div class="features-block-right-heading">
+            <p class="features-block-right-heading-icon">03</p>
+            <div class="features-block-right-heading-title">
+              <p class="features-block-right-heading-title-en">COMMUNITY-BASED</p>
+              <h3 class="features-block-right-heading-title-ja">地域密着</h3>
+            </div>
+          </div>
+          <p class="features-block-right-article">
             さくらいとれとれ市場は地域と密着し、地元産品の支援による地域経済活性化、新鮮な食材の提供、地域特色を活かした商品の発信、顧客との密接なコミュニケーション、および地域コミュニティ形成に貢献しています。これにより、お客様に喜ばれるサービスを提供し、地域の魅力を発信しています。
           </p>
+          <img class="pink_flower_variant" src="/svgs/pink-flower-variant.svg" alt="#" />
         </div>
       </div>
     </div>
+
     <!-- 取り扱い商品の紹介 -->
     <div>
       <p>PRODUCT INTRODUCTION</p>
@@ -100,59 +176,951 @@ import Footer from "../components/Footer.vue";
             さくらいとれとれ市場では、近隣のお客様に新鮮な野菜を届けるための宅配サービスを展開しています。お買い上げ金額が4,000円以上の場合、送料無料でお届けしています。さらに、農家直送の新鮮な野菜や旬の食材を取り扱っており、お客様に健康的で美味しい食材を提供しています。
           </p>
         </div>
-      </div>
-      <div>
-        <img src="" />
-        <div>
-          <h3>レシピ提案</h3>
-          <p>
-            野菜のレシピ提案サービスは、お客様が購入した野菜に合ったレシピを提案し、保存方法のアドバイスや料理のコツ、野菜情報の提供を行うサービスです。これにより、お客様がより健康的な食生活を送ることができるようになります。公式LINEアカウントのVOOMにて定期的に配信いたします。
-          </p>
+        <div class="recipe">
+          <div class="recipe-list">
+            <div class="recipe-title">
+              <img src="/svgs/book.svg" alt="" />
+              <h3 class="service-list-title">レシピ提案</h3>
+            </div>
+            <p class="service-list-text">
+              野菜のレシピ提案サービスは、お客様が購入した野菜に合ったレシピを提案し、保存方法のアドバイスや料理のコツ、野菜情報の提供を行うサービスです。これにより、お客様がより健康的な食生活を送ることができるようになります。公式LINEアカウントのVOOMにて定期的に配信いたします。
+            </p>
+            <img class="recipe-list-img" src="/svgs/cooking-woman.svg" alt="" />
+          </div>
+          <div class="recipe-img" style="background-image: url(/images/katie-smith-uQs1802D0CQ-unsplash.jpg);"></div>
+        </div>
+        <!-- お知らせ -->
+        <div class="news">
+          <div class="news-title">
+            <div class="green-leaf">
+              <img src="/svgs/green-leaf.svg" alt="#" />
+            </div>
+            <div class="news-text">
+              <p class="news-text-sub">NEWS</p>
+              <h2>お知らせ</h2>
+            </div>
+            <div class="green-leaf">
+              <img src="/svgs/green-leaf.svg" alt="#" />
+            </div>
+          </div>
+          <ul class="news-nav">
+            <li class="news-nav-list"><a href="#">すべて</a></li>
+            <li class="news-nav-list"><a href="#">ブログ</a></li>
+            <div class="space"></div>
+            <li class="news-nav-list"><a href="#">入荷情報</a></li>
+            <li class="news-nav-list"><a href="#">イベント情報</a></li>
+          </ul>
+          <div class="news-list">
+            <div class="news-list-container">
+              <img class="news-list-img" src="" />
+              <div class="news-list-text">
+                <p class="news-list-text-sub">2023.04.12</p>
+                <p>テキストが入ります。</p>
+              </div>
+            </div>
+            <div class="news-list-container">
+              <img class="news-list-img" src="" />
+              <div class="news-list-text">
+                <p class="news-list-text-sub">2023.04.12</p>
+                <p>テキストが入ります。</p>
+              </div>
+            </div>
+            <div class="news-list-container-sp">
+              <img class="news-list-img" src="" />
+              <div class="news-list-text">
+                <p class="news-list-text-sub">2023.04.12</p>
+                <p>テキストが入ります。</p>
+              </div>
+            </div>
+            <div class="news-list-container-sp">
+              <img class="news-list-img" src="" />
+              <div class="news-list-text">
+                <p class="news-list-text-sub">2023.04.12</p>
+                <p>テキストが入ります。</p>
+              </div>
+            </div>
+          </div>
+          <div class="up-arrow-left">
+            <img src="/svgs/up-arrow-green.svg" alt="" />
+          </div>
+          <div class="up-arrow-right">
+            <img src="/svgs/up-arrow-green.svg" alt="" />
+          </div>
+          <div class="read-more">
+            <a href="#">もっと見る</a>
+          </div>
         </div>
       </div>
+      <!-- アクセス -->
+      <div class="access">
+        <div class="access-texts">
+          <div class="access-list-title">
+            <p class="access-list-title-text">ACCESS</p>
+            <h2>アクセス</h2>
+          </div>
+          <div class="access-list">
+            <div class="access-list-text">
+              <p class="access-list-text-sub">営業時間</p>
+              <p>9:00 ~ 18:00</p>
+            </div>
+            <div class="access-list-text">
+              <p class="access-list-text-sub">所在地</p>
+              <p>
+                〒633-0062 <br />
+                奈良県桜井市大字粟殿72番地
+              </p>
+            </div>
+            <div class="access-list-text">
+              <p class="access-list-text-sub">TEL</p>
+              <p>0744-45-1011</p>
+            </div>
+          </div>
+        </div>
+        <img class="access-img" src="" />
+        <div class="access-title-sp">
+          <p class="access-title-text-sp">ACCESS</p>
+          <h2>アクセス</h2>
+        </div>
+      </div>
+      <Footer client:load />
     </div>
-    <!-- お知らせ -->
-    <div>
-      <p>NEWS</p>
-      <h2>お知らせ</h2>
-      <ul>
-        <li><a href="#">すべて</a></li>
-        <li><a href="#">ブログ</a></li>
-        <li><a href="#">入荷情報</a></li>
-        <li><a href="#">イベント情報</a></li>
-      </ul>
-      <div>
-        <div>
-          <img src="" />
-          <p>2023.04.12</p>
-          <p>テキストが入ります。</p>
-        </div>
-        <div>
-          <img src="" />
-          <p>2023.04.12</p>
-          <p>テキストが入ります。</p>
-        </div>
-        <div>
-          <img src="" />
-          <p>2023.04.12</p>
-          <p>テキストが入ります。</p>
-        </div>
-        <div>
-          <img src="" />
-          <p>2023.04.12</p>
-          <p>テキストが入ります。</p>
-        </div>
-      </div>
-      <a href="#">もっと見る</a>
-    </div>
-    <!-- アクセス -->
-    <div>
-      <div>
-        <p>ACCESS</p>
-        <h2>アクセス</h2>
-      </div>
-      <img src="" />
-    </div>
-    <Footer client:load />
   </main>
 </Layout>
+
+<style lang="scss">
+  .sp-header {
+    display: none;
+    @media screen and (max-width: 767px) {
+      display: block;
+    }
+  }
+  .pc-header {
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 2rem 0 2rem;
+    height: 100vh;
+    gap: 3rem;
+    @media screen and (max-width: 767px) {
+      display: flex;
+      flex-direction: column;
+      height: 80vh;
+      margin: 1rem;
+    }
+    &-slideShow {
+      position: relative;
+      top: -6%;
+      width: 640px;
+      height: 650px;
+      border-radius: 20px;
+      background-color: aqua;
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        top: 0;
+      }
+      &-scroll {
+        position: absolute;
+        bottom: 1%;
+        left: -2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        &-text {
+          font-family: var(--josefin-sans);
+          font-size: 0.7rem;
+          font-weight: 400;
+          writing-mode: vertical-rl;
+          letter-spacing: 0.045rem;
+        }
+        &-line {
+          display: inline-block;
+          width: 1px;
+          height: 2rem;
+          background-color: #b2b2b2;
+        }
+      }
+    }
+    &-nav {
+      position: relative;
+      width: 470px;
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      align-items: center;
+      padding-left: 2%;
+      padding-right: 2%;
+      background-color: white;
+      border-radius: 15px;
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        padding: 2%;
+      }
+      &-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &-logo {
+          position: absolute;
+          top: -10%;
+          @media screen and (max-width: 767px) {
+            width: 120px;
+            top: -65%;
+          }
+        }
+        &-en {
+          font-size: 1.1rem;
+          font-weight: 400;
+          font-family: var(--josefin-sans);
+          letter-spacing: 0.03rem;
+          color: #5f8934;
+          margin-top: 8.3rem;
+          @media screen and (max-width: 767px) {
+            display: none;
+          }
+        }
+        &-discription {
+          font-size: 1.1rem;
+          font-weight: 500;
+          text-align: center;
+          margin: 1rem 0 1rem 0;
+          letter-spacing: 0.0675rem;
+          &-decoration {
+            background: linear-gradient(transparent 60%, yellow 30%);
+          }
+        }
+        &-png {
+          display: inline-block;
+          position: relative;
+          margin-bottom: 0.8125rem;
+          width: 100%;
+          padding-bottom: 1rem;
+          &-underbar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            border-bottom: dashed 2px #5f8934;
+          }
+        }
+      }
+      &-list {
+        position: relative;
+        z-index: 1;
+        @media screen and (max-width: 767px) {
+          display: none;
+        }
+        &-item {
+          text-align: center;
+          font-weight: 500;
+          font-size: 1rem;
+          text-align: center;
+          letter-spacing: 0.06rem;
+          &-sub {
+            font-family: var(--josefin-sans);
+            font-size: 0.8rem;
+            color: #5f8934;
+            letter-spacing: 0.0975rem;
+            font-weight: 400;
+            margin: 0.625rem 0 1.56rem 0;
+          }
+        }
+      }
+      .blue-flower-left {
+        position: absolute;
+        top: 5%;
+        left: 0;
+        overflow: hidden;
+        opacity: 0.5;
+        @media screen and (max-width: 767px) {
+          display: none;
+        }
+      }
+
+      .blue-flower-right {
+        position: absolute;
+        top: 6%;
+        right: -1rem;
+        overflow: hidden;
+        opacity: 0.5;
+        @media screen and (max-width: 767px) {
+          display: none;
+        }
+      }
+      .pink-flower {
+        position: absolute;
+        bottom: -2rem;
+        right: -1rem;
+        z-index: 0;
+        opacity: 0.5;
+        @media screen and (max-width: 767px) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  /* <!-- ここから当店の特徴 --> */
+  .features {
+    width: 100%;
+    @media screen and (max-width: 767px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+    &-heading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 1.875rem;
+      font-weight: 600;
+      letter-spacing: 0.11rem;
+      margin-bottom: 2.5rem;
+      &-sub {
+        font-family: var(--josefin-sans);
+        font-size: 0.8rem;
+        font-weight: 400;
+        margin-top: 3.5rem;
+        color: #5f8934;
+        letter-spacing: 0.0975rem;
+      }
+    }
+    &-block {
+      display: flex;
+      justify-content: center;
+      max-width: 1260px;
+      margin: 0 auto;
+      @media screen and (max-width: 767px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+      &-left {
+        position: relative;
+        width: 40%;
+        @media screen and (max-width: 767px) {
+          width: 80%;
+        }
+        &-image {
+          z-index: 2;
+          position: absolute;
+          right: -10%;
+          @media screen and (max-width: 767px) {
+            position: static;
+          }
+        }
+      }
+      &-right {
+        position: relative;
+        width: 60%;
+        height: 520px;
+        background-color: #ffffff;
+        padding: 6rem;
+        @media screen and (max-width: 767px) {
+          width: 100%;
+        }
+        @media screen and (max-width: 767px) {
+          height: 100%;
+          border-radius: 16px;
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+          padding-right: 1rem;
+          padding-left: 1rem;
+        }
+        &-heading {
+          position: relative;
+          z-index: 1;
+          display: flex;
+          margin-bottom: 2rem;
+          &-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            background: #e6d37e;
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: 600;
+            border-radius: 50%;
+          }
+          &-title {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 0.8rem;
+            letter-spacing: 1.56px;
+            margin-left: 1.5rem;
+
+            &-en {
+              color: #963c3c;
+            }
+            &-ja {
+              font-size: 1.6rem;
+              font-weight: 500;
+            }
+          }
+        }
+        &-article {
+          position: relative;
+          z-index: 1;
+          letter-spacing: 1.2px;
+          line-height: 1.8;
+        }
+        .blue_flowers {
+          position: absolute;
+          top: 0;
+          right: 0;
+          z-index: 0;
+          margin: 1.5rem;
+          opacity: 0.5;
+          @media screen and (max-width: 767px) {
+            position: relative;
+            display: flex;
+            width: 150px;
+            float: right;
+          }
+        }
+        .gray_flowers {
+          position: absolute;
+          bottom: 10%;
+          right: 0;
+          z-index: 0;
+          margin: 1.5rem;
+          opacity: 0.5;
+          @media screen and (max-width: 767px) {
+            position: relative;
+            display: flex;
+            width: 150px;
+            float: left;
+          }
+        }
+        .pink_flower_variant {
+          position: absolute;
+          top: 0;
+          right: 10%;
+          z-index: 0;
+          margin: 1.5rem;
+          opacity: 0.5;
+          @media screen and (max-width: 767px) {
+            position: relative;
+            display: flex;
+            width: 150px;
+            float: right;
+          }
+        }
+      }
+    }
+  }
+
+  /* <!--ここから取り扱い商品の紹介 --> */
+
+  .product {
+    font-family: var(--noto-sans);
+    background: rgba(247, 232, 193, 0.4);
+    border-radius: 15px;
+    margin: 0 7%;
+    padding-top: 3.75rem;
+    padding-bottom: 3.125rem;
+  }
+
+  .product-title {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .product-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.875rem;
+    font-weight: 500;
+    letter-spacing: 0.11rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .product-text-sub {
+    font-family: var(--josefin-sans);
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #5f8934;
+    letter-spacing: 0.0975rem;
+    margin-bottom: 1rem;
+  }
+
+  .product-list {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .product-list-container {
+    display: flex;
+    flex-direction: column;
+    width: 18.75rem;
+  }
+
+  .product-img {
+    width: 18.75rem;
+    height: 14.375rem;
+    border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .product-list-text {
+    font-weight: 400;
+    letter-spacing: 0.06rem;
+    margin-top: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .summer-vegetable-text {
+    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: 0.18rem;
+    color: #ff9300;
+  }
+
+  .winter-vegetable-text {
+    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: 0.18rem;
+    color: #93a8ff;
+  }
+
+  .local-specialty-text {
+    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: 0.18rem;
+    color: #5f8934;
+  }
+
+  /* <!--ここから当店のサービス --> */
+
+  .service {
+    font-family: var(--noto-sans);
+  }
+
+  .service-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.875rem;
+    font-weight: 500;
+    letter-spacing: 0.11rem;
+    margin-bottom: 2.5rem;
+    padding-top: 3.75rem;
+  }
+
+  .service-text-sub {
+    font-family: var(--josefin-sans);
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #5f8934;
+    letter-spacing: 0.0975rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-list-title {
+    font-size: 1.375rem;
+    font-weight: 600;
+    letter-spacing: 0.0825rem;
+  }
+
+  .service-list-text {
+    font-size: 0.9375rem;
+    letter-spacing: 0.05625rem;
+  }
+
+  .delivery {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6.25rem;
+  }
+
+  .delivery-list {
+    width: 32.5rem;
+    margin-left: auto;
+    margin-right: 4%;
+  }
+
+  .delivery-title {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+    padding-bottom: 1.125rem;
+    margin-bottom: 2rem;
+    border-bottom: solid 1px #dddddd;
+  }
+
+  .delivery-img {
+    width: 38.125rem;
+    height: 23.125rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 0 10px 10px 0;
+  }
+
+  .delivery-list-img {
+    margin-left: auto;
+  }
+
+  .recipe {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6.25rem;
+  }
+
+  .recipe-list {
+    width: 32.5rem;
+    margin-left: 4%;
+    margin-right: 8%;
+  }
+
+  .recipe-title {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+    padding-bottom: 1.125rem;
+    margin-bottom: 2rem;
+    border-bottom: solid 1px #dddddd;
+  }
+
+  .recipe-img {
+    width: 38.125rem;
+    height: 23.125rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px 0 0 10px;
+    margin-left: auto;
+  }
+
+  .recipe-list-img {
+    margin-left: auto;
+  }
+
+  /* <!--ここからお知らせ --> */
+
+  .news {
+    position: relative;
+    font-family: var(--noto-sans);
+    background: rgba(247, 232, 193, 0.4);
+    padding-bottom: 3.75rem;
+    padding-top: 3.75rem;
+    margin-bottom: 7.5rem;
+    border-radius: 15px;
+  }
+
+  .news-title {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .news-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.875rem;
+    font-weight: 500;
+    letter-spacing: 0.11rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .news-text-sub {
+    font-family: var(--josefin-sans);
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #5f8934;
+    letter-spacing: 0.0975rem;
+    margin-bottom: 1rem;
+  }
+
+  .news-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.875rem;
+  }
+
+  .news-nav-list {
+    letter-spacing: 0.06rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .news-nav-list :hover {
+    border-bottom: 1px solid #5f8934;
+    padding-bottom: 0.5rem;
+    color: #5f8934;
+  }
+
+  .news-list {
+    display: flex;
+    justify-content: center;
+
+    gap: 3.125rem;
+  }
+
+  .news-list-img {
+    width: 16rem;
+    height: 15.625rem;
+    background-color: #93a8ff;
+    margin-bottom: 1.5rem;
+  }
+
+  .news-list-text {
+    font-weight: 600;
+    letter-spacing: 0.06rem;
+    margin-bottom: 2.1875rem;
+  }
+
+  .news-list-text-sub {
+    font-size: 0.9375rem;
+    font-weight: 400;
+    letter-spacing: 0.05625rem;
+    color: #5f8934;
+  }
+
+  .read-more {
+    text-align: center;
+  }
+
+  .up-arrow-left {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20rem;
+    right: 10%;
+    width: 3.75rem;
+    height: 3.75rem;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+
+  .up-arrow-right {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20rem;
+    left: 10%;
+    width: 3.75rem;
+    height: 3.75rem;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: scale(-1, 1);
+  }
+
+  .space {
+    display: none;
+  }
+
+  /* <!--ここからアクセス --> */
+
+  .access {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3.125rem;
+    margin-bottom: 7.5rem;
+  }
+
+  .access-texts {
+    margin-left: 7%;
+  }
+
+  .access-list-title {
+    font-size: 1.875rem;
+    font-weight: 600;
+    letter-spacing: 0.1125rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .access-list-title-text {
+    font-family: var(--josefin-sans);
+    font-size: 0.8125rem;
+    font-weight: 400;
+    letter-spacing: 0.0975rem;
+    color: #5f8934;
+  }
+
+  .access-list-text {
+    display: flex;
+    letter-spacing: 0.06rem;
+    margin-bottom: 1.625rem;
+  }
+
+  .access-list-text-sub {
+    width: 5rem;
+    font-weight: 500;
+    letter-spacing: 0.06rem;
+    color: #5f8934;
+    margin-right: 1rem;
+  }
+
+  .access-img {
+    background-color: #93a8ff;
+    border-radius: 20px 0 0 20px;
+  }
+
+  .access-title-sp {
+    display: none;
+  }
+
+  @media screen and (max-width: 767px) {
+    /* <!--ここから取り扱い商品の紹介 --> */
+
+    .product-text {
+      width: 180%;
+    }
+
+    .product-list {
+      flex-direction: column;
+    }
+
+    .product-list-container {
+      justify-content: space-around;
+      flex-direction: row;
+      width: 100%;
+      height: auto;
+      padding-bottom: 5rem;
+    }
+
+    .product-img {
+      width: 30%;
+    }
+
+    .product-list-text {
+      width: 40%;
+    }
+
+    /* <!--ここから当店のサービス --> */
+
+    .delivery {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .delivery-list {
+      margin-top: 1.5rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .recipe {
+      flex-direction: column-reverse;
+    }
+
+    .recipe-list {
+      margin-top: 1.5rem;
+    }
+
+    /* <!--ここからお知らせ --> */
+
+    .news {
+      margin-left: 1.25rem;
+      margin-right: 1.25rem;
+    }
+
+    .news-title {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+
+    .news-text {
+      width: 100%;
+    }
+
+    .news-nav {
+      justify-content: space-around;
+
+      flex-wrap: wrap;
+      gap: 0;
+    }
+
+    .news-list {
+      display: block;
+    }
+
+    .news-list-container {
+      display: none;
+    }
+
+    .news-list-container-sp {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .news-list-img {
+      width: 6.875rem;
+      height: 6rem;
+    }
+
+    .space {
+      display: block;
+      width: 100%;
+    }
+
+    .up-arrow-left {
+      display: none;
+    }
+
+    .up-arrow-right {
+      display: none;
+    }
+
+    .green-leaf {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    /* <!--ここからアクセス --> */
+
+    .access {
+      position: relative;
+      flex-direction: column-reverse;
+      align-items: stretch;
+    }
+
+    .access-list-title {
+      display: none;
+    }
+
+    .access-img {
+      margin-left: 1.25rem;
+    }
+
+    .access-title-sp {
+      display: block;
+      font-size: 1.875rem;
+      font-weight: 600;
+      letter-spacing: 0.1125rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .access-title-text-sp {
+      font-family: var(--josefin-sans);
+      font-size: 0.8125rem;
+      font-weight: 400;
+      letter-spacing: 0.0975rem;
+      color: #5f8934;
+    }
+  }
+</style>
