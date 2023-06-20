@@ -1,21 +1,25 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require("tailwindcss/defaultTheme");
+// const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     colors: {
+      primary: "#5f8934",
+      primaryVariant: "#154B15",
       blue: "#1fb6ff",
       purple: "#7e5bef",
       pink: "#ff49db",
       orange: "#ff7849",
       green: "#13ce66",
       yellow: "#ffc82c",
+      gray: "#969696",
       "gray-dark": "#273444",
-      gray: "#8492a6",
       "gray-light": "#d3dce6",
+      white: "#fff",
+      black: "#464646",
     },
     fontFamily: {
-      sans: ["Graphik", "sans-serif"],
+      sans: ["Noto Sans JP", "sans-serif"],
       serif: ["Merriweather", "serif"],
     },
     extend: {

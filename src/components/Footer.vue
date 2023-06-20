@@ -58,9 +58,7 @@
       </div>
     </div>
     <div class="copyright">
-      <small>
-        Copyright © 2018-2023 さくらいとれとれ市場 All rights reserved.
-      </small>
+      <small> Copyright © 2018-2023 さくらいとれとれ市場 All rights reserved. </small>
     </div>
   </footer>
 </template>

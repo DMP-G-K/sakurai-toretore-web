@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import TableOfContents from "../components/TableOfContents.astro";
 import Footer from "../components/Footer.vue";
+
+const contents = ["店舗情報・アクセス", "駐車場", "さくらいとれとれ市場の仲間たち", "運営会社"];
 ---
 
 <Layout title="information">
@@ -24,15 +27,9 @@ import Footer from "../components/Footer.vue";
       </div>
     </div>
     <div>
-      <p>目録</p>
-      <ul>
-        <li>店舗情報・アクセス</li>
-        <li>駐車場</li>
-        <li>さくらいとれとれ市場の仲間たち</li>
-        <li>運営会社</li>
-      </ul>
+      <TableOfContents contents={contents} />
     </div>
-    <div>
+    <div id="section-0">
       <h2>店舗情報・アクセス</h2>
       <div>
         <!-- TODO Google map -->
@@ -65,7 +62,7 @@ import Footer from "../components/Footer.vue";
         <img src="#" />
         <img src="#" />
       </div>
-      <div>
+      <div id="section-1">
         <div>
           <p>駐車場</p>
           <p>50台</p>
@@ -76,7 +73,7 @@ import Footer from "../components/Footer.vue";
         </div>
       </div>
     </div>
-    <div>
+    <div id="section-2">
       <h2>さくらいとれとれ市場の仲間たち</h2>
       <div>
         <h3>あすか整骨院　桜井院</h3>
@@ -93,8 +90,7 @@ import Footer from "../components/Footer.vue";
             <div>
               <p>診療時間</p>
               <p>
-                <span>[月～土]</span><br /><span>午前</span
-                >　8時30分～12時00分<br /><span>午後</span
+                <span>[月～土]</span><br /><span>午前</span>　8時30分～12時00分<br /><span>午後</span
                 >　14時30分～20時00分<br />
                 ※木曜日のみ午後休診<br />※日曜日　休診
               </p>
@@ -148,7 +144,7 @@ import Footer from "../components/Footer.vue";
         <img src="#" />
       </div>
     </div>
-    <div>
+    <div id="section-3">
       <h2>運営会社</h2>
       <div>
         <img src="#" />
@@ -176,10 +172,8 @@ import Footer from "../components/Footer.vue";
         <p>
           農産物等の販売を通じて、お客さまの健康増進と食生活を守り、地域農業の維持発展を実現する。<br
           />ビジョン「ここが頼りやねん」と言われる地域№１の農産物直売所を目指す。<br
-          />バリュー努力・労力を惜しまず、楽しく仕事をする。<br
-          />客観的な判断を大切にする。<br
-          />威厳と尊敬をもって誠実に向き合い、心を通わせる。<br
-          />進歩のための摩擦を恐れない勇気を持つ。
+          />バリュー努力・労力を惜しまず、楽しく仕事をする。<br />客観的な判断を大切にする。<br
+          />威厳と尊敬をもって誠実に向き合い、心を通わせる。<br />進歩のための摩擦を恐れない勇気を持つ。
         </p>
       </div>
       <div>
@@ -229,8 +223,7 @@ import Footer from "../components/Footer.vue";
           />
           さくらいとれとれ市場は新たなスタート地点に立ったばかりです。ステークホルダーの皆さまにとりまして至らぬ点が多々あると感じております。<br
           />
-          皆さまからの厳しい声を改善の原動力として日々進化し、サービスの向上に努めていく所存です。<br
-          />
+          皆さまからの厳しい声を改善の原動力として日々進化し、サービスの向上に努めていく所存です。<br />
           どうか厳しい声で叱咤いただき、温かい目で見守っていただきますよう、お願い申し上げます。
         </p>
         <p>2018年（平成30年）10月3日</p>
@@ -248,8 +241,7 @@ import Footer from "../components/Footer.vue";
             ㈱みなと山口合同新聞社（活版作業～電算室オペレーター）<br />
             みなと新聞（本社記者～大阪支社記者～中部支局長代理）<br />
             紀伊国屋書店梅田本店（出向、自費出版アドバイザー）<br />
-            (株)堀川（神戸受注センター係長）<br />ＦＫパブリッシング（自営）<br
-            />
+            (株)堀川（神戸受注センター係長）<br />ＦＫパブリッシング（自営）<br />
             フリーライター<br />ＮＴＴフレッツ光接続設定（業務委託）<br
             />(株)奈良日日新聞社（営業記者～企画部次長～取締役企画部長兼編集委員）
           </p>
@@ -259,8 +251,7 @@ import Footer from "../components/Footer.vue";
           <p>
             さくらいとれとれ市場株式会社　代表取締役社長<br />
             大阪府中小企業家同友会　会員<br />フリージャーナリスト<br />
-            (一社)奈良地域デザイン研究所　研究員　※研究テーマ「歴史から探る大和の美食」<br
-            />
+            (一社)奈良地域デザイン研究所　研究員　※研究テーマ「歴史から探る大和の美食」<br />
             奈良「歩くう会」主宰
           </p>
         </div>
@@ -271,8 +262,7 @@ import Footer from "../components/Footer.vue";
         <div>
           <p>好きな書物</p>
           <p>
-            ドナウの旅人（宮本輝）、国盗り物語（司馬遼太郎）、太閤記（司馬遼太郎）、<br
-            />
+            ドナウの旅人（宮本輝）、国盗り物語（司馬遼太郎）、太閤記（司馬遼太郎）、<br />
             分水嶺（森村誠一）、血と骨（梁石日）、久保の石田流（久保利明）、黄金の旅路（石田敏徳）
           </p>
         </div>

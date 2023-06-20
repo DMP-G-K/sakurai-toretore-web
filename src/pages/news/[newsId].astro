@@ -5,7 +5,10 @@ import { News, getNews, getNewsDetail } from "../../library/microcms";
 // 詳細記事ページの全パスを取得
 export async function getStaticPaths() {
   const news = await getNews({ fields: ["id"] });
-  type PickedNews = Pick<News, "id">;
+  type PickedNews = Pick<
+  News,
+  "id" | "title" | "eyecatch" | "publishedAt" | "category" | "content"
+>;
   return news.contents.map((content: PickedNews) => ({
     params: {
       newsId: content.id,
@@ -17,13 +20,68 @@ export async function getStaticPaths() {
 const { newsId } = Astro.params;
 if (!newsId) throw new Error("newsId is required");
 const news = await getNewsDetail(newsId);
+
+// お知らせ一覧取得
+const newsList = await getNews({
+  fields: ["id", "title", "eyecatch", "publishedAt", "category"], limit: 5
+});
+type PickedNews = Pick<
+  News,
+  "id" | "title" | "eyecatch" | "publishedAt" | "category" | "content"
+>;
 ---
 
 <Layout title="My first blog with Astro">
   <main>
-    <h1 class="title">{news.title}</h1>
-    <p class="publishedAt">公開日時：{news.publishedAt}</p>
-    <div class="post" set:html={news.content} />
+    <div>
+      <div>
+        <h1>お知らせ</h1>
+        <p>NEWS</p>
+        <nav>
+          <p>
+            <a href="#">トップ</a>
+            <span>＞</span>
+          </p>
+          <p>
+            <a href="#">お知らせ</a>
+            <span>＞</span>
+          </p>
+          <p>
+            <span>{news.title}</span>
+          </p>
+        </nav>
+      </div>
+      <div>
+        <img src="" />
+      </div>
+    </div>
+    <div>
+      <div>
+        <div>
+          <h2>{news.title}</h2>
+          <div>
+            <p>{news.category}</p>
+            <p>{news.publishedAt}</p>
+          </div>
+        </div>
+        <article set:html={news.content} />
+      </div>
+      <div>
+        {
+          newsList.contents.map((content: PickedNews) => (
+            <div>
+              <a href={`news/${content.id}`}></a>
+              <img src={content.eyecatch.url} width="200" alt="アイキャッチ画像" />
+              <p>
+                {content.publishedAt}
+                <span>{content.category}</span>
+              </p>
+              <p>{content.title}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
   </main>
 </Layout>
 

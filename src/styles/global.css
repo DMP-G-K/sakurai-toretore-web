@@ -1,7 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=M+PLUS+Rounded+1c:wght@500&family=Noto+Sans+JP:wght@400;500&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=M+PLUS+Rounded+1c:wght@500&family=Noto+Sans+JP:wght@400;600&display=swap");
+html {
+  scroll-behavior: smooth;
+}
 :root {
   --noto-sans: "Noto Sans JP", sans-serif;
   --m-plus-rounded-1c: "M PLUS Rounded 1c", sans-serif;
   --josefin-sans: "Josefin Sans", sans-serif;
+  --primary-color: #5f8934;
+  --primary-variant-color: #154b15;
+  --gray-color: #969696;
+  --black-color: #464646;
+  --white-color: #ffffff;
+  --background-color: #fff9e0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }

@@ -1,0 +1,70 @@
+---
+export interface Props {
+  bg?: "white" | "primary-variant" | "gray";
+  text?: "white" | "black" | "primary";
+  outlined?: boolean;
+  icon?: boolean;
+  size?: "sm" | "lg";
+  input: string;
+}
+
+let { bg = "gray", text = "black", outlined = false, icon = false, size = "lg", input = "" } = Astro.props;
+
+let sizeClass = size === "sm" ? "small-button" : "large-button";
+let borderClass = outlined ? "bordered" : "borderless";
+let iconClass = icon ? "icon-visible" : "icon-hidden";
+---
+
+<div class={`default ${sizeClass} ${borderClass} ${bg} ${text}`}>
+  <img class={`${iconClass}`} src="svgs/shopping-cart.svg" alt="" />
+  <p>{input}</p>
+</div>
+
+<style>
+  .default {
+    height: 3rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .small-button {
+    width: 12rem;
+  }
+  .large-button {
+    width: 16rem;
+  }
+  .bordered {
+    border: 1px solid var(--primary-color);
+  }
+  .borderless {
+    border: none;
+  }
+  .white {
+    background-color: var(--white-color);
+  }
+  .primary-variant {
+    background-color: var(--primary-variant-color);
+  }
+  .gray {
+    background-color: var(--gray-color);
+  }
+  .white {
+    color: var(--white-color);
+  }
+  .black {
+    color: var(--black-color);
+  }
+  .primary {
+    color: var(--primary-color);
+  }
+  .icon-visible {
+    display: block;
+    margin-right: 1rem;
+  }
+  .icon-hidden {
+    display: none;
+  }
+</style>

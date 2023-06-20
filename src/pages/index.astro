@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
+import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
 ---
 
@@ -136,71 +136,45 @@ import Footer from "../components/Footer.vue";
     </div>
 
     <!-- 取り扱い商品の紹介 -->
-    <div class="product">
-      <div class="product-title">
-        <div class="green-leaf">
-          <img src="/svgs/green-leaf.svg" alt="#" />
+    <div>
+      <p>PRODUCT INTRODUCTION</p>
+      <h2>取り扱い商品の紹介</h2>
+      <div>
+        <div>
+          <img src="" />
+          <p>夏野菜</p>
+          <p>これらの夏野菜は、さくらいとれとれ市場で新鮮な状態で提供されています。夏の味覚をお楽しみください。</p>
+          <a href="#">詳しくはこちら</a>
         </div>
-        <div class="product-text">
-          <p class="product-text-sub">PRODUCT INTRODUCTION</p>
-          <h2>取り扱い商品の紹介</h2>
+        <div>
+          <img src="" />
+          <p>冬野菜</p>
+          <p>
+            これらの冬野菜は、寒さによって甘みが増し、栄養価が高まります。さくらいとれとれ市場で新鮮な冬野菜をお楽しみください。
+          </p>
+          <a href="#">詳しくはこちら</a>
         </div>
-        <div class="green-leaf">
-          <img src="/svgs/green-leaf.svg" alt="#" />
-        </div>
-      </div>
-      <div class="product-list">
-        <div class="product-list-container">
-          <div class="product-img" style="background-image: url(/images/micheile-henderson-nyZOvAuVWbA-unsplash.jpg);">
-          </div>
-          <div class="product-list-text">
-            <p class="summer-vegetable-text">・夏野菜</p>
-            <p>これらの夏野菜は、さくらいとれとれ市場で新鮮な状態で提供されています。夏の味覚をお楽しみください。</p>
-            <a href="#">詳しくはこちら</a>
-          </div>
-        </div>
-        <div class="product-list-container">
-          <div class="product-img" style="background-image: url(/images/alexander-schimmeck-Z2df7dwD3mk-unsplash.jpg);">
-          </div>
-          <div class="product-list-text">
-            <p class="winter-vegetable-text">・冬野菜</p>
-            <p>
-              これらの冬野菜は、寒さによって甘みが増し、栄養価が高まります。さくらいとれとれ市場で新鮮な冬野菜をお楽しみください。
-            </p>
-            <a href="#">詳しくはこちら</a>
-          </div>
-        </div>
-        <div class="product-list-container">
-          <div class="product-img" style="background-image: url(/images/monika-grabkowska-S3g2H4Acw4g-unsplash.jpg);">
-          </div>
-          <div class="product-list-text">
-            <p class="local-specialty-text">・地元特産品</p>
-            <p>
-              さくらいとれとれ市場では地元の野菜のほか、三輪そうめん、奈良漬け、大和高原ピクルスなど地元の特産品も多く取り扱っています。
-            </p>
-            <a href="#">詳しくはこちら</a>
-          </div>
+        <div>
+          <img src="" />
+          <p>地元特産品</p>
+          <p>
+            さくらいとれとれ市場では地元の野菜のほか、三輪そうめん、奈良漬け、大和高原ピクルスなど地元の特産品も多く取り扱っています。
+          </p>
+          <a href="#">詳しくはこちら</a>
         </div>
       </div>
-
-      <!-- 当店のサービス -->
-      <div class="service">
-        <div class="service-text">
-          <p class="service-text-sub">SERVICE</p>
-          <h2>当店のサービス</h2>
-        </div>
-        <div class="delivery">
-          <div class="delivery-img" style="background-image: url(/images/brooke-cagle-TiTU0k1E0UE-unsplash.jpg);"></div>
-          <div class="delivery-list">
-            <div class="delivery-title">
-              <img src="/svgs/track.svg" alt="" />
-              <h3 class="service-list-title">宅配サービス</h3>
-            </div>
-            <p class="service-list-text">
-              さくらいとれとれ市場では、近隣のお客様に新鮮な野菜を届けるための宅配サービスを展開しています。お買い上げ金額が4,000円以上の場合、送料無料でお届けしています。さらに、農家直送の新鮮な野菜や旬の食材を取り扱っており、お客様に健康的で美味しい食材を提供しています。
-            </p>
-            <img class="delivery-list-img" src="/svgs/delivery.svg" alt="" />
-          </div>
+    </div>
+    <!-- 当店のサービス -->
+    <div>
+      <p>SERVICE</p>
+      <h2>当店のサービス</h2>
+      <div>
+        <img src="" />
+        <div>
+          <h3>宅配サービス</h3>
+          <p>
+            さくらいとれとれ市場では、近隣のお客様に新鮮な野菜を届けるための宅配サービスを展開しています。お買い上げ金額が4,000円以上の場合、送料無料でお届けしています。さらに、農家直送の新鮮な野菜や旬の食材を取り扱っており、お客様に健康的で美味しい食材を提供しています。
+          </p>
         </div>
         <div class="recipe">
           <div class="recipe-list">
