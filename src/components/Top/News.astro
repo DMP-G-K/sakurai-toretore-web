@@ -1,0 +1,29 @@
+---
+import Button from "../Button.astro";
+import Carousel from "../Carousel.astro";
+import Heading from "./Heading.astro";
+---
+
+<div class="news flex flex-col justify-center items-center md:my-14 my-4 pb-14">
+	<Heading en="NEWS" ja="お知らせ" decoration={true} />
+	<ul class="grid grid-cols-[repeat(auto-fit,_minmax(100px,_1fr))] w-2/6 text-center gap-y-6 mt-6">
+		<li><a href="#">すべて</a></li>
+		<li><a href="#">ブログ</a></li>
+		<li><a href="#">入荷情報</a></li>
+		<li><a href="#">イベント情報</a></li>
+	</ul>
+	<Carousel />
+	<div class="">
+		<Button input="もっと見る" bg="white" size="sm" />
+	</div>
+</div>
+
+<style lang="scss">
+	.news {
+		background: url("svgs/texture-bg.svg");
+		&-list {
+			width: 40%;
+			grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+		}
+	}
+</style>

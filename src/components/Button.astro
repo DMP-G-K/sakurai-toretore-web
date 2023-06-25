@@ -6,19 +6,22 @@ export interface Props {
   icon?: boolean;
   size?: "sm" | "lg";
   input: string;
+  link?: string;
 }
 
-let { bg = "gray", text = "black", outlined = false, icon = false, size = "lg", input = "" } = Astro.props;
+let { bg = "gray", text = "black", outlined = false, icon = false, size = "lg", input = "", link = "#" } = Astro.props;
 
 let sizeClass = size === "sm" ? "small-button" : "large-button";
 let borderClass = outlined ? "bordered" : "borderless";
 let iconClass = icon ? "icon-visible" : "icon-hidden";
 ---
 
-<div class={`default ${sizeClass} ${borderClass} ${bg} ${text}`}>
-  <img class={`${iconClass}`} src="svgs/shopping-cart.svg" alt="" />
-  <p>{input}</p>
-</div>
+<a href={link}>
+  <div class={`default ${sizeClass} ${borderClass} ${bg} ${text}`}>
+    <img class={`${iconClass}`} src="svgs/shopping-cart.svg" alt="" />
+    <p>{input}</p>
+  </div>
+</a>
 
 <style>
   .default {

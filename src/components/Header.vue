@@ -2,6 +2,14 @@
 import DrawerMenu from "./DrawerMenu.vue";
 import { computed, ref } from "vue";
 
+const props = defineProps({
+  bgColor: {
+    type: String,
+    required: false,
+    default: "none",
+  },
+});
+
 const isOpen = ref(false);
 const openMenu = () => {
   isOpen.value = !isOpen.value;
@@ -9,10 +17,13 @@ const openMenu = () => {
 const openClass = computed(() => {
   return { "-open": isOpen.value };
 });
+const headerStyle = computed(() => {
+  return { "--background-color": props.bgColor };
+});
 </script>
 
 <template>
-  <header :class="openClass">
+  <header :class="openClass" :style="headerStyle">
     <div class="logo">
       <div class="logo-icon">
         <a href="#"><img src="/svgs/logo.svg" alt="logo" /></a>
@@ -86,10 +97,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fff;
   width: 100vw;
   padding: 1% 3% 1% 3%;
   z-index: 100;
+  background-color: var(--background-color);
   &.-open {
     animation: fadeIn 0.6s ease-out forwards;
   }
