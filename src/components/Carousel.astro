@@ -1,0 +1,74 @@
+---
+const images = [
+	"https://images.pexels.com/photos/9754/mountains-clouds-forest-fog.jpg?auto=compress&cs=tinysrgb&w=1600",
+	"https://images.pexels.com/photos/6263568/pexels-photo-6263568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+	"https://images.pexels.com/photos/10343729/pexels-photo-10343729.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+	"https://images.pexels.com/photos/13860053/pexels-photo-13860053.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+	"https://images.pexels.com/photos/8576739/pexels-photo-8576739.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+	"https://images.pexels.com/photos/1743367/pexels-photo-1743367.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+	"https://images.pexels.com/photos/5920021/pexels-photo-5920021.jpeg?auto=compress&cs=tinysrgb&w=1600",
+	"https://images.pexels.com/photos/12805075/pexels-photo-12805075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+	"https://images.pexels.com/photos/547115/pexels-photo-547115.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+];
+---
+
+<div class="w-[90vw]">
+	<div class="max-w-7xl px-4 md:px-8 py-12 mx-auto transition-all duration-500 ease-linear">
+		<div class="relative">
+			<div
+				class="slides-container h-72 flex snap-x snap-mandatory overflow-hidden overflow-x-auto md:space-x-6 space-x-2 rounded scroll-smooth"
+			>
+				{
+					images.map((image) => (
+						<div class="slide aspect-square h-full flex-shrink-0 snap-center rounded overflow-hidden">
+							<img class="w-full h-full object-cover" src={image} alt="mountain_image" />
+						</div>
+					))
+				}
+			</div>
+			<div class="absolute top-0 -left-4 h-full items-center hidden md:flex">
+				<button role="button" class="prev px-2 py-2 rounded-full bg-white group w-14 h-14" aria-label="prev">
+					<img class="mx-auto w-auto h-2" style="transform: scale(-1, 1)" src="/svgs/right-arrow.svg" alt="" />
+				</button>
+			</div>
+			<div class="absolute top-0 -right-4 h-full items-center hidden md:flex">
+				<button role="button" class="next px-2 py-2 rounded-full bg-white group w-14 h-14" aria-label="next">
+					<img class="mx-auto w-auto h-2" src="/svgs/right-arrow.svg" alt="" />
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	const slidesContainer = document.querySelector(".slides-container");
+	const slideWidth = slidesContainer?.querySelector(".slide")?.clientWidth;
+	const prevButton = document.querySelector(".prev");
+	const nextButton = document.querySelector(".next");
+
+	if (nextButton) {
+		nextButton.addEventListener("click", () => {
+			if (slidesContainer && slideWidth !== undefined) {
+				slidesContainer.scrollLeft += slideWidth;
+			}
+		});
+	}
+
+	if (prevButton) {
+		prevButton.addEventListener("click", () => {
+			if (slidesContainer && slideWidth !== undefined) {
+				slidesContainer.scrollLeft -= slideWidth;
+			}
+		});
+	}
+</script>
+
+<style>
+	.slides-container {
+		-ms-overflow-style: none; /* Internet Explorer 10+ */
+		scrollbar-width: none; /* Firefox */
+	}
+	.slides-container::-webkit-scrollbar {
+		display: none; /* Safari and Chrome */
+	}
+</style>
