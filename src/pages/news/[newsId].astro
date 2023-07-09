@@ -6,9 +6,9 @@ import { News, getNews, getNewsDetail } from "../../library/microcms";
 export async function getStaticPaths() {
   const news = await getNews({ fields: ["id"] });
   type PickedNews = Pick<
-  News,
-  "id" | "title" | "eyecatch" | "publishedAt" | "category" | "content"
->;
+    News,
+    "id" | "title" | "eyecatch" | "publishedAt" | "category" | "content"
+  >;
   return news.contents.map((content: PickedNews) => ({
     params: {
       newsId: content.id,
@@ -23,7 +23,8 @@ const news = await getNewsDetail(newsId);
 
 // お知らせ一覧取得
 const newsList = await getNews({
-  fields: ["id", "title", "eyecatch", "publishedAt", "category"], limit: 5
+  fields: ["id", "title", "eyecatch", "publishedAt", "category"],
+  limit: 5,
 });
 type PickedNews = Pick<
   News,
@@ -55,27 +56,46 @@ type PickedNews = Pick<
         <img src="" />
       </div>
     </div>
-    <div>
-      <div>
-        <div>
-          <h2>{news.title}</h2>
+
+    <div class="news">
+      <div class="news-detail">
+        <div class="news-detail-title-wrapper">
+          <h2 class="detail-title">{news.title}</h2>
           <div>
-            <p>{news.category}</p>
-            <p>{news.publishedAt}</p>
+            <p class="news-detail-category">{news.category}</p>
+            <p class="news-detail-date">
+              {
+                new Date(news.publishedAt).getFullYear() +
+                  "." +
+                  ("00" + new Date(news.publishedAt).getMonth()).slice(-2) +
+                  "." +
+                  ("00" + new Date(news.publishedAt).getDate()).slice(-2)
+              }
+            </p>
           </div>
         </div>
         <article set:html={news.content} />
+        <p class="back-list">一覧に戻る</p>
       </div>
-      <div>
+
+      <div class="news-list">
         {
           newsList.contents.map((content: PickedNews) => (
             <div>
-              <a href={`news/${content.id}`}></a>
-              <img src={content.eyecatch.url} width="200" alt="アイキャッチ画像" />
-              <p>
-                {content.publishedAt}
-                <span>{content.category}</span>
-              </p>
+              <a href={`news/${content.id}`} />
+              <img src={content.eyecatch.url} alt="アイキャッチ画像" />
+              <div class="news-list-category-wrapper">
+                <p class="news-list-date">
+                  {new Date(content.publishedAt).getFullYear() +
+                    "." +
+                    ("00" + new Date(content.publishedAt).getMonth()).slice(
+                      -2
+                    ) +
+                    "." +
+                    ("00" + new Date(content.publishedAt).getDate()).slice(-2)}
+                </p>
+                <p class="news-list-category">{content.category}</p>
+              </div>
               <p>{content.title}</p>
             </div>
           ))
@@ -87,8 +107,141 @@ type PickedNews = Pick<
 
 <style>
   main {
-    margin: auto;
-    padding: 1em;
-    max-width: 60ch;
+    background-color: #fff9e0;
   }
+
+  .news {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  .news-detail {
+    width: 56%;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding-top: 60px;
+    padding: 0 3%;
+  }
+
+  .back-list {
+    margin-top: 50px;
+    padding-bottom: 60px;
+    padding-left: 30px;
+    position: relative;
+    color: #5f8934;
+  }
+
+  .back-list::before {
+    content: "";
+    position: absolute;
+  }
+
+  .news-detail-title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    align-items: center;
+  }
+
+  .detail-title {
+    font-size: 1.6rem;
+  }
+
+  .news-detail-category {
+    width: 83px;
+    border-radius: 15px;
+    background-color: #5f8934;
+    color: #ffffff;
+    font-size: 0.5rem;
+    text-align: center;
+    padding: 3px 0;
+    margin-bottom: 10px;
+  }
+
+  .news-detail-date {
+    color: #5f8934;
+  }
+
+  .news-list {
+    width: 24%;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding-top: 60px;
+  }
+
+  .news-list > div {
+    width: 87%;
+    margin: auto;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #dddddd;
+    margin-bottom: 35px;
+  }
+
+  .news-list-category-wrapper {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.87rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .news-list-date {
+    color: #5f8934;
+  }
+
+  .news-list-category {
+    width: 83px;
+    border-radius: 15px;
+    background-color: #5f8934;
+    color: #ffffff;
+    font-size: 0.5rem;
+    text-align: center;
+    padding: 3px 0;
+  }
+
+  .news-list > div:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 767px) {
+    .news {
+      display: block;
+      margin: auto;
+    }
+
+    .news-detail {
+      width: 90%;
+      margin: 0 auto;
+      padding-top: 45px;
+    }
+
+    .news-detail-title-wrapper {
+      display: block;
+      margin-top: 0;
+    }
+
+    .news-detail-title-wrapper > div {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      margin-top: 20px;
+    }
+
+    .news-list {
+      display: none;
+    }
+
+    .back-list {
+      margin-top: 40px;
+      padding-bottom: 50px;
+    }
+  }
+
+  /* TODO
+  .news-detail-dateの画像
+  .back-listの方向
+  font-sizeの調整
+  */
 </style>
