@@ -1,0 +1,283 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/Header.vue";
+import Footer from "../../../components/Footer.vue";
+
+// microCMS呼び出し
+import { News, getNews } from "../../../library/microcms";
+
+import type { GetStaticPathsOptions } from "astro";
+
+type PickedNews = Pick<
+  News,
+  "id" | "title" | "eyecatch" | "publishedAt" | "category" | "content" | "title"
+>;
+export const getStaticPaths = async ({ paginate }: GetStaticPathsOptions) => {
+  const response = await getNews({
+    fields: [
+      "id",
+      "title",
+      "eyecatch",
+      "publishedAt",
+      "category",
+      "content",
+      "title",
+    ],
+    limit: 9,
+  });
+  return paginate(response.contents, { pageSize: 9 });
+};
+
+let category = null;
+
+const { page } = Astro.props;
+---
+
+<!-- 
+  TODO
+  文字サイズ
+  タイトル
+  Headerのエラー
+  newsの中央寄せ（justify-contentを使用すると3で割り切れない時に間があいてしまう）
+  ページング処理
+  詳細リンクのURL
+ -->
+<Layout title="My first blog with Astro">
+  <main>
+    <div class="sp-header">
+      <Header client:load />
+    </div>
+    <div>
+      <div>
+        <h1>{category}お知らせ</h1>
+        <p>NEWS</p>
+        <nav>
+          <p>
+            <a href="#">トップ</a>
+            <span>＞</span>
+          </p>
+          <p>
+            <span>お知らせ</span>
+          </p>
+        </nav>
+      </div>
+      <div>
+        <img src="" />
+      </div>
+    </div>
+    <div class="news">
+      <div class="result">
+        <div class="sub-title flex justify-around">
+          <img src="/svgs/green-leaf.svg" />
+          <h2>お知らせ</h2>
+          <img src="/svgs/green-leaf.svg" />
+        </div>
+        <ul class="category-link">
+          <li><a href="#">すべて</a></li>
+          <li><a href="#">ブログ</a></li>
+          <li><a href="#">入荷情報</a></li>
+          <li><a href="#">イベント情報</a></li>
+        </ul>
+        <div class="news-list">
+          {
+            page.data.map((content: PickedNews) => (
+              <div class="news-detail">
+                <a class="news-detail-link" href={`news/${content.id}`}>
+                  <img src={content.eyecatch.url} alt="アイキャッチ画像" />
+                  <div class="news-list-category-wrapper">
+                    <p class="news-detail-date">
+                      {new Date(content.publishedAt).getFullYear() +
+                        "." +
+                        ("00" + new Date(content.publishedAt).getMonth()).slice(
+                          -2
+                        ) +
+                        "." +
+                        ("00" + new Date(content.publishedAt).getDate()).slice(
+                          -2
+                        )}
+                    </p>
+                    <p class="news-list-category">{content.category}</p>
+                  </div>
+                  <p class="news-title">{content.title}</p>
+                </a>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+    <ul class="page-number">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+    <Footer client:load />
+  </main>
+</Layout>
+
+<style>
+  main {
+    background-color: #fff9c0;
+    margin: auto;
+  }
+
+  .sub-title > img {
+    width: 24%;
+  }
+
+  .sub-title > h2 {
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin: 0 20px;
+    text-align: center;
+    margin-bottom: 35px;
+  }
+
+  .news {
+    background-color: #ffffff;
+    width: 84%;
+    border-radius: 15px;
+    margin: 60px auto;
+    padding: 60px 0 60px;
+  }
+
+  .result {
+    width: 90%;
+    margin: auto;
+  }
+
+  .category-link {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+  }
+
+  .category-link > li {
+    margin: 0 15px;
+  }
+
+  .news-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .news-detail {
+    width: 28%;
+    margin: 0 2%;
+  }
+
+  .news-detail-link {
+    display: block;
+  }
+
+  .news-detail-link:hover {
+    opacity: 0.7;
+  }
+
+  .news-detail-link > img {
+    width: 100%;
+    height: 245px;
+    border-radius: 10px;
+  }
+
+  .news-detail-date {
+    color: #5f8934;
+  }
+
+  .news-list-category-wrapper {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.87rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .news-list-category {
+    width: 83px;
+    border-radius: 15px;
+    background-color: #5f8934;
+    color: #ffffff;
+    font-size: 0.5rem;
+    text-align: center;
+    padding: 3px 0;
+  }
+
+  .news-title {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dddddd;
+    margin-bottom: 50px;
+    font-weight: bold;
+  }
+
+  .page-number {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 140px;
+  }
+
+  .page-number > li {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #5f8934;
+    line-height: 60px;
+    text-align: center;
+    margin: 0 20px;
+    font-weight: bold;
+  }
+
+  .page-number > li:hover {
+    background-color: #5f8934;
+    color: #ffffff;
+  }
+
+  @media screen and (max-width: 767px) {
+    .news {
+      width: 90%;
+    }
+
+    .result {
+      width: 88%;
+    }
+
+    .news-list {
+      display: block;
+    }
+
+    .category-link {
+      display: none;
+    }
+
+    .news-detail {
+      width: 100%;
+      margin: 0;
+    }
+
+    .news-detail:last-child > .news-title {
+      padding-bottom: 0;
+      border-bottom: none;
+      margin-bottom: 0;
+      font-weight: bold;
+    }
+
+    .page-number {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 130px;
+    }
+
+    .page-number > li {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      color: #5f8934;
+      line-height: 44px;
+      text-align: center;
+      margin: 0 7px;
+      font-weight: bold;
+    }
+  }
+</style>
