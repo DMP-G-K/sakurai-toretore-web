@@ -2,17 +2,26 @@
 import Layout from "../layouts/Layout.astro";
 import TableOfContents from "../components/TableOfContents.astro";
 import Footer from "../components/Footer.vue";
+import Header from "../components/Header.vue";
 
-const contents = ["店舗情報・アクセス", "駐車場", "さくらいとれとれ市場の仲間たち", "運営会社"];
+const contents = [
+  "店舗情報・アクセス",
+  "駐車場",
+  "さくらいとれとれ市場の仲間たち",
+  "運営会社",
+];
 ---
 
 <Layout title="information">
   <main>
-    <div>
+    <div class="sp-header">
+      <Header client:load />
+    </div>
+    <div class="page-title-wrapper">
       <div>
-        <h1>店舗情報</h1>
+        <h1 class="page-title">店舗情報</h1>
         <p>FEATURES</p>
-        <nav>
+        <nav class="bread-crumbs">
           <p>
             <a href="#">トップ</a>
             <span>＞</span>
@@ -26,71 +35,87 @@ const contents = ["店舗情報・アクセス", "駐車場", "さくらいと�
         <img src="" />
       </div>
     </div>
-    <div>
+    <div class="table-of-contents">
       <TableOfContents contents={contents} />
     </div>
-    <div id="section-0">
-      <h2>店舗情報・アクセス</h2>
-      <div>
+    <div id="section-0" class="access">
+      <div class="sub-title">
+        <img src="/svgs/green-leaf.svg" />
+        <h2 class="access-title">店舗情報・アクセス</h2>
+        <img src="/svgs/green-leaf.svg" />
+      </div>
+      <div class="google-map">
         <!-- TODO Google map -->
       </div>
-      <div>
+      <div class="detail">
         <div>
-          <p>所在地</p>
-          <p>
+          <p class="detail-title">所在地</p>
+          <p class="detail-content">
             〒633-0062 奈良県桜井市大字粟殿72番地 (<a href="#">Google map →</a>)
           </p>
         </div>
         <div>
-          <p>営業時間</p>
-          <p>8：45～18：00（年末年始を除く）</p>
+          <p class="detail-title">営業時間</p>
+          <p class="detail-content">8：45～18：00（年末年始を除く）</p>
         </div>
         <div>
-          <p>TEL</p>
-          <p>0744- 45-1011</p>
+          <p class="detail-title">TEL</p>
+          <p class="detail-content">0744- 45-1011</p>
         </div>
         <div>
-          <p>FAX</p>
-          <p>050-3588-2346</p>
+          <p class="detail-title">FAX</p>
+          <p class="detail-content">050-3588-2346</p>
         </div>
       </div>
     </div>
-    <div>
-      <h2>駐車場</h2>
-      <div>
-        <img src="#" />
-        <img src="#" />
-        <img src="#" />
+    <div id="section-1" class="parking">
+      <div class="sub-title">
+        <img src="/svgs/green-leaf.svg" />
+        <h2 class="parking-title">駐車場</h2>
+        <img src="/svgs/green-leaf.svg" />
       </div>
-      <div id="section-1">
-        <div>
-          <p>駐車場</p>
-          <p>50台</p>
+      <div class="detail">
+        <div class="parking-image-wrapper">
+          <img src="#" />
+          <img src="#" />
+          <img src="#" />
         </div>
         <div>
-          <p>お支払方法</p>
-          <p>キャッシュレス対応（paypay・メルペイ・d払い）</p>
+          <p class="detail-title">駐車場</p>
+          <p class="detail-content">50台</p>
+        </div>
+        <div>
+          <p class="detail-title">お支払方法</p>
+          <p class="detail-content">
+            キャッシュレス対応（paypay・メルペイ・d払い）
+          </p>
         </div>
       </div>
     </div>
-    <div id="section-2">
-      <h2>さくらいとれとれ市場の仲間たち</h2>
-      <div>
-        <h3>あすか整骨院　桜井院</h3>
-        <p>
+    <div id="section-2" class="friend">
+      <div class="sub-title">
+        <img src="/svgs/green-leaf.svg" />
+        <h2 class="friend-title">さくらいとれとれ市場の仲間たち</h2>
+        <img src="/svgs/green-leaf.svg" />
+      </div>
+      <div class="friend-detail">
+        <h3 class="friend-detail-title">あすか整骨院　桜井院</h3>
+        <p class="friend-content">
           奈良県で一番リピート率の高いという整骨院です。一般診療、交通事故治療、実費治療と様々なメニューがあります。
         </p>
-        <div>
+        <div class="friend-info-wrapper">
           <img src="#" />
-          <div>
+          <div class="friend-info">
             <div>
-              <p>電話</p>
-              <p>07466-46-4040</p>
+              <p class="friend-info-title">電話</p>
+              <p class="friend-info-content">07466-46-4040</p>
             </div>
             <div>
-              <p>診療時間</p>
-              <p>
-                <span>[月～土]</span><br /><span>午前</span>　8時30分～12時00分<br /><span>午後</span
+              <p class="friend-info-title">診療時間</p>
+              <p class="friend-info-content">
+                <span class="emphasize">[月～土]</span><br /><span
+                  class="emphasize">午前</span
+                >　8時30分～12時00分<br /><span class="emphasize">午後</span
                 >　14時30分～20時00分<br />
                 ※木曜日のみ午後休診<br />※日曜日　休診
               </p>
@@ -98,101 +123,109 @@ const contents = ["店舗情報・アクセス", "駐車場", "さくらいと�
           </div>
         </div>
       </div>
-      <div>
-        <h3>肉のきしもと</h3>
-        <p>
+      <div class="friend-detail">
+        <h3 class="friend-detail-title">肉のきしもと</h3>
+        <p class="friend-content">
           2019年10月にオープン。山形産の牛肉を中心に、質のよいお肉をリーズナブルな価格で提供。丁寧に処理しており、肉のおいしさを堪能できます。揚げたてのコロッケ、串カツ、民地活をはじめ焼きステーキの販売も行っています。
         </p>
-        <div>
+        <div class="friend-info-wrapper">
           <img src="#" />
-          <div>
+          <div class="friend-info">
             <div>
-              <p>電話</p>
-              <p>0744-41-9122</p>
+              <p class="friend-info-title">電話</p>
+              <p class="friend-info-content">0744-41-9122</p>
             </div>
             <div>
-              <p>定休日</p>
-              <p>水曜日</p>
+              <p class="friend-info-title">定休日</p>
+              <p class="friend-info-content">水曜日</p>
             </div>
           </div>
         </div>
       </div>
-      <div>
-        <h3>SOL CAFÉ</h3>
-        <p>
+      <div class="friend-detail">
+        <h3 class="friend-detail-title">SOL CAFÉ</h3>
+        <p class="friend-content">
           市内で評判のスイーツCafé。ハンドメイドのケーキや焼き菓子、ぜいたくな豆を使ったコーヒーを求めて橿原市や宇陀市から通う常連さんもいます。瀟洒な椅子やテーブルを揃え、店員の接客マナーもよいことから、ゆっくりとくつろげます。
           もちろん、とれとれ市場の朝どり野菜を使ったランチメニューも豊富で、地元の味を満喫できます。
         </p>
-        <div>
+        <div class="friend-info-wrapper">
           <img src="#" />
-          <div>
+          <div class="friend-info">
             <div>
-              <p>予算</p>
-              <p>モーニング　 550円～<br />ランチ　　　1100円～</p>
+              <p class="friend-info-title">予算</p>
+              <p class="friend-info-content">
+                モーニング　 550円～<br />ランチ　　　1100円～
+              </p>
             </div>
             <div>
-              <p>営業時間</p>
-              <p>8時～17時（土曜定休）</p>
+              <p class="friend-info-title">営業時間</p>
+              <p class="friend-info-content">8時～17時（土曜定休）</p>
             </div>
           </div>
         </div>
       </div>
-      <div>
+      <div class="friend-image-wrapper">
         <img src="#" />
         <img src="#" />
         <img src="#" />
         <img src="#" />
       </div>
     </div>
-    <div id="section-3">
-      <h2>運営会社</h2>
-      <div>
+    <div id="section-3" class="company">
+      <div class="sub-title">
+        <img src="/svgs/green-leaf.svg" />
+        <h2 class="company-title">運営会社</h2>
+        <img src="/svgs/green-leaf.svg" />
+      </div>
+      <div class="company-image">
         <img src="#" />
       </div>
-      <div>
+      <div class="company-info">
         <div>
-          <p>商号</p>
-          <p>さくらいとれとれ市場株式会社</p>
+          <p class="company-info-title">商号</p>
+          <p class="company-info-content">さくらいとれとれ市場株式会社</p>
         </div>
         <div>
-          <p>創業</p>
-          <p>平成23年10月11日</p>
+          <p class="company-info-title">創業</p>
+          <p class="company-info-content">平成23年10月11日</p>
         </div>
         <div>
-          <p>TEL</p>
-          <p>0744-45-1011</p>
+          <p class="company-info-title">TEL</p>
+          <p class="company-info-content">0744-45-1011</p>
         </div>
         <div>
-          <p>FAX</p>
-          <p>050-3588-2346</p>
+          <p class="company-info-title">FAX</p>
+          <p class="company-info-content">050-3588-2346</p>
         </div>
       </div>
       <!-- 企業理念 -->
-      <div>
+      <div class="company-philosophy">
         <p>
           農産物等の販売を通じて、お客さまの健康増進と食生活を守り、地域農業の維持発展を実現する。<br
           />ビジョン「ここが頼りやねん」と言われる地域№１の農産物直売所を目指す。<br
-          />バリュー努力・労力を惜しまず、楽しく仕事をする。<br />客観的な判断を大切にする。<br
-          />威厳と尊敬をもって誠実に向き合い、心を通わせる。<br />進歩のための摩擦を恐れない勇気を持つ。
+          />バリュー努力・労力を惜しまず、楽しく仕事をする。<br
+          />客観的な判断を大切にする。<br
+          />威厳と尊敬をもって誠実に向き合い、心を通わせる。<br
+          />進歩のための摩擦を恐れない勇気を持つ。
         </p>
       </div>
-      <div>
+      <div class="company-detail">
         <div>
-          <h3>社員との関係</h3>
+          <h3 class="company-detail-title">社員との関係</h3>
           <p>
             社員は価値観を共有する最も大切なパートナーとして認識します。すべての社員の健康と安全に配慮し、働きやすい職場環境をつくるために努力します。関係法令を遵守し、また人権を尊重し、性別、人権、出身、宗教、価値観等を理由とする差別やプライバシーの侵害を排除します。
           </p>
         </div>
         <div>
-          <h3>ステークホルダーとの関係</h3>
+          <h3 class="company-detail-title">ステークホルダーとの関係</h3>
           <p>
             フェアでオープンな企業活動を通じて信頼関係を構築する。お客さま、生産者さまと「三方よし」となる企業活動を行う。<br
             />企業活動を通じて得た利益はステークホルダーに還元する。
           </p>
         </div>
       </div>
-      <div>
-        <h3>社員行動指針</h3>
+      <div class="employee-guidelines">
+        <h3 class="employee-guidelines-title">社員行動指針</h3>
         <ul>
           <li>1. 常に「生理」「整頓」「清潔」を心掛ける。</li>
           <li>2. 訪れるすべての方々に、笑顔と真心を込めて接する。</li>
@@ -205,8 +238,8 @@ const contents = ["店舗情報・アクセス", "駐車場", "さくらいと�
           <li>9. 知恵と工夫をもって職務にあたる。</li>
         </ul>
       </div>
-      <div>
-        <h3>代表者メッセージ</h3>
+      <div class="representative-message">
+        <h3 class="representative-message-title">代表者メッセージ</h3>
         <p>
           日本の歴史は2000回のコメづくり―<br />
           移動や通信手段が発達し、きれいな家、おしゃれな洋服があふれる時代になっても、コメづくりだけは変わらず、ずっと続いています。その事実に向き合うと、さくらいとれとれ市場の代表となりました自分自身の責任や役割は、食の根幹をなす農業を、これからも大切に守り育て、次世代につなげていくことではないかといきつきました。<br
@@ -223,46 +256,55 @@ const contents = ["店舗情報・アクセス", "駐車場", "さくらいと�
           />
           さくらいとれとれ市場は新たなスタート地点に立ったばかりです。ステークホルダーの皆さまにとりまして至らぬ点が多々あると感じております。<br
           />
-          皆さまからの厳しい声を改善の原動力として日々進化し、サービスの向上に努めていく所存です。<br />
+          皆さまからの厳しい声を改善の原動力として日々進化し、サービスの向上に努めていく所存です。<br
+          />
           どうか厳しい声で叱咤いただき、温かい目で見守っていただきますよう、お願い申し上げます。
         </p>
-        <p>2018年（平成30年）10月3日</p>
+        <p class="ceo">
+          2018年（平成30年）10月3日<br />さくらいとれとれ市場株式会社<br
+          />代表取締役　藤田茂
+        </p>
       </div>
-      <div>
-        <h3>代表者プロフィール</h3>
-        <p>昭和37年　山口県生まれ。４人兄妹の次男。血液型Ｂ型</p>
-        <div>
-          <p>学歴</p>
-          <p>下関工業高校卒</p>
+      <div class="profile">
+        <h3 class="profile-title">代表者プロフィール</h3>
+        <p class="birth">昭和37年　山口県生まれ。４人兄妹の次男。血液型Ｂ型</p>
+        <div class="profile-detail">
+          <p class="profile-detail-title">学歴</p>
+          <p class="profile-detail-content">下関工業高校卒</p>
         </div>
-        <div>
-          <p>職歴</p>
-          <p>
+        <div class="profile-detail">
+          <p class="profile-detail-title">職歴</p>
+          <p class="profile-detail-content">
             ㈱みなと山口合同新聞社（活版作業～電算室オペレーター）<br />
             みなと新聞（本社記者～大阪支社記者～中部支局長代理）<br />
             紀伊国屋書店梅田本店（出向、自費出版アドバイザー）<br />
-            (株)堀川（神戸受注センター係長）<br />ＦＫパブリッシング（自営）<br />
+            (株)堀川（神戸受注センター係長）<br />ＦＫパブリッシング（自営）<br
+            />
             フリーライター<br />ＮＴＴフレッツ光接続設定（業務委託）<br
             />(株)奈良日日新聞社（営業記者～企画部次長～取締役企画部長兼編集委員）
           </p>
         </div>
-        <div>
-          <p>現在</p>
-          <p>
+        <div class="profile-detail">
+          <p class="profile-detail-title">現在</p>
+          <p class="profile-detail-content">
             さくらいとれとれ市場株式会社　代表取締役社長<br />
             大阪府中小企業家同友会　会員<br />フリージャーナリスト<br />
-            (一社)奈良地域デザイン研究所　研究員　※研究テーマ「歴史から探る大和の美食」<br />
+            (一社)奈良地域デザイン研究所　研究員　※研究テーマ「歴史から探る大和の美食」<br
+            />
             奈良「歩くう会」主宰
           </p>
         </div>
-        <div>
-          <p>趣味</p>
-          <p>将棋（日本将棋連盟アマ三段有資格）、釣り、読書、旅行</p>
+        <div class="profile-detail">
+          <p class="profile-detail-title">趣味</p>
+          <p class="profile-detail-content">
+            将棋（日本将棋連盟アマ三段有資格）、釣り、読書、旅行
+          </p>
         </div>
-        <div>
-          <p>好きな書物</p>
-          <p>
-            ドナウの旅人（宮本輝）、国盗り物語（司馬遼太郎）、太閤記（司馬遼太郎）、<br />
+        <div class="profile-detail">
+          <p class="profile-detail-title">好きな書物</p>
+          <p class="profile-detail-content">
+            ドナウの旅人（宮本輝）、国盗り物語（司馬遼太郎）、太閤記（司馬遼太郎）、<br
+            />
             分水嶺（森村誠一）、血と骨（梁石日）、久保の石田流（久保利明）、黄金の旅路（石田敏徳）
           </p>
         </div>
@@ -271,3 +313,579 @@ const contents = ["店舗情報・アクセス", "駐車場", "さくらいと�
     <Footer client:load />
   </main>
 </Layout>
+
+<style>
+  main {
+    background-color: #fff9e0;
+    margin: auto;
+    font-size: 1rem;
+    letter-spacing: 0.96px;
+  }
+
+  .table-of-contents {
+    background-color: #ffffff;
+    margin: auto;
+    width: 84%;
+    border-radius: 20px;
+    opacity: 1;
+  }
+
+  .page-title-wrapper {
+    display: flex;
+    background-color: aqua;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .sub-title {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .sub-title > img {
+    width: 24%;
+  }
+
+  .access {
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 84%;
+    margin: 60px auto;
+    padding: 60px 0 80px;
+  }
+
+  .access-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0 20px;
+    position: relative;
+    text-align: center;
+  }
+
+  .detail {
+    padding: 0 140px;
+    text-align: center;
+  }
+
+  .detail > div {
+    display: flex;
+  }
+
+  .detail-title {
+    font-weight: bold;
+    padding: 30px 0;
+    border-bottom: 1px solid #5f8934;
+    width: 22%;
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .detail-content {
+    padding: 30px 30px 0 20px;
+    border-bottom: 1px solid #dddddd;
+    width: 77%;
+    text-align: left;
+  }
+
+  .parking {
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 84%;
+    margin: 60px auto;
+    padding: 60px 0 80px;
+  }
+
+  .parking-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0 20px;
+    position: relative;
+    text-align: center;
+  }
+
+  .parking-image-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+
+  .parking-image-wrapper > img {
+    width: 23%;
+    height: 200px;
+    border-radius: 10px;
+  }
+
+  .friend {
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 84%;
+    margin: 60px auto;
+    padding: 60px 50px 80px;
+  }
+
+  .friend-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0 20px;
+    position: relative;
+    text-align: center;
+  }
+
+  .friend-detail {
+    margin-bottom: 30px;
+  }
+
+  .friend-detail-title {
+    padding: 20px 0 20px 25px;
+    color: #5f8934;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: relative;
+  }
+
+  .friend-detail-title::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 30px;
+    left: 5px;
+    border-radius: 50%;
+    background-color: #5f8934;
+  }
+
+  .friend-content {
+    margin-bottom: 25px;
+  }
+
+  .friend-info-wrapper {
+    display: flex;
+  }
+
+  .friend-info-wrapper > img {
+    width: 27%;
+    height: 217px;
+    border-radius: 10px;
+  }
+
+  .friend-info {
+    margin-left: 30px;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .friend-info-title {
+    width: 28%;
+    padding-left: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #5f8934;
+    font-weight: bold;
+  }
+
+  .friend-info-content {
+    width: 72%;
+    padding-left: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #dddddd;
+  }
+
+  .friend-info > div {
+    display: flex;
+    margin-bottom: 30px;
+  }
+
+  .emphasize {
+    font-weight: bold;
+  }
+
+  .friend-image-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .friend-image-wrapper > img {
+    width: 20%;
+    height: 160px;
+    border-radius: 10px;
+  }
+
+  .company {
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 84%;
+    margin: 60px auto;
+    padding: 60px 50px 80px;
+  }
+
+  .company-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0 20px;
+    position: relative;
+    text-align: center;
+  }
+
+  .company-image {
+    margin: 50px 0;
+  }
+
+  .company-image > img {
+    margin: auto;
+    width: 100%;
+    height: 450px;
+    border-radius: 10px;
+  }
+
+  .company-info {
+    margin-bottom: 80px;
+  }
+
+  .company-info > div {
+    display: flex;
+    margin-bottom: 30px;
+  }
+
+  .company-info-title {
+    width: 18%;
+    padding-left: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #5f8934;
+    font-weight: bold;
+  }
+
+  .company-info-content {
+    width: 82%;
+    padding-left: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #dddddd;
+  }
+
+  .company-philosophy {
+    border: 1px solid #5f8934;
+    border-radius: 10px;
+    text-align: center;
+    padding: 50px 40px 30px;
+    letter-spacing: 0.96px;
+    line-height: 2rem;
+    position: relative;
+  }
+
+  .company-philosophy::before {
+    content: "企業理念";
+    position: absolute;
+    background-color: #ffffff;
+    color: #5f8934;
+    font-size: 1.2rem;
+    font-weight: bold;
+    top: -15px;
+    padding: 0 20px;
+    transform: translate(-50%, 0%);
+    -webkit-transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, 0%);
+  }
+
+  .company-detail {
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    justify-content: space-between;
+  }
+
+  .company-detail > div {
+    width: 45%;
+  }
+
+  .company-detail-title {
+    margin-bottom: 20px;
+    color: #5f8934;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .employee-guidelines {
+    margin-bottom: 50px;
+  }
+
+  .employee-guidelines-title {
+    margin-bottom: 20px;
+    color: #5f8934;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .employee-guidelines > ul > li {
+    margin-bottom: 10px;
+  }
+
+  .representative-message {
+    margin-bottom: 50px;
+  }
+
+  .representative-message-title {
+    margin-bottom: 20px;
+    color: #5f8934;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .ceo {
+    margin-top: 30px;
+    text-align: right;
+  }
+
+  .profile-title {
+    margin-bottom: 20px;
+    color: #5f8934;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .birth {
+    margin-bottom: 40px;
+  }
+
+  .profile-detail {
+    display: flex;
+    margin-bottom: 30px;
+  }
+
+  .profile-detail-title {
+    width: 18%;
+    padding-left: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #5f8934;
+    font-weight: bold;
+  }
+
+  .profile-detail-content {
+    width: 82%;
+    padding-left: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #dddddd;
+  }
+
+  .google-map {
+    width: 74%;
+    margin: auto;
+  }
+
+  @media screen and (max-width: 767px) {
+    .access {
+      width: 90%;
+    }
+
+    .google-map {
+      border-bottom: 1px solid #5f8934;
+      width: 88%;
+    }
+
+    .detail {
+      width: 88%;
+      padding: 0;
+      margin: auto;
+    }
+
+    .detail > div {
+      display: block;
+    }
+
+    .detail-title {
+      margin-top: 20px;
+      margin-bottom: 15px;
+      border-bottom: none;
+      width: 100%;
+      padding: 0;
+    }
+
+    .detail-content {
+      width: 100%;
+      padding: 0;
+      padding-bottom: 20px;
+    }
+
+    .parking-image-wrapper {
+      border-bottom: 1px solid #5f8934;
+      width: 100%;
+      padding-bottom: 30px;
+    }
+
+    .parking-image-wrapper > img {
+      width: 100%;
+    }
+
+    .friend {
+      background-color: #ffffff;
+      border-radius: 15px;
+      width: 84%;
+      margin: 60px auto;
+      padding: 40px 0 80px;
+    }
+
+    .friend-info-wrapper > img {
+      width: 100%;
+      border-bottom: 1px solid #5f8934;
+      padding-bottom: 25px;
+      margin-bottom: 25px;
+    }
+
+    .friend-info-wrapper {
+      display: block;
+    }
+
+    .friend-info {
+      margin: 0;
+    }
+
+    .friend-info > div {
+      display: block;
+    }
+
+    .friend-info-title {
+      margin-top: 20px;
+      margin-bottom: 15px;
+      border-bottom: none;
+      width: 100%;
+      padding: 0;
+    }
+
+    .friend-info-content {
+      width: 100%;
+      padding: 0;
+      padding-bottom: 20px;
+    }
+
+    .friend-detail {
+      width: 88%;
+      padding: 0;
+      margin: auto;
+    }
+
+    .friend-detail-title {
+      margin-top: 20px;
+      margin-bottom: 15px;
+      border-bottom: none;
+      width: 100%;
+      padding: 0;
+      padding-left: 25px;
+    }
+
+    .friend-detail-title::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: 10px;
+      left: 5px;
+      border-radius: 50%;
+      background-color: #5f8934;
+    }
+
+    .friend-content {
+      width: 100%;
+      padding: 0;
+      padding-bottom: 20px;
+    }
+
+    .friend-image-wrapper {
+      width: 88%;
+      margin: auto;
+      flex-wrap: wrap;
+    }
+
+    .friend-image-wrapper > img {
+      width: 47%;
+      height: 108px;
+      margin-bottom: 20px;
+    }
+
+    .company {
+      background-color: #ffffff;
+      border-radius: 15px;
+      width: 84%;
+      margin: 60px auto;
+      padding: 40px 0 80px;
+    }
+
+    .company-image {
+      width: 88%;
+      margin: 50px auto;
+    }
+
+    .company-info {
+      width: 88%;
+      padding: 0;
+      margin: auto;
+    }
+
+    .company-info > div {
+      display: block;
+    }
+
+    .company-info-title {
+      margin-top: 20px;
+      margin-bottom: 15px;
+      border-bottom: none;
+      width: 100%;
+      padding: 0;
+    }
+
+    .company-info-content {
+      width: 100%;
+      padding: 0;
+      padding-bottom: 20px;
+    }
+
+    .company-philosophy {
+      width: 88%;
+      margin: auto;
+    }
+
+    .company-detail {
+      width: 88%;
+      margin: 50px auto;
+      display: block;
+    }
+
+    .company-detail > div {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+
+    .employee-guidelines {
+      width: 88%;
+      margin: auto;
+      margin-bottom: 50px;
+    }
+
+    .representative-message {
+      width: 88%;
+      margin: auto;
+      margin-bottom: 50px;
+    }
+
+    .profile {
+      width: 88%;
+      margin: auto;
+    }
+
+    .profile-detail {
+      display: block;
+    }
+
+    .profile-detail-title {
+      margin-top: 20px;
+      margin-bottom: 15px;
+      border-bottom: none;
+      width: 100%;
+      padding: 0;
+    }
+
+    .profile-detail-content {
+      width: 100%;
+      padding: 0;
+      padding-bottom: 20px;
+    }
+  }
+</style>
