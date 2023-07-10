@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import TableOfContents from "../components/TableOfContents.astro";
 import Footer from "../components/Footer.vue";
 import { Product, getProducts } from "../library/microcms";
+import Header from "../components/Header.vue";
+import Button from "../components/Button.astro";
 
 const contents = ["夏野菜", "冬野菜", "地元特産品"];
 
@@ -24,11 +26,14 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
 
 <Layout title="product">
   <main>
-    <div>
+    <div class="sp-header">
+      <Header client:load />
+    </div>
+    <div class="page-title-wrapper">
       <div>
-        <h1>お取り扱い商品の紹介</h1>
+        <h1 class="page-title">お取り扱い商品の紹介</h1>
         <p>PRODUCT</p>
-        <nav>
+        <nav class="bread-crumbs">
           <p>
             <a href="#">トップ</a>
             <span>＞</span>
@@ -38,83 +43,397 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
           </p>
         </nav>
       </div>
-      <div>
+      <div class="page-img">
         <img src="" />
       </div>
     </div>
-    <TableOfContents contents={contents} />
-    <div>
-      <h2>旬の野菜</h2>
-      <div id="section-0">
+    <div class="table-of-contents">
+      <TableOfContents contents={contents} />
+    </div>
+    <div class="season">
+      <div class="sub-title">
+        <img src="/svgs/green-leaf.svg" />
+        <h2>旬の野菜</h2>
+        <img src="/svgs/green-leaf.svg" />
+      </div>
+      <div id="section-0" class="summer-vegetable">
         <h3>夏野菜</h3>
         <p>
           これらの夏野菜は、さくらいとれとれ市場で新鮮な状態で提供されています。夏の味覚をお楽しみください。
         </p>
-        <div>
+        <div class="product-wrapper">
           {
             summerVegetable.contents.map((content: PickedProduct) => (
-              <div>
-                <img
-                  src={content.mainVisual.url}
-                  width="200"
-                  alt="メインビジュアル"
-                />
-                <p>{content.name}</p>
-                <article set:html={content.content} />
+              <div class="product">
+                <img src={content.mainVisual.url} alt="メインビジュアル" />
+                <div>
+                  <p class="summer-vegetable-title">{content.name}</p>
+                  <article set:html={content.content} />
+                </div>
               </div>
             ))
           }
+          <div class="product">
+            <img src="" />
+            <div>
+              <p class="summer-vegetable-title">夏野菜２</p>
+              <article>
+                <p>aaaaaaaaaaaaa</p>
+              </article>
+            </div>
+          </div>
+          <div class="product">
+            <img src="" />
+            <div>
+              <p class="summer-vegetable-title">夏野菜3</p>
+              <article>
+                <p>aaaaaaaaaaaaa</p>
+              </article>
+            </div>
+          </div>
+          <div class="product">
+            <img src="" />
+            <div>
+              <p class="summer-vegetable-title">夏野菜4</p>
+              <article>
+                <p>aaaaaaaaaaaaa</p>
+              </article>
+            </div>
+          </div>
+          <div class="product">
+            <img src="" />
+            <div>
+              <p class="summer-vegetable-title">夏野菜5</p>
+              <article>
+                <p>aaaaaaaaaaaaa</p>
+              </article>
+            </div>
+          </div>
         </div>
-        <div>
-          <a href="#">購入はこちら</a>
+        <div class="purchase-button">
+          <Button
+            bg="primary-variant"
+            text="white"
+            size="sm"
+            input="購入はこちら"
+          />
         </div>
       </div>
-      <div>
-        <h3 id="section-1">冬野菜</h3>
+      <div id="section-1" class="winter-vegetable">
+        <h3>冬野菜</h3>
         <p>
           これらの冬野菜は、寒さによって甘みが増し、栄養価が高まります。さくらいとれとれ市場で新鮮な冬野菜をお楽しみください。
         </p>
-        <div>
+        <div class="product-wrapper">
           {
             winterVegetable.contents.map((content: PickedProduct) => (
-              <div>
-                <img
-                  src={content.mainVisual.url}
-                  width="200"
-                  alt="メインビジュアル"
-                />
-                <p>{content.name}</p>
-                <article set:html={content.content} />
+              <div class="product">
+                <img src={content.mainVisual.url} alt="メインビジュアル" />
+                <div>
+                  <p class="winter-vegetable-title">{content.name}</p>
+                  <article set:html={content.content} />
+                </div>
               </div>
             ))
           }
+          <div class="product">
+            <img src="" />
+            <div>
+              <p class="winter-vegetable-title">冬野菜２</p>
+              <article>
+                <p>aaaaaaaaaaaaa</p>
+              </article>
+            </div>
+          </div>
+          <div class="product">
+            <img src="" />
+            <div>
+              <p class="winter-vegetable-title">冬野菜3</p>
+              <article>
+                <p>aaaaaaaaaaaaa</p>
+              </article>
+            </div>
+          </div>
+          <div class="product">
+            <img src="" />
+            <div>
+              <p class="winter-vegetable-title">冬野菜4</p>
+              <article>
+                <p>aaaaaaaaaaaaa</p>
+              </article>
+            </div>
+          </div>
+          <div class="product">
+            <img src="" />
+            <div>
+              <p class="winter-vegetable-title">冬野菜5</p>
+              <article>
+                <p>aaaaaaaaaaaaa</p>
+              </article>
+            </div>
+          </div>
+          <div class="product">
+            <img src="" />
+            <div>
+              <p class="winter-vegetable-title">冬野菜6</p>
+              <article>
+                <p>aaaaaaaaaaaaa</p>
+              </article>
+            </div>
+          </div>
         </div>
         <div>
-          <a href="#">購入はこちら</a>
+          <div>
+            <Button
+              bg="primary-variant"
+              text="white"
+              size="sm"
+              input="購入はこちら"
+            />
+          </div>
         </div>
       </div>
     </div>
-    <div id="section-2">
-      <h2>地元特産品</h2>
-      <p>
-        さくらいとれとれ市場では地元の野菜のほか、三輪そうめん、奈良漬け、<br
-        />大和高原ピクルスなど地元の特産品も多く取り扱っています。
-      </p>
-      <div>
-        {
-          specialProduct.contents.map((content: PickedSpecialProduct) => (
-            <img
-              src={content.mainVisual.url}
-              width="200"
-              alt="メインビジュアル"
-            />
-          ))
-        }
+    <div id="section-2" class="special">
+      <div class="sub-title">
+        <img src="/svgs/green-leaf.svg" />
+        <h2>地元特産品</h2>
+        <img src="/svgs/green-leaf.svg" />
       </div>
-      <div>
-        <a href="#">購入はこちら</a>
+      <div class="special-info">
+        <p class="special-detail">
+          さくらいとれとれ市場では地元の野菜のほか、三輪そうめん、奈良漬け、<br
+          />大和高原ピクルスなど地元の特産品も多く取り扱っています。
+        </p>
+        <div class="special-img-wrapper">
+          {
+            specialProduct.contents.map((content: PickedSpecialProduct) => (
+              <img src={content.mainVisual.url} alt="メインビジュアル" />
+            ))
+          }
+          <img src="" />
+          <img src="" />
+          <img src="" />
+        </div>
+        <div>
+          <Button
+            bg="primary-variant"
+            text="white"
+            size="sm"
+            input="購入はこちら"
+          />
+        </div>
       </div>
     </div>
     <Footer client:load />
   </main>
+
+  <style>
+    main {
+      background-color: #fff9e0;
+      margin: auto;
+      font-size: 1rem;
+    }
+
+    .page-title-wrapper {
+      display: flex;
+      background-color: aqua;
+    }
+
+    .page-img > img {
+      width: 50%;
+    }
+
+    .season {
+      background-color: #ffffff;
+      border-radius: 15px;
+      width: 84%;
+      margin: 60px auto;
+      padding: 60px 0 80px;
+    }
+
+    .page-title {
+      font-size: 2rem;
+    }
+
+    .sub-title {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .sub-title > img {
+      width: 24%;
+    }
+
+    .sub-title > h2 {
+      font-size: 30px;
+      font-weight: bold;
+      margin: 0 20px;
+      text-align: center;
+    }
+
+    .summer-vegetable {
+      width: 90%;
+      margin: auto;
+      margin-top: 35px;
+    }
+
+    .summer-vegetable > h3 {
+      padding-left: 20px;
+      color: #ff9300;
+      font-weight: bold;
+      font-size: 1.2rem;
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .summer-vegetable > h3::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: 10px;
+      left: 5px;
+      border-radius: 50%;
+      background-color: #ff9300;
+    }
+
+    .summer-vegetable > p {
+      margin-bottom: 35px;
+    }
+
+    .product-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .product {
+      width: 23%;
+      margin-bottom: 40px;
+    }
+
+    .product > img {
+      height: 200px;
+      width: 100%;
+    }
+
+    .summer-vegetable-title {
+      margin: 20px 0 15px;
+      color: #ff9300;
+    }
+
+    .purchase-button > div {
+      margin: auto;
+    }
+
+    .winter-vegetable {
+      width: 90%;
+      margin: auto;
+      margin-top: 35px;
+    }
+
+    .winter-vegetable > h3 {
+      padding-left: 20px;
+      color: #93a8ff;
+      font-weight: bold;
+      font-size: 1.2rem;
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .winter-vegetable > h3::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: 10px;
+      left: 5px;
+      border-radius: 50%;
+      background-color: #93a8ff;
+    }
+
+    .winter-vegetable > p {
+      margin-bottom: 35px;
+    }
+
+    .winter-vegetable-title {
+      margin: 20px 0 15px;
+      color: #93a8ff;
+    }
+
+    .special {
+      background-color: #ffffff;
+      border-radius: 15px;
+      width: 84%;
+      margin: 60px auto;
+      padding: 60px 0 80px;
+    }
+
+    .special-detail {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .special-info {
+      width: 84%;
+      margin: auto;
+      margin-top: 40px;
+    }
+
+    .special-img-wrapper {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 50px;
+    }
+
+    .special-img-wrapper > img {
+      width: 28%;
+      height: 230px;
+    }
+
+    @media screen and (max-width: 767px) {
+      .season {
+        width: 90%;
+      }
+
+      .product-wrapper {
+        display: block;
+        margin: 0;
+        margin-bottom: 25px;
+      }
+
+      .product {
+        width: 88%;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+      }
+
+      .product > img {
+        width: 33%;
+        height: 165px;
+        margin-right: 4%;
+      }
+
+      .special {
+        background-color: #ffffff;
+        border-radius: 15px;
+        width: 88%;
+        margin: 120px auto;
+        padding: 60px 0 80px;
+      }
+
+      .special-info {
+        width: 84%;
+        margin: auto;
+        margin-top: 30px;
+      }
+      .special-img-wrapper > img {
+        width: 27%;
+        height: 73px;
+      }
+    }
+  </style>
 </Layout>
