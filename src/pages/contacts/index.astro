@@ -1,10 +1,15 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/Footer.vue";
+import Button from "../../components/Button.astro";
+import Header from "../../components/Header.vue";
 ---
 
 <Layout title="inquiry">
   <main>
+    <div class="sp-header">
+      <Header client:load />
+    </div>
     <div>
       <div>
         <h1>お問い合わせ</h1>
@@ -23,49 +28,195 @@ import Footer from "../../components/Footer.vue";
         <img src="" />
       </div>
     </div>
-    <div>
-      <h2>お問い合わせ</h2>
-      <div>
-        <label>お名前</label>
-        <input type="text" name="name" />
+    <div class="contacts">
+      <div class="sub-title flex justify-around">
+        <img src="/svgs/green-leaf.svg" />
+        <h2>お問い合わせ</h2>
+        <img src="/svgs/green-leaf.svg" />
       </div>
-      <div>
-        <label>ふりがな</label>
-        <input type="text" name="kana" />
-      </div>
-      <div>
-        <label>郵便番号</label>
+      <div class="input">
         <div>
-          〒 <input type="text" name="zip_code1" /> - <input
-            type="text"
-            name="zip_code2"
+          <label>お名前<span class="required">必須</span></label>
+          <input class="name" type="text" name="name" />
+        </div>
+        <div>
+          <label>ふりがな<span class="required">必須</span></label>
+          <input class="kana" type="text" name="kana" />
+        </div>
+        <div>
+          <label>郵便番号<span class="required">必須</span></label>
+          <div>
+            〒 <input class="zip_code" type="text" name="zip_code1" /> - <input
+              class="zip_code"
+              type="text"
+              name="zip_code2"
+            />
+          </div>
+        </div>
+        <div>
+          <label>住所<span class="required">必須</span></label>
+          <input class="address" type="text" name="address" />
+        </div>
+        <div>
+          <label>電話番号<span class="required">必須</span></label>
+          <input class="tel" type="text" name="tel" />
+        </div>
+        <div>
+          <label>メールアドレス<span class="required">必須</span></label>
+          <input class="email" type="text" name="email" />
+        </div>
+        <div>
+          <label>確認用メールアドレス<span class="required">必須</span></label>
+          <input class="email-confirm" type="text" name="email_confirm" />
+        </div>
+        <div>
+          <label>お問い合わせ内容<span class="required">必須</span></label>
+          <input class="content" type="text" name="content" />
+        </div>
+        <div>
+          <Button
+            bg="white"
+            text="primary"
+            size="lg"
+            outlined="true"
+            input="入力内容確認"
           />
         </div>
-      </div>
-      <div>
-        <label>住所</label>
-        <input type="text" name="address" />
-      </div>
-      <div>
-        <label>電話番号</label>
-        <input type="text" name="email" />
-      </div>
-      <div>
-        <label>メールアドレス</label>
-        <input type="text" name="email" />
-      </div>
-      <div>
-        <label>確認用メールアドレス</label>
-        <input type="text" name="email_confirm" />
-      </div>
-      <div>
-        <label>お問い合わせ内容</label>
-        <input type="text" name="content" />
-      </div>
-      <div>
-        <a href="#">入力内容確認</a>
       </div>
     </div>
     <Footer client:load />
   </main>
 </Layout>
+
+<style>
+  main {
+    background-color: #fff9e0;
+    margin: auto;
+    font-size: 1rem;
+  }
+
+  input {
+    border: 1px solid #dddddd;
+    height: 45px;
+    border-radius: 5px;
+  }
+
+  .name,
+  .kana {
+    width: 50%;
+  }
+
+  .zip_code {
+    width: 13%;
+    margin: 0 10px;
+  }
+
+  .address {
+    width: 100%;
+  }
+
+  .tel {
+    width: 43%;
+  }
+
+  .email,
+  .email-confirm {
+    width: 71%;
+  }
+
+  .content {
+    width: 100%;
+    height: 250px;
+  }
+
+  .input > div {
+    margin-bottom: 40px;
+  }
+
+  .input > div > label {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  .required {
+    display: inline-block;
+    height: 29px;
+    width: 57px;
+    background-color: #ff3c3c;
+    color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 20px;
+  }
+
+  .contacts {
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 84%;
+    margin: 60px auto;
+    padding: 60px 0 80px;
+  }
+
+  .sub-title > img {
+    width: 24%;
+  }
+
+  .sub-title > h2 {
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin: 0 20px;
+    text-align: center;
+  }
+
+  .input {
+    width: 65%;
+    margin: auto;
+    margin-top: 35px;
+  }
+
+  @media screen and (max-width: 767px) {
+    .contacts {
+      width: 90%;
+    }
+
+    .contacts {
+      background-color: #ffffff;
+      border-radius: 15px;
+      width: 84%;
+      margin: 60px auto;
+      padding: 45px 0 60px;
+    }
+
+    .input {
+      width: 88%;
+    }
+
+    .name,
+    .kana {
+      width: 100%;
+    }
+
+    .zip_code {
+      width: 25%;
+      margin: 0 10px;
+    }
+
+    .address {
+      width: 100%;
+    }
+
+    .tel {
+      width: 100%;
+    }
+
+    .email,
+    .email-confirm {
+      width: 100%;
+    }
+
+    .content {
+      width: 100%;
+      height: 250px;
+    }
+  }
+</style>
