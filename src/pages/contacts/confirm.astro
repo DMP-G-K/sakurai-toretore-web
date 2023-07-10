@@ -1,10 +1,15 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/Footer.vue";
+import Button from "../../components/Button.astro";
+import Header from "../../components/Header.vue";
 ---
 
 <Layout title="inquiry">
   <main>
+    <div class="sp-header">
+      <Header client:load />
+    </div>
     <div>
       <div>
         <h1>お問い合わせ</h1>
@@ -23,47 +28,137 @@ import Footer from "../../components/Footer.vue";
         <img src="" />
       </div>
     </div>
-    <div>
-      <h2>お問い合わせ</h2>
-      <div>
-        <label>お名前</label>
-        <p>お名前が入ります。</p>
+    <div class="contacts">
+      <div class="sub-title flex justify-around">
+        <img src="/svgs/green-leaf.svg" />
+        <h2>お問い合わせ</h2>
+        <img src="/svgs/green-leaf.svg" />
       </div>
-      <div>
-        <label>ふりがな</label>
-        <p>ふりがなが入ります。</p>
-      </div>
-      <div>
-        <label>郵便番号</label>
-        <p>〒 0000 - 0000</p>
-      </div>
-      <div>
-        <label>住所</label>
-        <p>住所が入ります。</p>
-      </div>
-      <div>
-        <label>電話番号</label>
-        <p>0000000</p>
-      </div>
-      <div>
-        <label>メールアドレス</label>
-        <p>XXXXX@gmail.com</p>
-      </div>
-      <div>
-        <label>確認用メールアドレス</label>
-        <p>XXXXX@gmail.com</p>
-      </div>
-      <div>
-        <label>お問い合わせ内容</label>
-        <p>
-          お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。
-        </p>
-      </div>
-      <div>
-        <a href="#">修正する</a>
-        <a href="#">確認する</a>
+      <div class="input">
+        <div>
+          <label>お名前</label>
+          <p>お名前が入ります。</p>
+        </div>
+        <div>
+          <label>ふりがな</label>
+          <p>ふりがなが入ります。</p>
+        </div>
+        <div>
+          <label>郵便番号</label>
+          <p>〒 0000 - 0000</p>
+        </div>
+        <div>
+          <label>住所</label>
+          <p>住所が入ります。</p>
+        </div>
+        <div>
+          <label>電話番号</label>
+          <p>0000000</p>
+        </div>
+        <div>
+          <label>メールアドレス</label>
+          <p>XXXXX@gmail.com</p>
+        </div>
+        <div>
+          <label>確認用メールアドレス</label>
+          <p>XXXXX@gmail.com</p>
+        </div>
+        <div>
+          <label>お問い合わせ内容</label>
+          <p>
+            お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。
+          </p>
+        </div>
+        <div class="btn-group">
+          <Button
+            bg="gray"
+            text="white"
+            size="lg"
+            outlined="true"
+            input="修正する"
+          />
+          <Button
+            bg="white"
+            text="primary"
+            size="lg"
+            outlined="true"
+            input="確認する"
+          />
+        </div>
       </div>
     </div>
     <Footer client:load />
   </main>
 </Layout>
+
+<style>
+  main {
+    background-color: #fff9e0;
+    margin: auto;
+    font-size: 1rem;
+  }
+
+  .input > div {
+    margin-bottom: 40px;
+  }
+
+  .input > div > label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+  .contacts {
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 84%;
+    margin: 60px auto;
+    padding: 60px 0 20px;
+  }
+
+  .sub-title > img {
+    width: 24%;
+  }
+
+  .sub-title > h2 {
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin: 0 20px;
+    text-align: center;
+  }
+
+  .input {
+    width: 65%;
+    margin: auto;
+    margin-top: 35px;
+  }
+
+  .btn-group {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 767px) {
+    .contacts {
+      width: 90%;
+      background-color: #ffffff;
+      border-radius: 15px;
+      width: 84%;
+      margin: 60px auto;
+      padding: 45px 0 60px;
+    }
+
+    .input {
+      width: 88%;
+    }
+
+    .btn-group {
+      flex-flow: column;
+    }
+
+    .btn-group > a > div {
+      margin: auto;
+    }
+  }
+</style>
