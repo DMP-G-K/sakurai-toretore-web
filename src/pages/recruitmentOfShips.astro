@@ -29,19 +29,19 @@ import Button from "../components/Button.astro";
       </div>
     </div>
     <div>
-      <div>
-        <div>
-          <img src="" />
+      <div class="inquiry">
+        <div class="sub-title flex justify-around">
+          <img src="/svgs/green-leaf.svg" />
           <h2>お問い合わせ</h2>
-          <img src="" />
+          <img src="/svgs/green-leaf.svg" />
         </div>
-        <div>
-          <div>
+        <div class="inquiry-contents">
+          <div class="confirm-link">
             <a href="#">出荷要領を確認する</a>
             <a href="#">販売委託契約約款を確認する</a>
             <a href="#">販売不向き商品について</a>
           </div>
-          <div>
+          <div class="download-link">
             <div>
               <p>農産物の安全・安心生産に関する誓約書</p>
               <a href="#">農産物の安全・安心生産に関する誓約書ダウンロード</a>
@@ -53,88 +53,111 @@ import Button from "../components/Button.astro";
           </div>
         </div>
       </div>
-      <div>
-        <div>
-          <img src="" />
+      <div class="form">
+        <div class="sub-title flex justify-around">
+          <img src="/svgs/green-leaf.svg" />
           <h2>出荷者仮登録フォーム</h2>
-          <img src="" />
+          <img src="/svgs/green-leaf.svg" />
         </div>
-        <div>
+        <div class="input">
           <div>
-            <label>お名前<span>必須</span></label>
-            <input type="text" />
+            <label>お名前<span class="required">必須</span></label>
+            <input class="name" type="text" name="name" />
           </div>
           <div>
-            <label>ふりがな<span>必須</span></label>
-            <input type="text" />
+            <label>ふりがな<span class="required">必須</span></label>
+            <input class="kana" type="text" name="kana" />
           </div>
           <div>
-            <label>郵便番号<span>必須</span></label>
+            <label>郵便番号<span class="required">必須</span></label>
             <div>
-              〒 <input class="zip_code" type="text" name="zip_code1" /> - <input
+              〒 <input class="zip-code" type="text" name="zip_code1" /> - <input
+                class="zip-code"
                 type="text"
                 name="zip_code2"
               />
             </div>
           </div>
           <div>
-            <label>住所<span>必須</span></label>
-            <input type="text" />
+            <label>住所<span class="required">必須</span></label>
+            <input class="address" type="text" name="address" />
           </div>
           <div>
-            <label>電話番号<span>必須</span></label>
-            <input type="text" />
+            <label>電話番号<span class="required">必須</span></label>
+            <input class="tel" type="text" name="tel" />
           </div>
           <div>
-            <label>メールアドレス<span>必須</span></label>
-            <input type="text" />
+            <label>メールアドレス<span class="required">必須</span></label>
+            <input class="email" type="text" name="email" />
           </div>
           <div>
-            <label>確認用メールアドレス<span>必須</span></label>
-            <input type="text" />
+            <label>確認用メールアドレス<span class="required">必須</span></label
+            >
+            <input class="email-confirm" type="text" name="email_confirm" />
           </div>
           <div>
             <label>FAX</label>
-            <input type="text" />
+            <input class="fax" type="text" name="fax" />
           </div>
           <div>
-            <label>性別<span>必須</span></label>
-            <select>
-              <option>選択してください</option>
-              <option>男性</option>
-              <option>女性</option>
-              <option>その他</option>
-            </select>
+            <label>年齢<span class="required">必須</span></label>
+            <input class="age" type="text" name="age" />
           </div>
           <div>
-            <label>JA奈良の口座番号<span>必須</span></label>
-            <p>支店番号</p>
-            <input type="text" />
-            <p>口座番号</p>
-            <input type="text" />
+            <label>性別<span class="required">必須</span></label>
+            <div class="gender-wrapper">
+              <select class="gender">
+                <option>選択してください</option>
+                <option>男性</option>
+                <option>女性</option>
+                <option>その他</option>
+              </select>
+            </div>
           </div>
           <div>
-            <label>主に作っている農産物<span>必須</span></label>
-            <input type="text" />
+            <label>JA奈良の口座番号<span class="required">必須</span></label>
+            <div class="account-number-wrapper">
+              <p>支店番号</p>
+              <input class="branch-number" type="text" name="branch_number" />
+              <p>口座番号</p>
+              <input class="account-number" type="text" name="account_number" />
+            </div>
           </div>
           <div>
-            <label>作付面積<span>必須</span></label>
-            <input type="text" /><span>㎡</span>
+            <label>主に作っている農産物<span class="required">必須</span></label
+            >
+            <input
+              class="agricultural-products"
+              type="text"
+              name="agricultural_products"
+            />
           </div>
           <div>
-            <label>他に出荷している直営店<span>必須</span></label>
-            <input type="text" />
+            <label>作付面積<span class="required">必須</span></label>
+            <input class="planted-area" type="text" name="planted_area" /><span
+              >㎡</span
+            >
           </div>
           <div>
-            <label>同意事項<span>必須</span></label>
+            <label
+              >他に出荷している直営店<span class="required">必須</span></label
+            >
+            <input
+              class="other-irectly-managed-store"
+              type="text"
+              name="other_irectly_managed_store"
+            />
+          </div>
+          <div>
+            <label>同意事項<span class="required">必須</span></label>
             <div>
-              <input type="checkbox" />
-              <label
+              <input id="agreement" type="checkbox" name="agreement" />
+              <label for="agreement" class="agreement"
                 >出荷要領・販売委託契約約款・販売不向き商品について・それぞれに同意する。</label
               >
             </div>
           </div>
-          <div>
+          <div class="submit">
             <Button
               bg="white"
               text="primary"
@@ -149,3 +172,284 @@ import Button from "../components/Button.astro";
     <Footer client:load />
   </main>
 </Layout>
+
+<style>
+  main {
+    background-color: #fff9e0;
+    margin: auto;
+  }
+
+  .inquiry {
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 84%;
+    margin: 60px auto;
+    padding: 60px 0 80px;
+  }
+
+  .sub-title > img {
+    width: 24%;
+  }
+
+  .sub-title > h2 {
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin: 0 20px;
+    text-align: center;
+  }
+
+  .inquiry-contents {
+    width: 90%;
+    margin: auto;
+  }
+
+  .confirm-link {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+  }
+
+  .confirm-link > a {
+    display: block;
+    border: 1px solid #464646;
+    border-radius: 9px;
+    width: 30%;
+    font-size: 0.8rem;
+    line-height: 3rem;
+    padding-left: 20px;
+    color: #5f8934;
+    font-weight: bold;
+    position: relative;
+  }
+
+  /* TODO 画像 */
+  .confirm-link > a::before {
+    content: "";
+    position: absolute;
+    background: url("/svgs/up-arrow.svg") no-repeat;
+    color: #464646;
+    transform: rotate(90deg);
+    width: 9px;
+    height: 20px;
+    top: 17px;
+    right: 10px;
+  }
+
+  .download-link {
+    display: flex;
+  }
+
+  .download-link > div > p {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 25px;
+    font-weight: bold;
+  }
+
+  .download-link > div {
+    margin-right: 5%;
+  }
+
+  .download-link > div > p::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #464646;
+    border-radius: 50%;
+    position: absolute;
+    top: 7px;
+    left: 5px;
+  }
+
+  .download-link > div > a {
+    margin-left: 30px;
+    position: relative;
+    margin-bottom: 25px;
+    color: #ff4545;
+    font-weight: bold;
+    border-bottom: 1px solid;
+  }
+
+  /* TODO pdf画像 */
+  .download-link > div > a::before {
+    content: "";
+    background-color: #ff4545;
+    position: absolute;
+    top: 7px;
+    left: 5px;
+    /* background-image: ("/svgs/"); */
+  }
+
+  .form {
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 84%;
+    margin: 60px auto;
+    padding: 60px 0 20px;
+  }
+
+  input {
+    border: 1px solid #dddddd;
+    height: 45px;
+    border-radius: 5px;
+  }
+
+  select {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  .input {
+    width: 65%;
+    margin: auto;
+    margin-top: 40px;
+  }
+
+  .input > div {
+    margin-bottom: 40px;
+  }
+
+  .input > div > label {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  .required {
+    display: inline-block;
+    height: 29px;
+    width: 57px;
+    background-color: #ff3c3c;
+    color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 20px;
+  }
+
+  .name,
+  .kana {
+    width: 50%;
+  }
+
+  .zip-code {
+    width: 13%;
+    margin: 0 10px;
+  }
+
+  .address {
+    width: 100%;
+  }
+
+  .tel,
+  .fax {
+    width: 43%;
+  }
+
+  .email,
+  .email-confirm {
+    width: 71%;
+  }
+
+  .age {
+    width: 14%;
+  }
+
+  .gender-wrapper {
+    position: relative;
+    z-index: 1;
+    height: 45px;
+    width: 28%;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+  }
+
+  .account-number-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .account-number-wrapper > p {
+    margin-right: 15px;
+  }
+
+  .account-number-wrapper > input {
+    margin-right: 15px;
+  }
+
+  .branch-number {
+    width: 15%;
+  }
+
+  .account-number {
+    width: 24%;
+  }
+
+  .agricultural-products {
+    width: 100%;
+  }
+
+  .planted-area {
+    width: 43%;
+  }
+
+  .planted-area {
+    margin-right: 15px;
+  }
+
+  .other-irectly-managed-store {
+    width: 100%;
+  }
+
+  .agreement {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 30px;
+    position: relative;
+    width: auto;
+  }
+
+  .agreement::before {
+    background: #fff;
+    border: 1px solid #dddddd;
+    content: "";
+    display: block;
+    height: 16px;
+    left: 5px;
+    margin-top: -8px;
+    position: absolute;
+    top: 50%;
+    width: 16px;
+  }
+
+  .agreement::after {
+    border-right: 3px solid #464646;
+    border-bottom: 3px solid #464646;
+    content: "";
+    display: block;
+    height: 9px;
+    left: 10px;
+    margin-top: -7px;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: rotate(45deg);
+    width: 5px;
+  }
+
+  input[type="checkbox"]:checked + .agreement::after {
+    opacity: 1;
+  }
+</style>
