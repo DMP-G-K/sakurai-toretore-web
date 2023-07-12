@@ -1,0 +1,151 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.vue";
+import Header from "../components/Header.vue";
+import Button from "../components/Button.astro";
+---
+
+<Layout title="recruitmentOfShips">
+  <main>
+    <div class="sp-header">
+      <Header client:load />
+    </div>
+    <div>
+      <div>
+        <h1>出荷者募集</h1>
+        <p>RECRUITMENT OF SHIPS</p>
+        <nav>
+          <p>
+            <a href="#">トップ</a>
+            <span>＞</span>
+          </p>
+          <p>
+            <span>出荷者募集</span>
+          </p>
+        </nav>
+      </div>
+      <div>
+        <img src="" />
+      </div>
+    </div>
+    <div>
+      <div>
+        <div>
+          <img src="" />
+          <h2>お問い合わせ</h2>
+          <img src="" />
+        </div>
+        <div>
+          <div>
+            <a href="#">出荷要領を確認する</a>
+            <a href="#">販売委託契約約款を確認する</a>
+            <a href="#">販売不向き商品について</a>
+          </div>
+          <div>
+            <div>
+              <p>農産物の安全・安心生産に関する誓約書</p>
+              <a href="#">農産物の安全・安心生産に関する誓約書ダウンロード</a>
+            </div>
+            <div>
+              <p>約束書（こめの出荷販売について）</p>
+              <a href="#">約束書（こめの出荷販売について）ダウンロード</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <img src="" />
+          <h2>出荷者仮登録フォーム</h2>
+          <img src="" />
+        </div>
+        <div>
+          <div>
+            <label>お名前<span>必須</span></label>
+            <input type="text" />
+          </div>
+          <div>
+            <label>ふりがな<span>必須</span></label>
+            <input type="text" />
+          </div>
+          <div>
+            <label>郵便番号<span>必須</span></label>
+            <div>
+              〒 <input class="zip_code" type="text" name="zip_code1" /> - <input
+                type="text"
+                name="zip_code2"
+              />
+            </div>
+          </div>
+          <div>
+            <label>住所<span>必須</span></label>
+            <input type="text" />
+          </div>
+          <div>
+            <label>電話番号<span>必須</span></label>
+            <input type="text" />
+          </div>
+          <div>
+            <label>メールアドレス<span>必須</span></label>
+            <input type="text" />
+          </div>
+          <div>
+            <label>確認用メールアドレス<span>必須</span></label>
+            <input type="text" />
+          </div>
+          <div>
+            <label>FAX</label>
+            <input type="text" />
+          </div>
+          <div>
+            <label>性別<span>必須</span></label>
+            <select>
+              <option>選択してください</option>
+              <option>男性</option>
+              <option>女性</option>
+              <option>その他</option>
+            </select>
+          </div>
+          <div>
+            <label>JA奈良の口座番号<span>必須</span></label>
+            <p>支店番号</p>
+            <input type="text" />
+            <p>口座番号</p>
+            <input type="text" />
+          </div>
+          <div>
+            <label>主に作っている農産物<span>必須</span></label>
+            <input type="text" />
+          </div>
+          <div>
+            <label>作付面積<span>必須</span></label>
+            <input type="text" /><span>㎡</span>
+          </div>
+          <div>
+            <label>他に出荷している直営店<span>必須</span></label>
+            <input type="text" />
+          </div>
+          <div>
+            <label>同意事項<span>必須</span></label>
+            <div>
+              <input type="checkbox" />
+              <label
+                >出荷要領・販売委託契約約款・販売不向き商品について・それぞれに同意する。</label
+              >
+            </div>
+          </div>
+          <div>
+            <Button
+              bg="white"
+              text="primary"
+              size="lg"
+              outlined="true"
+              input="入力内容確認"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <Footer client:load />
+  </main>
+</Layout>
