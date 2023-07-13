@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="586.5" height="418.583" viewBox="0 0 586.5 418.583">
+  <defs>
+    <linearGradient id="linear-gradient" x1="1" y1="1" x2="0" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f87537"/>
+      <stop offset="1" stop-color="#fba81f"/>
+    </linearGradient>
+  </defs>
+  <g id="グループ_9301" data-name="グループ 9301" transform="translate(-593.5 -148.553)">
+    <path id="blob" d="M42.9,40.467C-8.54,66.6-49.334,113.5-32.484,147.666s91.342,56.28,141.89,90.449c51.435,34.84,80.7,82.409,141.89,107.2s156.079,26.8,211.949-8.04C519.114,303.1,536.85,231.415,540.4,157.716c2.66-73.7-8.868-149.409-64.737-174.869s-156.079-.67-237.666,14.07S94.33,15.007,42.9,40.467Z" transform="translate(639.25 203.423)" fill="url(#linear-gradient)"/>
+    <path id="shelley-pauls-Zaiuy5dKeCk-unsplash" d="M42.9,40.467C-8.54,66.6-49.334,113.5-32.484,147.666s91.342,56.28,141.89,90.449c51.435,34.84,80.7,82.409,141.89,107.2s156.079,26.8,211.949-8.04C519.114,303.1,536.85,231.415,540.4,157.716c2.66-73.7-8.868-149.409-64.737-174.869s-156.079-.67-237.666,14.07S94.33,15.007,42.9,40.467Z" transform="translate(629.84 176.693)" fill="#ddd"/>
+  </g>
+</svg>
