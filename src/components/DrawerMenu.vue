@@ -4,31 +4,31 @@
       <span class="shape-upper-left"></span>
       <span class="shape-bottom-right"></span>
       <li class="nav-text">
-        <a href="#"
+        <a href="/information"
           >店舗情報
           <p class="nav-text-sub">INFOMATION</p>
         </a>
       </li>
       <li class="nav-text">
-        <a href="#"
+        <a href="/product"
           >取り扱い商品
           <p class="nav-text-sub">PRODUCT</p>
         </a>
       </li>
       <li class="nav-text">
-        <a href="#"
+        <a href="/news/page/1"
           >お知らせ
           <p class="nav-text-sub">NEWS</p>
         </a>
       </li>
       <li class="nav-text">
-        <a href="#"
+        <a href="/shippers"
           >出品者募集
           <p class="nav-text-sub">SHIPPERS</p>
         </a>
       </li>
       <li class="nav-text">
-        <a href="#"
+        <a href="/contacts"
           >お問い合わせ
           <p class="nav-text-sub">CONTACT US</p>
         </a>

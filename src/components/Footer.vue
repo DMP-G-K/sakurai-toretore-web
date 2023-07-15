@@ -2,44 +2,46 @@
   <footer>
     <div class="footer-main">
       <div>
-        <div class="logo">
-          <div class="logo-icon">
-            <a href="#"><img src="/svgs/logo.svg" alt="logo" /></a>
+        <a href="/">
+          <div class="logo">
+            <div class="logo-icon">
+              <img src="/svgs/logo.svg" alt="logo" />
+            </div>
+            <div>
+              <p class="logo-text">さくらいとれとれ市場</p>
+              <p class="logo-text-sub">Sakurai Toretore Market</p>
+            </div>
           </div>
-          <div>
-            <p class="logo-text">さくらいとれとれ市場</p>
-            <p class="logo-text-sub">Sakurai Toretore Market</p>
-          </div>
-        </div>
+        </a>
       </div>
       <div>
         <ul class="nav">
           <li class="nav-text">
-            <a href="#">
+            <a href="/information">
               店舗情報
-              <p class="nav-text-sub">INFOMATIN</p>
+              <p class="nav-text-sub">INFORMATIN</p>
             </a>
           </li>
           <li class="nav-text">
-            <a href="#"
+            <a href="/product"
               >取り扱い商品
               <p class="nav-text-sub">PRODUCT</p>
             </a>
           </li>
           <li class="nav-text">
-            <a href="#"
+            <a href="/news/page/1"
               >お知らせ
               <p class="nav-text-sub">NEWS</p>
             </a>
           </li>
           <li class="nav-text">
-            <a href="#"
+            <a href="/shippers"
               >出荷者募集
               <p class="nav-text-sub">SHIPPERS</p></a
             >
           </li>
           <li class="nav-text">
-            <a href="#"
+            <a href="/contacts"
               >お問い合わせ
               <p class="nav-text-sub">CONTACT US</p>
             </a>
@@ -51,14 +53,22 @@
       <div class="address">
         <p class="address-text">〒633-0062</p>
         <p class="address-text">奈良県桜井市大字粟殿72番地</p>
-        <p class="address-map">Google map →</p>
+        <a
+          href="https://goo.gl/maps/YfNABRuyw2RkZ4qk6"
+          target="_blank"
+          class="address-map"
+        >
+          Google map →
+        </a>
       </div>
       <div class="shopping-cart">
         <a href="#"><img src="/svgs/shopping-cart.svg" alt="#" /></a>
       </div>
     </div>
     <div class="copyright">
-      <small> Copyright © 2018-2023 さくらいとれとれ市場 All rights reserved. </small>
+      <small>
+        Copyright © 2018-2023 さくらいとれとれ市場 All rights reserved.
+      </small>
     </div>
   </footer>
 </template>
