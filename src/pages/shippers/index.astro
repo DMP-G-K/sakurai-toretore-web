@@ -1,0 +1,700 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.vue";
+import Header from "../../components/Header.vue";
+import Button from "../../components/Button.astro";
+import OpenModalButton from "../../components/OpenModalButton.vue";
+---
+
+<Layout title="recruitmentOfShips">
+  <main>
+    <div class="sp-header">
+      <Header client:load bgColor="" />
+    </div>
+    <div>
+      <div>
+        <h1>出荷者募集</h1>
+        <p>RECRUITMENT OF SHIPS</p>
+        <nav>
+          <p>
+            <a href="#">トップ</a>
+            <span>＞</span>
+          </p>
+          <p>
+            <span>出荷者募集</span>
+          </p>
+        </nav>
+      </div>
+      <div>
+        <img src="" />
+      </div>
+    </div>
+    <div>
+      <div class="inquiry">
+        <div class="sub-title flex justify-around">
+          <img src="/svgs/green-leaf.svg" />
+          <h2>お問い合わせ</h2>
+          <img src="/svgs/green-leaf.svg" />
+        </div>
+        <div class="inquiry-contents">
+          <div class="confirm-link">
+            <OpenModalButton text="出荷要領を確認する" client:only>
+              <p>
+                会員資格および登録について 1．会員資格
+                ■当市場に出荷をご希望の方は、会員登録（販売委託契約）をしていただきます。
+                会員登録ができるのは、次のいずれかに該当する方とします。
+                ①桜井市及び桜井市近郊に居住する農業者及び桜井市内及び桜井市近郊に事業所を有する事業者。
+                ②当市場が特に認めた者。 2．会員登録
+                ■会員登録をご希望の方は、販売委託契約（様式１）をしていただきます。その際、販売代金振り込みのための専用口座を、会員名と同　一名義で、ＪＡに開設していただきます。
+                ■会員のご家族で出荷者表示および販売代金振り込み口座を別にしたい方は、それぞれ個人別に会員登録をしてください。
+                ■グループで加入する場合は、代表者名で会員登録をしてください。
+                3．組織への加入
+                ■会員登録をする際、加入費および年会費を支払っていただきます。加入費及び年会費は次のとおりです。
+                加入費：５，０００円（会員登録時のみ。脱退されても返却しません。）
+                年会費：１年間２，０００円（加入時又は毎年１月に支払っていただくものとし、年度途中で脱退されても返却しません）
+                契約は12月30日までに、特段の申し出がない限り自動的に更新するものとし、１月に販売代金から差し引くか、予めお届けいただいた販売代金振り込み専用口座から引き落とさせていただきます。
+                4．会員番号、連絡等
+                ■会員登録をした方には、当市場で会員番号を指定します。バーコードの人力や販売データの照会等は、指定された会員番号により行っていただきます。
+                ■会員登録をした方には、会員番号に従って個人別の「連絡ボックス」を割り当てます。「連絡ボックス」は搬入口に設置し、当市場から会員への連絡・通知はこれを使って行　います。
+                ■会員登録をした方の写真パネルを市場内に掲示します。当市場の指示にしたがって撮影した写真の提出をお願いします。
+                ５．脱退
+                ■会員はいつでも脱退することができます。脱退する場合は、あらかじめ当市場に連絡をしてください。
+                ■会員登録の日から１年以内にまったく出荷をしなかった方は、当店で強制的に脱退手続きをとらせていただきます。
+                ６．出荷できる商品
+                ■当市場に出荷できる商品は、会員がみずから生産・製造・製作した農産物・加工品工芸品に限ります。他から買い取ったり仕入れた商品を出荷することはできません
+                （当市場が地場で不足する商品を特に仕入れたものは例外とします）。
+                ■出荷する商品について品目毎に、その年の最初の出荷時及び最終出荷日に、「生産履歴記帳簿」を必ず提出してください。
+                7．商品の区分
+                ■出荷された商品を、当市場では「農産物」と「加工品・工芸品」に区分して取扱います。
+                区分の基準は次のとおりです。
+                （農産物）未加工の農林畜水産物で、「切断」「冷凍」「冷蔵」「乾燥」しただけの農林畜水産物も含まれます。「製造物責任法（ＰＬ法）」の対象外です。
+                （加工品）加工（製造）された農林畜水産物で、「製造物責任法（ＰＬ法）」の対象となります。ここでいう「加工」とは次のようなものです。
+                ①加熱（煮る、蒸す、焼く、煎る、炒める、ゆでる）
+                ②味付け（調味、塩漬け、薫製） ③粉挽き（製粉） ④搾汁
+                （工芸品）農産物・加工品以外の織物・染物・木工品・竹製品・紙細工・陶器などです。
+                8．加工品の取り扱い
+                ■加工品の製造・販売には、「食品衛生法」にもとづく次の要件が必要です。具体的な内容は、所轄の保健所に相談してください。
+                ①「加工所」の施設許可（みそ製造、納豆製造、そうざい製造、菓子製造、アイスクリーム製造、ハム・ソーセージ等の食肉加工）。漬物製造等は対象外ですが、県条例で規制される場合があります。
+                ②「食品衛生責任者」の設置（調理師、栄養士、知事の指定した食品衛生責任者資格養成・認定講習会を受講した人など）。グループの場合は１人いれば十分です。
+                ■加工品の販売には、「食品衛生法」にもとづく次の表示が必要です。文字は８ポイント（JIS規格）以上の活字に限ります。
+                ①品名
+                ②原材料名（製品に占める重量割合の多い順に記載）、調味料、着色保存料
+                ③原料生産地（漬け物に限り表示）
+                ④内容量（グラム、ミリリットルなどの単位を付けて表示）
+                ⑤賞味期限（日持ちの長い食品）または消費期限（日持ちの短い食品）
+                ⑥保存方法（保存温度○○度以下、開封後要冷蔵、直射日光を避けるなど）
+                ⑦製造者または販売者（氏名・住所等を記載、グループの場合はグループ名と代表者名）
+                ※商品によっては、食物アレルギーの注意、取り扱い上の注意（保管方法、再調理・加熱の注意、腐敗の見分け方等）などの「警告表示」が必要な場合があります。
+                ■加工品は「製造物責任法（ＰＬ法）」の対象で、食中毒など製造物の欠陥による被害に対して、製造者は責任を負わねばなりません（被害者は単に欠陥を証明すればよく、製造者の過失を証明する必要はありません）。
+                ■加工品を出荷する場合は、事前の次の書類を当市場に提出していただきます。
+                ①製造許可書（コピー）
+                ⑦ＰＬ共済の契約書（コピー：１年ごとに更新） ９．出荷規格・数量
+                ■出荷する商品の数量は自由です。
+                ※ただし、季節・品目により過剰出荷が予想される場合は、１会員当たりの出荷数量を制限することがあります。その場合、前日15：00までに電子メールにてお知らせいたします。（電話での問い合わせもできます）
+                10．搬入・検品
+                ■商品の搬入は、会員それぞれの責任で指定時間内に行っていただきます。
+                ■搬入は原則として１日１回とし、受付時間は原則として午前７時３０分から午前９時００分までです。
+                ※売り切れた商品を営業時間内に追加搬入する場合は、受付時間外でも可能です。その場合、搬入希望時間をあらかじめ当市場に連絡してください。
+                ■劣化の恐れの少ない商品は、前日に搬人することも可能です。
+                前日搬入の受付時間は、夏期は16：00～18：00、冬季は15：00～18：00です。
+                ※前日搬入をご希望の場合は、あらかじめ当市場に連絡してください。
+                ■上記以外の日時に搬入をご希望の場合は、事前に当市場にご相談ください。
+                ■営業時間外は一応の防犯施錠をしますが、店舗の形状から万全のことは出来ません。
+                また、「商品は開店前に搬入し、閉店後売れ残り品を持ち帰る。」を原則としていますので、上記いずれの場合も、営業時間外の市場での商品の保管につきましては、盗難　などによる損害の補償はしません。
+                ■当市場では、商品搬入の際に検品をいたしません。会員それぞれの責任で包装、搬入、値づけを行って、当市場の指示にしたがって売り場内に陳列してください。
+                11．値づけ
+                ■商品の値段は、会員個々の判断で自由に決めていただきます。（最低60円でお願いします。）
+                ■バーコードに表示する価格は、消費税を含む価格です（内税方式）。
+                12．バーコード発行・表示
+                ■商品の表示（品名、出荷者名、価格等）は、当市場のバーコードで行います。
+                ■バーコードは、当市場備え付けのバーコード発行機を使って、会員ご自身で発行していただきます。
+                ■出荷できる農産物は、「生産履歴記帳簿」を提出したものに限ります。「生産履歴記帳簿」の提出のない商品を、当市場の承認を得ないで出荷された場合は、当市場で陳列　から引き上げることがあります。
+                ■加工品は表示ラベル（品名、原材料名、内容量、賞味期限、保存方法、製造者名などを印字した所定のもの）も必要です。（記載基準等詳細については事務所におたずねください。）
+                ■加工品の表示ラベルをお持ちでない方は、事務所にお申し出ください。
+                発行実費は次のとおりとします。表示ラベル　２シート（２４枚）…６０円
+                ■バーコードの発行枚数は、会員ごとに商品の販売個数をコンピュータで集計・管理します。発行実費は次のとおりとし、会員の販売代金から差し引かせていただきます。バーコード･…１枚３円
+                ■バーコード発行の際、会員番号、発行枚数等をコンピューターで自動記録されます。
+                販売個数と著しい違いがある場合は、その差額を精算していただく場合があります。
+                ■値づけや表示を変更する場合は、バーコードあるいは表示ラベルを貼り替えてください、手書きによる訂正はできません。
+                ■バーコードが剥がれたり汚損してレジで読みとれない商品は、会員の販売額として、計上されませんのでご注意ください。
+                13．包装・陳列
+                ■出荷する商品は、バーコードや表示ラベル（加工品）が貼れるように、ひとつずつ包装してください。包装資材は会員でご用意ください。
+                ■食品については、ホッチキス針が混入する危険があるので、包装にはホッチキスを絶対に使用しないでください。
+                ■包装とバーコード貼付の終わった商品は、当市場の指示にしたがって会員それぞれが陳列していただきます。
+                ■包装・表示が不完全な商品、あるいは販売に不適格と当市場で判断した商品については、陳列をお断りすることがあります。
+                ■包装用品の再使用は、絶対に行わないでください。
+                ■販売台に並ばない商品（補充商品）は、販売台の下にある納品箱（コンテナ）に納めてください。販売状況を見ながら、順次、当市場で販売台に陳列します。
+                ■商品の種類により、冷凍ショーケースでの販売を希望される場合や、陳列までに冷蔵庫での保管を希望される場合は、当市場の設備を利用できます。その場合所定の手数　料をいただく場合があります。
+                ■商品の陳列や引き下げのために売り場内に出入りする際は、必ず当市場所定の帽子かＩＤカード（名札）を着用してください。
+                14．営業日・営業時間
+                ■当市場は、年始（１月１日～５日）を除く毎日営業します。都合により常業日を変更　する場合は、１週間前までに搬人口の「連絡板」に掲示します。
+                ■当市場の営業時間は、8：45～18：00です。都合により営業時間を変更する場合は、電子メールで連絡します。
+                15．商品管理・販促
+                ■売り場内は人工照明を行います。その際農産物が乾燥し過ぎないよう十分配意します。
+                ■商品に傷み、劣化、腐敗、安全性の懸念（残留農薬、有害物資汚染等）などの問題があると当市場で判断した場合は、その商品を会員の了解なしに陳列棚から撤去することがあります。撤去した商品は、売れ残り商品として取り扱います。その場合、「不良品明細書」に記入し、搬入通路左側の「不良品回収箱」に入れておきますので、速やかに引き取り願います。
+                ■販売不向き不良品を引き取られるときは、確認欄に引取日付を記入し現品をお持ち帰り願います。
+                ■当市場は、販売委託された商品の管理に十分注意をしますが、万引きや自然災害など当市場の責に帰することのできない理由で発生した損害については、その賠償をいたしません。
+                ■販促活動（新聞折り込み、店頭広告、イベント案内など）は、当市場が定期的に行います。会員が自分の商品のＰＲや試食販売などをご希望の場合は、事前に当市場にご相談ください。
+                16．販売管理・精算
+                ■販売委託された商品は、バーコード表示金額で販売します。
+                ■当市場ではいっさい値引きをいたしません。会員が自分の判断で値引きをする場合は、定められた方法で、バーコードを貼り加えてください。値上げをする場合は、旧ラベ　ルルはがしたうえ、新ラベルに張り替えてください。
+                ■販売委託手数料は、販売価格の１７％です。
+                ■販売代金は毎月月末に精算し、販売代金から販売委託手数料、バーコード・表示ラベルの発行実費等を差し引いた金額を、精算月の翌月の１０日以降に各会員の専用口座　に振り込みます。
+                ■販売実績はコンピュータで会員ごとに集計し、原則として月１回、販売明細書を発行します。事務所にその都度請求して受け取ってください。
+                17．引き取り
+                ■商品の販売委託期間は、出荷日の営業時間内（9：00～18：00）です。ただし、日持ちの良い農産物・鉢花・加工品・工芸品など、劣化が少なくて保存性の良い商品については、当市場で別に販売委託期間を定めます。
+                ■売れ残った商品は、販売委託期間後、所定期間内に引き取っていただきます。
+                ■引き取りの受付時間は、出荷日の１８：００～１８：３０です。
+                ただし、当市場で別に販売委託期間を定めた商品は、最終日の前記の時間です。
+                ■当日引き取りができない場合は、翌日の搬入時間内に引き取ることも可能です。その場合は、あらかじめ当市場に連絡して承認を受けてください。
+                ■上記以外の日時に引き取りをご希望の場合は、事前に当市場にご相談ください。
+                ■引き取りの際、備え付けの「不良品明細書」の確認欄に引取日を記入のうえ、当市場の確認を受けてください。自分の出荷した商品以外は持ち帰らないようにご注意ください。
+                ■事前の連絡・相談なく売れ残った商品を引き取らなかった時は、当市場でその商品を処分することがあります。処分手数料は当該商品の販売価格相当額とし、後日、販売　代金精算時などに　請求・精算させていただきます。
+                ■上記いずれの場合も、前記10の搬入・検品の場合と同じく、営業時間外における、商品の盗難などの損害の補償はしません。
+                18．注意・除名等
+                ■次のいずれかに該当する会員には、注意を促すために当市場で「注意力ード」を発行し、その会員の「連絡ボックス」に入れておきます。
+                ①みずから生産・製造・製作した商品以外の商品を出荷したとき。
+                ②出荷した商品に欠陥（劣化、病虫害、腐敗、量目不足、粗悪品など）があったとき。
+                ③バーコードシールの発行枚数が、商品販売個数に較べ著しく多かったとき。
+                ④消費者から商品に対する苦情があったとき。
+                ⑤事前の連絡・相談なく売れ残り商品を引き取らなかったとき。
+                ⑥当市場の敷地内で、当市場の承諾なく商品の直接相対取引または無料提供を行ったとき。
+                ⑦会員の資格又は会員の地位についての一切の権利を、譲渡又は質入れその他第三者の権利を設定し又は第三者に利用させたとき。
+                ⑧その他、当市場の営業を妨げる行為、当市場の信用を傷つける行為を行ったとき。
+                ■「注意カード」が度重なった場合は、出荷停止または会員除名とすることがあります。
+                19．その他
+                ■この運営要領に定めのない事項、または運営要領の内容に疑義が生じた場合は、さくらいとれとれ市場株式会社で決定し、会員にご連絡します。
+                ■この運営要領は、平成２３年１０月１日（令和２年２月１２日、令和３年５月５日改訂）から施行します。
+              </p>
+            </OpenModalButton>
+            <OpenModalButton text="販売委託契約約款を確認する" client:only>
+              <p>
+                （販売委託）
+                第１条　契約者（登録会員）はみずから生産・製造・製作した農産物・加工品・工芸品（以下「商品」という）の販売を当市場に委託し、当市場は委託された商品を善良なる注意のもとに販売します。（運営要領（以下「要領」という）
+                (会費、販売手数料）
+                第２条　会員になるには、入会時に加入費５､０００円、年会費２､０００円及びその他所定の費用を支払っていただきます。以後、年会費は毎年１月に徴求します。
+                ２．納入した加入費・年会費は年度途中の契約の解約及び第12条による契約解除の場合も原則として返却しません。（要領３）
+                ３．販売委託手数料は、販売価格の１７％とします（冷蔵庫等を使用する商品のみの場合は、別途の割合とします）。（要領１６）
+                （さくらいとれとれ市場運営協力会への入会）
+                第３条　登録会員は、別に定める「さくらいとれとれ市場運営協力会」の会員となっていただきます。
+                （作付け予定表、生産履歴記録簿等の提出）
+                第４条　毎年、１月に「作付け予定表」を提出する他、品目毎の最初の出荷の度に「生産履歴記録簿」を提出し、当市場の確認を受けてください。（要領６）
+                ２．加工品等を販売するときは、必要に応じて届け出た監督官庁への届け出書等の写しを提出（以降毎年度毎に）する他、定められた「表示ラベル」を適切に添付して下さい。（要領８）
+                （搬入、包装、値づけ、陳列）
+                第５条　当市場が指定する時刻（原則午前７時３０分～９時）までに商品を搬入し、販売価格（最低６０円）を定め、当市場指定のバーコードを貼付して、当市場の指示に従って陳列していただきます。
+                ２．同一品目の搬入が集中すると予想される時は、出荷制限する場合があります。
+                ３．バーコードの発行にかかる実費（レジを通過した商品に添付されたバーコード用紙の枚数１枚に付き３円）は、契約者の負担とします。
+                ４．当市場に出入りする場合は、登録会員の証である当市場所定の帽子かＩＤカード（名札）必ず着用してください。（要領９～１３）
+                （販売、撤去）
+                第６条　当市場は、当市場が別に定める範囲で、契約者が定めた販売価格により商品を販売します。
+                ２．当市場は、商品の傷み、劣化、安全性の懸念等により販売が不適切と判断したときは、その商品を陳列棚から撤去する場合があります。（要領１５）
+                （引き取り、処分）
+                第７条　売れ残った商品は、原則として、搬入当日の所定の時間に引き取っていただきます品質劣化が少ない商品、保存性の良い商品で当市場が指定するもの及び契約者が予め当市場に届け出て当市場が承認したものを除く。）
+                ２．前項の時間内及び当市場に承認を得ないで、契約者が商品を引き取らなかったときは、当市場はその商品を処分し処分手数料（当該商品の販売価格相当）を徴求する場合があります。（要領１７）
+                （損害の賠償）
+                第８条　前２条による商品の撤去、処分、もしくは盗難・自然災害等当市場の責に帰することのできない理由により契約者に損害が発生した場合、当市場はその賠償をいたしません。（要領１５）
+                （販売代金の支払い）
+                第９条　商品の販売代金は原則として毎月月末に精算し、精算月の翌月の１０日以降に販売代金から販売委託手数料、バーコード発行実費、処分手数料等を控除した額を、契約者指定の当市場専用口座に振り込みます。（要領１６）
+                ２．「精算書」は、月毎に事務所に請求して受け取ってください。
+                （消費者との直接取引の禁止）
+                第10条　当市場の内外を問わず消費者との商品の直接取引は厳禁です。（要領１８）
+                （脱退）
+                第11条　登録会員の契約を解除しようとするときは、１２月末日までに別に定める契約解除届けを提出してください。（要領５）
+                （契約の解除）
+                第12条　当市場は次のいずれかに該当するとき、契約を解除する場合があります。
+                ①契約者がこの契約に違反したとき。（要領１８）
+                ②契約者がさくらいとれとれ市場の運営を妨げる行為、又は消費者に対する当市場の信用を傷つける行為をしたとき。
+                （その他）
+                第13条　この契約に疑義が生じた場合または定めのない事項については、契約者と当市場が協議して定めるものとします。
+              </p>
+            </OpenModalButton>
+            <OpenModalButton text="販売不向き商品について">
+              <p>
+                平素は、当市場の活動にご協力いただきましてありがとうございます。
+                当市場の発展はその特異性の発揮なくしては考えられません。
+                当市場の持ち味である、「地域で生産された、
+                新鮮なものを、より安く」を、徹底していくことが重要であると考えられます。
+                安かろう、 悪かろうではお客様の満足は得られません。
+                このような、観点から、当市場では品質と値段に、こだわって、委託販売に取り組んでいたいと思っていますので、生産者の皆様の絶大なるご理解とご協力をよろしくお願いいたします。
+                つきましては、その方策の一部として、品質管理の厳格化と廃棄処分手数料料金の減額等のため、販売不向きの商品の取り扱いについて、下記の通りとさせていただきますので、ご了承のうえご協力願います。
+                1.　生産者出入口左横に販売不向き商品
+                (勝手ながら、向き不向きの判断は当市場の基準で
+                当店の従業員が行います。)を置いておきますので、3日以内に、必ず引き取りをお願いいたします。3日以内に引き取りのない場合は、当方で処分します。(商品出荷中は、必ず、2、3日に一度はご来店いただき、自分の商品の販売状況と、生産者出入り口横の台を確認願います。)
+                2.　3日以内に引き取りのなく、当方で処分した場合は、商品販売代金相当の、処分手数料を申し受けます(翌月の販売代金精算時に差引計算)ので、ご了承願います。
+              </p>
+            </OpenModalButton>
+          </div>
+          <div class="download-link">
+            <div>
+              <p>農産物の安全・安心生産に関する誓約書</p>
+              <a href="#">農産物の安全・安心生産に関する誓約書ダウンロード</a>
+            </div>
+            <div>
+              <p>約束書（こめの出荷販売について）</p>
+              <a href="#">約束書（こめの出荷販売について）ダウンロード</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form">
+        <div class="sub-title flex justify-around">
+          <img src="/svgs/green-leaf.svg" />
+          <h2>出荷者仮登録フォーム</h2>
+          <img src="/svgs/green-leaf.svg" />
+        </div>
+        <div class="input">
+          <div>
+            <label class="form-label"
+              >お名前<span class="required">必須</span></label
+            >
+            <input class="name" type="text" name="name" />
+          </div>
+          <div>
+            <label class="form-label"
+              >ふりがな<span class="required">必須</span></label
+            >
+            <input class="kana" type="text" name="kana" />
+          </div>
+          <div>
+            <label class="form-label"
+              >郵便番号<span class="required">必須</span></label
+            >
+            <div>
+              〒 <input class="zip-code" type="text" name="zip_code1" /> - <input
+                class="zip-code"
+                type="text"
+                name="zip_code2"
+              />
+            </div>
+          </div>
+          <div>
+            <label class="form-label"
+              >住所<span class="required">必須</span></label
+            >
+            <input class="address" type="text" name="address" />
+          </div>
+          <div>
+            <label class="form-label"
+              >電話番号<span class="required">必須</span></label
+            >
+            <input class="tel" type="text" name="tel" />
+          </div>
+          <div>
+            <label class="form-label"
+              >メールアドレス<span class="required">必須</span></label
+            >
+            <input class="email" type="text" name="email" />
+          </div>
+          <div>
+            <label class="form-label"
+              >確認用メールアドレス<span class="required">必須</span></label
+            >
+            <input class="email-confirm" type="text" name="email_confirm" />
+          </div>
+          <div>
+            <label class="form-label">FAX</label>
+            <input class="fax" type="text" name="fax" />
+          </div>
+          <div>
+            <label class="form-label"
+              >年齢<span class="required">必須</span></label
+            >
+            <input class="age" type="text" name="age" />
+          </div>
+          <div>
+            <label class="form-label"
+              >性別<span class="required">必須</span></label
+            >
+            <div class="gender-wrapper">
+              <select class="gender">
+                <option>選択してください</option>
+                <option>男性</option>
+                <option>女性</option>
+                <option>その他</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="form-label"
+              >JA奈良の口座番号<span class="required">必須</span></label
+            >
+            <div class="account-number-wrapper">
+              <p>支店番号</p>
+              <input class="branch-number" type="text" name="branch_number" />
+              <p>口座番号</p>
+              <input class="account-number" type="text" name="account_number" />
+            </div>
+          </div>
+          <div>
+            <label class="form-label"
+              >主に作っている農産物<span class="required">必須</span></label
+            >
+            <input
+              class="agricultural-products"
+              type="text"
+              name="agricultural_products"
+            />
+          </div>
+          <div>
+            <label class="form-label"
+              >作付面積<span class="required">必須</span></label
+            >
+            <input class="planted-area" type="text" name="planted_area" /><span
+              >㎡</span
+            >
+          </div>
+          <div>
+            <label class="form-label"
+              >他に出荷している直営店<span class="required">必須</span></label
+            >
+            <input
+              class="other-irectly-managed-store"
+              type="text"
+              name="other_irectly_managed_store"
+            />
+          </div>
+          <div>
+            <label class="form-label"
+              >同意事項<span class="required">必須</span></label
+            >
+            <div>
+              <input id="agreement" type="checkbox" name="agreement" />
+              <label for="agreement" class="agreement"
+                >出荷要領・販売委託契約約款・販売不向き商品について・それぞれに同意する。</label
+              >
+            </div>
+          </div>
+          <div class="flex justify-center">
+            <Button
+              bg="white"
+              text="primary"
+              size="lg"
+              outlined={true}
+              input="入力内容確認"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <Footer client:load />
+  </main>
+</Layout>
+
+<style>
+  main {
+    background-color: #fff9e0;
+    margin: auto;
+  }
+
+  .inquiry {
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 84%;
+    margin: 60px auto;
+    padding: 60px 0 80px;
+  }
+
+  .sub-title > img {
+    width: 24%;
+  }
+
+  .sub-title > h2 {
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin: 0 20px;
+    text-align: center;
+  }
+
+  .inquiry-contents {
+    width: 90%;
+    margin: auto;
+  }
+
+  .confirm-link {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+    gap: 24px 6%;
+    margin-bottom: 60px;
+  }
+
+  .download-link {
+    display: flex;
+  }
+
+  .download-link > div > p {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 25px;
+    font-weight: bold;
+  }
+
+  .download-link > div {
+    margin-right: 5%;
+  }
+
+  .download-link > div > p::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #464646;
+    border-radius: 50%;
+    position: absolute;
+    top: 7px;
+    left: 5px;
+  }
+
+  .download-link > div > a {
+    margin-left: 30px;
+    position: relative;
+    margin-bottom: 25px;
+    color: #ff4545;
+    font-weight: bold;
+    border-bottom: 1px solid;
+  }
+
+  .download-link > div > a::before {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: -25px;
+    width: 20px;
+    height: 25px;
+    background: url("/svgs/pdf-icon.svg") no-repeat;
+  }
+
+  .form {
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 84%;
+    margin: 60px auto;
+    padding: 60px 0 20px;
+  }
+
+  input {
+    border: 1px solid #dddddd;
+    height: 45px;
+    border-radius: 5px;
+  }
+
+  select {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+  }
+
+  .form-label {
+    font-weight: bold;
+  }
+
+  .form-label > span {
+    font-weight: normal;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  .input {
+    width: 65%;
+    margin: auto;
+    margin-top: 40px;
+  }
+
+  .input > div {
+    margin-bottom: 40px;
+  }
+
+  .input > div > label {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  .required {
+    display: inline-block;
+    height: 29px;
+    width: 57px;
+    background-color: #ff3c3c;
+    color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 20px;
+  }
+
+  .name,
+  .kana {
+    width: 50%;
+  }
+
+  .zip-code {
+    width: 13%;
+    margin: 0 10px;
+  }
+
+  .address {
+    width: 100%;
+  }
+
+  .tel,
+  .fax {
+    width: 43%;
+  }
+
+  .email,
+  .email-confirm {
+    width: 71%;
+  }
+
+  .age {
+    width: 14%;
+  }
+
+  .gender-wrapper {
+    position: relative;
+    z-index: 1;
+    height: 45px;
+    width: 28%;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+  }
+
+  .account-number-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .account-number-wrapper > p {
+    margin-right: 15px;
+  }
+
+  .account-number-wrapper > input {
+    margin-right: 15px;
+  }
+
+  .branch-number {
+    width: 15%;
+  }
+
+  .account-number {
+    width: 24%;
+  }
+
+  .agricultural-products {
+    width: 100%;
+  }
+
+  .planted-area {
+    width: 43%;
+  }
+
+  .planted-area {
+    margin-right: 15px;
+  }
+
+  .other-irectly-managed-store {
+    width: 100%;
+  }
+
+  .agreement {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 30px;
+    position: relative;
+    width: auto;
+  }
+
+  .agreement::before {
+    background: #fff;
+    border: 1px solid #dddddd;
+    content: "";
+    display: block;
+    height: 16px;
+    left: 5px;
+    margin-top: -8px;
+    position: absolute;
+    top: 50%;
+    width: 16px;
+  }
+
+  .agreement::after {
+    border-right: 3px solid #464646;
+    border-bottom: 3px solid #464646;
+    content: "";
+    display: block;
+    height: 9px;
+    left: 10px;
+    margin-top: -7px;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: rotate(45deg);
+    width: 5px;
+  }
+
+  input[type="checkbox"]:checked + .agreement::after {
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 767px) {
+    .inquiry {
+      width: 90%;
+      padding: 60px 0 40px;
+    }
+
+    .download-link {
+      display: block;
+    }
+
+    .download-link > div {
+      margin-bottom: 20px;
+    }
+
+    .form {
+      width: 90%;
+    }
+
+    .input {
+      width: 88%;
+    }
+
+    .account-number-wrapper {
+      display: block;
+    }
+
+    .branch-number {
+      margin-bottom: 20px;
+    }
+
+    .age {
+      width: 50%;
+    }
+
+    .name,
+    .kana,
+    .tel,
+    .email,
+    .email-confirm,
+    .fax,
+    .branch-number,
+    .account-number {
+      width: 100%;
+    }
+
+    .zip-code {
+      width: 25%;
+      margin: 0 10px;
+    }
+
+    .planted-area {
+      width: 80%;
+    }
+  }
+</style>
