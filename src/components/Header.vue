@@ -24,19 +24,23 @@ const headerStyle = computed(() => {
 
 <template>
   <header :class="openClass" :style="headerStyle">
-    <div class="logo">
+    <a href="/" class="logo">
       <div class="logo-icon">
-        <a href="#"><img src="/svgs/logo.svg" alt="logo" /></a>
+        <img src="/svgs/logo.svg" alt="logo" />
       </div>
       <div>
         <p class="logo-text">さくらいとれとれ市場</p>
         <p class="logo-text-sub">Sakurai Toretore Market</p>
       </div>
-    </div>
+    </a>
     <div class="icons">
       <div class="shopping-cart">
         <a href="#">
-          <img class="shopping-cart-img" src="/svgs/shopping-cart-black.svg" alt="shoppng-cart" />
+          <img
+            class="shopping-cart-img"
+            src="/svgs/shopping-cart-black.svg"
+            alt="shoppng-cart"
+          />
         </a>
       </div>
       <div class="hamburger-menu" @click.prevent="openMenu">
@@ -51,34 +55,34 @@ const headerStyle = computed(() => {
 
     <ul class="nav">
       <li class="nav-text">
-        <a href="#"
-          >店舗情報
-          <p class="nav-text-sub">INFOMATION</p></a
-        >
+        <a href="/information">
+          店舗情報
+          <p class="nav-text-sub">INFORMATION</p>
+        </a>
       </li>
       <li class="nav-text">
-        <a href="#"
-          >取り扱い商品
-          <p class="nav-text-sub">PRODUCT</p></a
-        >
+        <a href="/product">
+          取り扱い商品
+          <p class="nav-text-sub">PRODUCT</p>
+        </a>
       </li>
       <li class="nav-text">
-        <a href="#"
-          >お知らせ
-          <p class="nav-text-sub">NEWS</p></a
-        >
+        <a href="/news/page/1">
+          お知らせ
+          <p class="nav-text-sub">NEWS</p>
+        </a>
       </li>
       <li class="nav-text">
-        <a href="#"
-          >出品者募集
-          <p class="nav-text-sub">SHIPPERS</p></a
-        >
+        <a href="/shippers">
+          出品者募集
+          <p class="nav-text-sub">SHIPPERS</p>
+        </a>
       </li>
       <li class="nav-text">
-        <a href="#"
-          >お問い合わせ
-          <p class="nav-text-sub">CONTACT US</p></a
-        >
+        <a href="/contacts">
+          お問い合わせ
+          <p class="nav-text-sub">CONTACT US</p>
+        </a>
       </li>
     </ul>
   </header>

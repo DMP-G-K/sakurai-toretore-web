@@ -13,7 +13,9 @@
 			</div>
 			<p class="hero-nav-title-en">Sakurai Toretore Market</p>
 			<p class="hero-nav-title-discription">
-				<span class="hero-nav-title-discription-decoration"> 新鮮な野菜</span>の恵みを家庭にお届け！
+				<span class="hero-nav-title-discription-decoration">
+					新鮮な野菜</span
+				>の恵みを家庭にお届け！
 			</p>
 			<div class="hero-nav-title-png">
 				<img src="/images/4d0939b9579d64f2.png" alt="" />
@@ -21,21 +23,31 @@
 			</div>
 		</div>
 		<ul class="hero-nav-list">
-			<li class="hero-nav-list-item">
-				<a href="#">店舗情報<p class="hero-nav-list-item-sub">INFOMATION</p></a>
-			</li>
-			<li class="hero-nav-list-item">
-				<a href="#">取り扱い商品<p class="hero-nav-list-item-sub">PRODUCT</p></a>
-			</li>
-			<li class="hero-nav-list-item">
-				<a href="#">お知らせ<p class="hero-nav-list-item-sub">NEWS</p></a>
-			</li>
-			<li class="hero-nav-list-item">
-				<a href="#">出品者募集<p class="hero-nav-list-item-sub">SHIPPERS</p></a>
-			</li>
-			<li class="hero-nav-list-item">
-				<a href="#">お問い合わせ<p class="hero-nav-list-item-sub">CONTACT US</p></a>
-			</li>
+			<a href="/information">
+				<li class="hero-nav-list-item">
+					店舗情報<p class="hero-nav-list-item-sub">INFOMATION</p>
+				</li>
+			</a>
+			<a href="/product">
+				<li class="hero-nav-list-item">
+					取り扱い商品<p class="hero-nav-list-item-sub">PRODUCT</p>
+				</li>
+			</a>
+			<a href="/news/page/1">
+				<li class="hero-nav-list-item">
+					お知らせ<p class="hero-nav-list-item-sub">NEWS</p>
+				</li>
+			</a>
+			<a href="/shippers">
+				<li class="hero-nav-list-item">
+					出品者募集<p class="hero-nav-list-item-sub">SHIPPERS</p>
+				</li>
+			</a>
+			<a href="/contacts">
+				<li class="hero-nav-list-item">
+					お問い合わせ<p class="hero-nav-list-item-sub">CONTACT US</p>
+				</li>
+			</a>
 		</ul>
 
 		<!-- 装飾画像 -->
@@ -146,7 +158,10 @@
 					margin: 1rem 0 1rem 0;
 					letter-spacing: 0.0675rem;
 					&-decoration {
-						background: linear-gradient(transparent 60%, yellow 30%);
+						background: linear-gradient(
+							transparent 60%,
+							yellow 30%
+						);
 					}
 				}
 				&-png {
