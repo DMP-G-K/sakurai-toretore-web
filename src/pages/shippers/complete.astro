@@ -1,0 +1,105 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.vue";
+import Header from "../../components/Header.vue";
+import Button from "../../components/Button.astro";
+---
+
+<Layout title="shippers">
+  <main>
+    <div class="sp-header">
+      <Header client:load bgColor="" />
+    </div>
+    <div>
+      <div>
+        <h1>出荷者募集</h1>
+        <p>RECRUITMENT OF SHIPS</p>
+        <nav>
+          <p>
+            <a href="#">トップ</a>
+            <span>＞</span>
+          </p>
+          <p>
+            <span>出荷者募集</span>
+          </p>
+        </nav>
+      </div>
+      <div>
+        <img src="" />
+      </div>
+    </div>
+    <div class="complete">
+      <div class="sub-title flex justify-around">
+        <img src="/svgs/green-leaf.svg" />
+        <h2>出荷者仮登録フォーム</h2>
+        <img src="/svgs/green-leaf.svg" />
+      </div>
+      <p class="text-confirmed">お問い合わせフォームの送信を完了致しました。</p>
+      <p class="text-confirmation">
+        この度はお問い合わせいただきまして誠にありがとうございます。<br
+        />ご確認メールをお送りしておりますのでご確認ください。
+      </p>
+      <p>
+        <p class="text-attention">
+          ※ご送信後、ご確認メールが届かない場合は、フォームご入力のメールアドレスの謝り、<br
+          />もしくはシステム等の不具合が考えられます。その際にはお手数ですが<br
+          />もう一度ご送信下さいますか、<br
+          />お電話にてお問い合わせくださいますようお願い申し上げます。<br
+          />また、まれに迷惑メールフォルダへ入っている場合がございますので、<br
+          />合わせてご確認ください。
+        </p>
+        <div class="flex justify-center">
+          <Button
+            bg="white"
+            text="primary"
+            size="lg"
+            outlined={true}
+            input="トップページへ戻る"
+          />
+        </div>
+      </p>
+    </div>
+    <Footer client:load />
+  </main>
+</Layout>
+
+<style>
+  .complete {
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 84%;
+    margin: 60px auto;
+    padding: 60px 0;
+    text-align: center;
+  }
+
+  .sub-title > img {
+    width: 24%;
+  }
+
+  .sub-title > h2 {
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin: 0 20px;
+    text-align: center;
+  }
+
+  .text-confirmed {
+    font-weight: 600;
+    padding-bottom: 1.5625rem;
+    letter-spacing: 0.06rem;
+    margin-top: 40px;
+  }
+
+  .text-confirmation {
+    font-weight: 400;
+    letter-spacing: 0.06rem;
+    padding-bottom: 1.5625rem;
+  }
+
+  .text-attention {
+    color: #ff3333;
+    letter-spacing: 0.06rem;
+    padding-bottom: 2.5rem;
+  }
+</style>
