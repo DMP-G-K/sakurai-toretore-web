@@ -1,0 +1,180 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.vue";
+import Header from "../../components/Header.vue";
+import Button from "../../components/Button.astro";
+---
+
+<Layout title="shippers">
+  <main>
+    <div class="sp-header">
+      <Header client:load bgColor="" />
+    </div>
+    <div>
+      <div>
+        <h1>出荷者募集</h1>
+        <p>RECRUITMENT OF SHIPS</p>
+        <nav>
+          <p>
+            <a href="#">トップ</a>
+            <span>＞</span>
+          </p>
+          <p>
+            <span>出荷者募集</span>
+          </p>
+        </nav>
+      </div>
+      <div>
+        <img src="" />
+      </div>
+    </div>
+    <div class="form">
+      <div class="sub-title flex justify-around">
+        <img src="/svgs/green-leaf.svg" />
+        <h2>出荷者仮登録フォーム</h2>
+        <img src="/svgs/green-leaf.svg" />
+      </div>
+      <div class="input">
+        <div>
+          <label class="form-label">お名前</label>
+          <p>お名前が入ります。</p>
+        </div>
+        <div>
+          <label class="form-label">ふりがな</label>
+          <p>ふりがなが入ります。</p>
+        </div>
+        <div>
+          <label class="form-label">郵便番号</label>
+          <p>〒 0000 - 0000</p>
+        </div>
+        <div>
+          <label class="form-label">住所</label>
+          <p>住所が入ります。</p>
+        </div>
+        <div>
+          <label class="form-label">電話番号</label>
+          <p>0000000</p>
+        </div>
+        <div>
+          <label class="form-label">メールアドレス</label>
+          <p>XXXXX@gmail.com</p>
+        </div>
+        <div>
+          <label class="form-label">確認用メールアドレス</label>
+          <p>XXXXX@gmail.com</p>
+        </div>
+        <div>
+          <label class="form-label">年齢</label>
+          <p>20</p>
+        </div>
+        <div>
+          <label class="form-label">性別</label>
+          <p>男性</p>
+        </div>
+        <div>
+          <label class="form-label">JA奈良の口座番号</label>
+          <div class="account-number-wrapper">
+            <p>支店番号</p>
+            <p class="branch-number">000</p>
+            <p>口座番号</p>
+            <p class="account-number">000000000</p>
+          </div>
+        </div>
+        <div>
+          <label class="form-label">主に作っている農作物</label>
+          <p>主に作っている農作物が入ります。</p>
+        </div>
+        <div>
+          <label class="form-label">作付面積</label>
+          <p class="planted-area">100<span>㎡</span></p>
+        </div>
+        <div>
+          <label class="form-label">他に出荷している直営店</label>
+          <p>他に出荷している直営店が入ります。</p>
+        </div>
+        <div class="flex justify-around">
+          <Button bg="gray" text="white" size="lg" input="修正する" />
+          <Button
+            bg="white"
+            text="primary"
+            size="lg"
+            outlined={true}
+            input="確認する"
+          />
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .form {
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 84%;
+    margin: 60px auto;
+    padding: 60px 0 20px;
+  }
+
+  .sub-title > img {
+    width: 24%;
+  }
+
+  .sub-title > h2 {
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin: 0 20px;
+    text-align: center;
+  }
+
+  .input {
+    width: 65%;
+    margin: auto;
+    margin-top: 35px;
+  }
+
+  .input > div {
+    margin-bottom: 40px;
+  }
+
+  .input > div > label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+  .account-number-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .account-number-wrapper > p {
+    margin-right: 15px;
+  }
+
+  .planted-area {
+    margin-right: 15px;
+  }
+
+  @media screen and (max-width: 767px) {
+    .form {
+      width: 90%;
+      background-color: #ffffff;
+      border-radius: 15px;
+      width: 84%;
+      margin: 60px auto;
+      padding: 45px 0 60px;
+    }
+
+    .input {
+      width: 88%;
+    }
+
+    .account-number-wrapper {
+      display: block;
+    }
+    .account-number-wrapper > p {
+      margin-bottom: 10px;
+    }
+  }
+</style>
