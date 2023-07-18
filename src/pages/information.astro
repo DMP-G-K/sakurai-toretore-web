@@ -1,8 +1,7 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../layouts/Layout2.astro";
 import TableOfContents from "../components/TableOfContents.astro";
 import Footer from "../components/Footer.vue";
-import Header from "../components/Header.vue";
 
 const contents = [
   "店舗情報・アクセス",
@@ -12,29 +11,13 @@ const contents = [
 ];
 ---
 
-<Layout title="information">
+<Layout
+  title="information"
+  pageTitle="店舗情報"
+  pageTitleEng="FEATURES"
+  breadcrumb={[["店舗情報", ""]]}
+>
   <main>
-    <div class="sp-header">
-      <Header client:load />
-    </div>
-    <div class="page-title-wrapper">
-      <div>
-        <h1 class="page-title">店舗情報</h1>
-        <p>FEATURES</p>
-        <nav class="bread-crumbs">
-          <p>
-            <a href="/">トップ</a>
-            <span>＞</span>
-          </p>
-          <p>
-            <span>店舗情報</span>
-          </p>
-        </nav>
-      </div>
-      <div>
-        <img src="" />
-      </div>
-    </div>
     <div class="table-of-contents">
       <TableOfContents contents={contents} />
     </div>

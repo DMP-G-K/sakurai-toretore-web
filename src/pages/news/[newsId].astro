@@ -1,5 +1,6 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../layouts/Layout2.astro";
+import Footer from "../../components/Footer.vue";
 import { News, getNews, getNewsDetail } from "../../library/microcms";
 
 // 詳細記事ページの全パスを取得
@@ -32,31 +33,16 @@ type PickedNews = Pick<
 >;
 ---
 
-<Layout title="My first blog with Astro">
+<Layout
+  title="NEWS"
+  pageTitle="お知らせ"
+  pageTitleEng="NEWS"
+  breadcrumb={[
+    ["お知らせ", "/news/page/1"],
+    [news.title, ""],
+  ]}
+>
   <main>
-    <div>
-      <div>
-        <h1>お知らせ</h1>
-        <p>NEWS</p>
-        <nav>
-          <p>
-            <a href="/">トップ</a>
-            <span>＞</span>
-          </p>
-          <p>
-            <a href="/news/page/1">お知らせ</a>
-            <span>＞</span>
-          </p>
-          <p>
-            <span>{news.title}</span>
-          </p>
-        </nav>
-      </div>
-      <div>
-        <img src="" />
-      </div>
-    </div>
-
     <div class="news">
       <div class="news-detail">
         <div class="news-detail-title-wrapper">
@@ -102,6 +88,7 @@ type PickedNews = Pick<
         }
       </div>
     </div>
+    <Footer client:load />
   </main>
 </Layout>
 
@@ -114,6 +101,7 @@ type PickedNews = Pick<
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
+    margin-bottom: 60px;
   }
 
   .news-detail {
@@ -209,6 +197,7 @@ type PickedNews = Pick<
     .news {
       display: block;
       margin: auto;
+      margin-bottom: 60px;
     }
 
     .news-detail {

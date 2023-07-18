@@ -1,0 +1,118 @@
+---
+import LINEPurchaseButtonGroup from "../components/LINEPurchaseButtonGroup.astro";
+import "../styles/global.css";
+import Header from "../components/Header.vue";
+import Breadcrumb from "../components/Breadcrumb.astro";
+export interface Props {
+  title: string;
+  pageTitle: string;
+  pageTitleEng: string;
+  breadcrumb: [string, string][];
+}
+
+const { title } = Astro.props;
+
+const { pageTitle } = Astro.props;
+
+const { pageTitleEng } = Astro.props;
+
+const { breadcrumb } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <LINEPurchaseButtonGroup />
+    <main>
+      <div class="sp-header">
+        <Header client:load bgColor="" />
+      </div>
+      <div class="main-visual-wrapper">
+        <div>
+          <div class="page-title">
+            <h1>{pageTitle}</h1>
+            <p>{pageTitleEng}</p>
+          </div>
+          <Breadcrumb breadcrumb={breadcrumb} />
+        </div>
+        <div class="mainv-visual-image">
+          <img src="/svgs/mainvisual-dammy.svg" />
+        </div>
+      </div>
+    </main>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  :root {
+    --accent: 124, 58, 237;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      #da62c4 30%,
+      white 60%
+    );
+  }
+  html {
+    font-family: var(--noto-sans);
+    background-color: #fff9e0;
+    color: #464646;
+  }
+  code {
+    font-family: var(--noto-sans);
+  }
+  main {
+    font-family: var(--noto-sans);
+  }
+
+  .main-visual-wrapper {
+    display: flex;
+    align-items: center;
+    width: 84%;
+    margin: auto;
+    margin-top: 150px;
+    margin-bottom: 50px;
+    justify-content: space-between;
+  }
+
+  .page-title > h1 {
+    font-size: 2.625rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+
+  .page-title > p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #5f8934;
+    margin-bottom: 100px;
+  }
+
+  @media screen and (max-width: 767px) {
+    .main-visual-wrapper {
+      margin-top: 100px;
+      flex-direction: column-reverse;
+      align-items: baseline;
+      width: 90%;
+    }
+    .page-title > h1 {
+      font-size: 1.56rem;
+    }
+
+    .page-title > p {
+      font-size: 0.875rem;
+      margin-bottom: 30px;
+    }
+
+    .main-visual-image {
+      margin-left: 12%;
+    }
+  }
+</style>

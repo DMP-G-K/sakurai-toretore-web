@@ -1,9 +1,8 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../layouts/Layout2.astro";
 import TableOfContents from "../components/TableOfContents.astro";
 import Footer from "../components/Footer.vue";
 import { Product, getProducts } from "../library/microcms";
-import Header from "../components/Header.vue";
 import Button from "../components/Button.astro";
 
 const contents = ["夏野菜", "冬野菜", "地元特産品"];
@@ -24,29 +23,13 @@ type PickedProduct = Pick<Product, "id" | "name" | "mainVisual" | "content">;
 type PickedSpecialProduct = Pick<Product, "mainVisual">;
 ---
 
-<Layout title="product">
+<Layout
+  title="product"
+  pageTitle="取り扱い商品の紹介"
+  pageTitleEng="PRODUCT"
+  breadcrumb={[["取り扱い商品の紹介", ""]]}
+>
   <main>
-    <div class="sp-header">
-      <Header client:load />
-    </div>
-    <div class="page-title-wrapper">
-      <div>
-        <h1 class="page-title">お取り扱い商品の紹介</h1>
-        <p>PRODUCT</p>
-        <nav class="bread-crumbs">
-          <p>
-            <a href="#">トップ</a>
-            <span>＞</span>
-          </p>
-          <p>
-            <span>取り扱い商品の紹介</span>
-          </p>
-        </nav>
-      </div>
-      <div class="page-img">
-        <img src="" />
-      </div>
-    </div>
     <div class="table-of-contents">
       <TableOfContents contents={contents} />
     </div>

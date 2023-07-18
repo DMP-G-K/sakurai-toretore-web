@@ -1,33 +1,16 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../layouts/Layout2.astro";
 import Footer from "../../components/Footer.vue";
-import Header from "../../components/Header.vue";
 import Button from "../../components/Button.astro";
 ---
 
-<Layout title="shippers">
+<Layout
+  title="shippers"
+  pageTitle="出荷者募集"
+  pageTitleEng="RECRUITMENT OF SHIPPERS"
+  breadcrumb={[["出荷者募集", "/shippers"]]}
+>
   <main>
-    <div class="sp-header">
-      <Header client:load bgColor="" />
-    </div>
-    <div>
-      <div>
-        <h1>出荷者募集</h1>
-        <p>RECRUITMENT OF SHIPS</p>
-        <nav>
-          <p>
-            <a href="#">トップ</a>
-            <span>＞</span>
-          </p>
-          <p>
-            <span>出荷者募集</span>
-          </p>
-        </nav>
-      </div>
-      <div>
-        <img src="" />
-      </div>
-    </div>
     <div class="complete">
       <div class="sub-title flex justify-around">
         <img src="/svgs/green-leaf.svg" />
@@ -55,6 +38,7 @@ import Button from "../../components/Button.astro";
             size="lg"
             outlined={true}
             input="トップページへ戻る"
+            link="/"
           />
         </div>
       </p>
@@ -68,7 +52,8 @@ import Button from "../../components/Button.astro";
     background-color: #ffffff;
     border-radius: 15px;
     width: 84%;
-    margin: 60px auto;
+    margin: auto;
+    margin-bottom: 60px;
     padding: 60px 0;
     text-align: center;
   }
@@ -105,11 +90,8 @@ import Button from "../../components/Button.astro";
 
   @media screen and (max-width: 767px) {
     .complete {
-      margin-left: 1.25rem;
-      margin-right: 1.25rem;
-      padding-bottom: 4rem;
-      padding-left: 1.25rem;
-      padding-right: 1.25rem;
+      width: 90%;
+      padding: 40px 6% 60px;
     }
 
     .sub-title > h2 {

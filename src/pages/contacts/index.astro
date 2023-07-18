@@ -1,33 +1,16 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../layouts/Layout2.astro";
 import Footer from "../../components/Footer.vue";
 import Button from "../../components/Button.astro";
-import Header from "../../components/Header.vue";
 ---
 
-<Layout title="inquiry">
+<Layout
+  title="contact"
+  pageTitle="お問い合わせ"
+  pageTitleEng="CONTACT US"
+  breadcrumb={[["お問い合わせ", ""]]}
+>
   <main>
-    <div class="sp-header">
-      <Header client:load />
-    </div>
-    <div>
-      <div>
-        <h1>お問い合わせ</h1>
-        <p>CONTACT US</p>
-        <nav>
-          <p>
-            <a href="/">トップ</a>
-            <span>＞</span>
-          </p>
-          <p>
-            <span>お問い合わせ</span>
-          </p>
-        </nav>
-      </div>
-      <div>
-        <img src="" />
-      </div>
-    </div>
     <div class="contacts">
       <div class="sub-title flex justify-around">
         <img src="/svgs/green-leaf.svg" />
@@ -177,12 +160,8 @@ import Header from "../../components/Header.vue";
   @media screen and (max-width: 767px) {
     .contacts {
       width: 90%;
-    }
-
-    .contacts {
       background-color: #ffffff;
       border-radius: 15px;
-      width: 84%;
       margin: 60px auto;
       padding: 45px 0 60px;
     }

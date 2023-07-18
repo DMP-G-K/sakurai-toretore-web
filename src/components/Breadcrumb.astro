@@ -1,0 +1,40 @@
+---
+export interface Props {
+  breadcrumb: [string, string][];
+}
+
+const { breadcrumb } = Astro.props;
+---
+
+<div class="bread-crumb-wrapper">
+  <nav class="flex">
+    <p class="flex items-center">
+      <a href="/">トップ</a>
+      <span class="m-4">
+        <img src="/svgs/arrow-forward.svg" width="15px" />
+      </span>
+    </p>
+    {
+      breadcrumb.map((value: string[], i) => (
+        <p class="flex items-center">
+          
+          {breadcrumb.length - 1 !== i ? (
+            <a href={value[1]}>{value[0]}</a>
+            <span class="m-4">
+              <img src="/svgs/arrow-forward.svg" width="15px" />
+            </span>
+          ) : (
+            <span>{value[0]}</span>
+          )}
+        </p>
+      ))
+    }
+  </nav>
+</div>
+
+<style>
+    a {
+        color: #5F8934;
+        border-bottom: 1px solid #5F8934;
+    }
+</style>
