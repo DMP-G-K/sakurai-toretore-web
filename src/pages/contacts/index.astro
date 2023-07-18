@@ -5,7 +5,7 @@ import Button from "../../components/Button.astro";
 ---
 
 <Layout
-  title="contact"
+  title="CONTACT"
   pageTitle="お問い合わせ"
   pageTitleEng="CONTACT US"
   breadcrumb={[["お問い合わせ", ""]]}
@@ -56,13 +56,14 @@ import Button from "../../components/Button.astro";
           <label>お問い合わせ内容<span class="required">必須</span></label>
           <input class="content" type="text" name="content" />
         </div>
-        <div>
+        <div class="flex justify-center">
           <Button
             bg="white"
             text="primary"
             size="lg"
-            outlined="true"
+            outlined={true}
             input="入力内容確認"
+            link="/contacts/confirm"
           />
         </div>
       </div>
@@ -137,7 +138,7 @@ import Button from "../../components/Button.astro";
     border-radius: 15px;
     width: 84%;
     margin: 60px auto;
-    padding: 60px 0 80px;
+    padding: 60px 0 20px;
   }
 
   .sub-title > img {
@@ -163,7 +164,7 @@ import Button from "../../components/Button.astro";
       background-color: #ffffff;
       border-radius: 15px;
       margin: 60px auto;
-      padding: 45px 0 60px;
+      padding: 45px 0 20px;
     }
 
     .input {

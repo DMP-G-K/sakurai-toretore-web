@@ -5,7 +5,7 @@ import Button from "../../components/Button.astro";
 ---
 
 <Layout
-  title="contact"
+  title="CONTACT"
   pageTitle="お問い合わせ"
   pageTitleEng="CONTACT US"
   breadcrumb={[["お問い合わせ", ""]]}
@@ -52,20 +52,22 @@ import Button from "../../components/Button.astro";
             お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。お問い合わせ内容が入ります。
           </p>
         </div>
-        <div class="btn-group">
+        <div class="flex justify-around">
           <Button
             bg="gray"
             text="white"
             size="lg"
-            outlined="true"
+            outlined={false}
             input="修正する"
+            link="/contacts/"
           />
           <Button
             bg="white"
             text="primary"
             size="lg"
-            outlined="true"
+            outlined={true}
             input="確認する"
+            link="/contacts/complete"
           />
         </div>
       </div>
@@ -116,12 +118,6 @@ import Button from "../../components/Button.astro";
     margin-top: 35px;
   }
 
-  .btn-group {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 0;
-  }
-
   @media screen and (max-width: 767px) {
     .contacts {
       width: 90%;
@@ -133,14 +129,6 @@ import Button from "../../components/Button.astro";
 
     .input {
       width: 88%;
-    }
-
-    .btn-group {
-      flex-flow: column;
-    }
-
-    .btn-group > a > div {
-      margin: auto;
     }
   }
 </style>

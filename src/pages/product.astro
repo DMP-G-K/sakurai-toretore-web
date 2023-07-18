@@ -24,7 +24,7 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
 ---
 
 <Layout
-  title="product"
+  title="PRODUCT"
   pageTitle="取り扱い商品の紹介"
   pageTitleEng="PRODUCT"
   breadcrumb={[["取り扱い商品の紹介", ""]]}
@@ -92,13 +92,23 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
               </article>
             </div>
           </div>
+          <div class="product">
+            <img src="" />
+            <div>
+              <p class="summer-vegetable-title">夏野菜5</p>
+              <article>
+                <p>aaaaaaaaaaaaa</p>
+              </article>
+            </div>
+          </div>
         </div>
-        <div class="purchase-button">
+        <div class="flex justify-center">
           <Button
             bg="primary-variant"
             text="white"
-            size="sm"
+            size="lg"
             input="購入はこちら"
+            icon={true}
           />
         </div>
       </div>
@@ -166,12 +176,13 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
           </div>
         </div>
         <div>
-          <div>
+          <div class="flex justify-center">
             <Button
               bg="primary-variant"
               text="white"
-              size="sm"
+              size="lg"
               input="購入はこちら"
+              icon={true}
             />
           </div>
         </div>
@@ -198,12 +209,13 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
           <img src="" />
           <img src="" />
         </div>
-        <div>
+        <div class="flex justify-center">
           <Button
             bg="primary-variant"
             text="white"
-            size="sm"
+            size="lg"
             input="購入はこちら"
+            icon={true}
           />
         </div>
       </div>
@@ -212,10 +224,12 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
   </main>
 
   <style>
-    main {
-      background-color: #fff9e0;
+    .table-of-contents {
+      background-color: #ffffff;
       margin: auto;
-      font-size: 1rem;
+      width: 84%;
+      border-radius: 20px;
+      opacity: 1;
     }
 
     .page-title-wrapper {
@@ -313,7 +327,7 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
     .winter-vegetable {
       width: 90%;
       margin: auto;
-      margin-top: 35px;
+      margin-top: 75px;
     }
 
     .winter-vegetable > h3 {
@@ -350,7 +364,7 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
       border-radius: 15px;
       width: 84%;
       margin: 60px auto;
-      padding: 60px 0 80px;
+      padding: 60px 0 60px;
     }
 
     .special-detail {
