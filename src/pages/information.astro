@@ -28,13 +28,21 @@ const contents = [
         <img src="/svgs/green-leaf.svg" />
       </div>
       <div class="google-map">
-        <!-- TODO Google map -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1643.7121982738595!2d135.85046854912122!3d34.51747418585241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6006cb31180a31b5%3A0x97acdb702587bd7e!2z44GV44GP44KJ44GE44Go44KM44Go44KM5biC5aC0!5e0!3m2!1sja!2sjp!4v1689658589968!5m2!1sja!2sjp"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <div class="detail">
         <div>
           <p class="detail-title">所在地</p>
           <p class="detail-content">
-            〒633-0062 奈良県桜井市大字粟殿72番地 (<a href="#">Google map →</a>)
+            〒633-0062 奈良県桜井市大字粟殿72番地 (<a
+              target="_blank"
+              href="https://goo.gl/maps/Tv1WS7mGV4ooRfpM9">Google map →</a
+            >)
           </p>
         </div>
         <div>
@@ -652,6 +660,13 @@ const contents = [
   .google-map {
     width: 74%;
     margin: auto;
+    margin-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .google-map > iframe {
+    width: 100%;
+    height: 450px;
   }
 
   @media screen and (max-width: 767px) {
@@ -662,6 +677,11 @@ const contents = [
     .google-map {
       border-bottom: 1px solid #5f8934;
       width: 88%;
+      padding-bottom: 30px;
+    }
+
+    .google-map > iframe {
+      height: 200px;
     }
 
     .detail {
