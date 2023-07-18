@@ -35,11 +35,7 @@ const { page } = Astro.props;
 <!-- 
   TODO
   文字サイズ
-  タイトル
-  Headerのエラー
-  newsの中央寄せ（justify-contentを使用すると3で割り切れない時に間があいてしまう）
   ページング処理
-  詳細リンクのURL
  -->
 <Layout
   title="NEWS"
@@ -65,7 +61,7 @@ const { page } = Astro.props;
           {
             page.data.map((content: PickedNews) => (
               <div class="news-detail">
-                <a class="news-detail-link" href={`news/${content.id}`}>
+                <a class="news-detail-link" href={`/news/${content.id}`}>
                   <img src={content.eyecatch.url} alt="アイキャッチ画像" />
                   <div class="news-list-category-wrapper">
                     <p class="news-detail-date">
@@ -140,12 +136,12 @@ const { page } = Astro.props;
   }
 
   .news-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+    gap: 24px 6%;
   }
 
   .news-detail {
-    width: 28%;
     margin: 0 2%;
   }
 

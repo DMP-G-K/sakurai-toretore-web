@@ -56,51 +56,6 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
               </div>
             ))
           }
-          <div class="product">
-            <img src="" />
-            <div>
-              <p class="summer-vegetable-title">夏野菜２</p>
-              <article>
-                <p>aaaaaaaaaaaaa</p>
-              </article>
-            </div>
-          </div>
-          <div class="product">
-            <img src="" />
-            <div>
-              <p class="summer-vegetable-title">夏野菜3</p>
-              <article>
-                <p>aaaaaaaaaaaaa</p>
-              </article>
-            </div>
-          </div>
-          <div class="product">
-            <img src="" />
-            <div>
-              <p class="summer-vegetable-title">夏野菜4</p>
-              <article>
-                <p>aaaaaaaaaaaaa</p>
-              </article>
-            </div>
-          </div>
-          <div class="product">
-            <img src="" />
-            <div>
-              <p class="summer-vegetable-title">夏野菜5</p>
-              <article>
-                <p>aaaaaaaaaaaaa</p>
-              </article>
-            </div>
-          </div>
-          <div class="product">
-            <img src="" />
-            <div>
-              <p class="summer-vegetable-title">夏野菜5</p>
-              <article>
-                <p>aaaaaaaaaaaaa</p>
-              </article>
-            </div>
-          </div>
         </div>
         <div class="flex justify-center">
           <Button
@@ -129,51 +84,6 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
               </div>
             ))
           }
-          <div class="product">
-            <img src="" />
-            <div>
-              <p class="winter-vegetable-title">冬野菜２</p>
-              <article>
-                <p>aaaaaaaaaaaaa</p>
-              </article>
-            </div>
-          </div>
-          <div class="product">
-            <img src="" />
-            <div>
-              <p class="winter-vegetable-title">冬野菜3</p>
-              <article>
-                <p>aaaaaaaaaaaaa</p>
-              </article>
-            </div>
-          </div>
-          <div class="product">
-            <img src="" />
-            <div>
-              <p class="winter-vegetable-title">冬野菜4</p>
-              <article>
-                <p>aaaaaaaaaaaaa</p>
-              </article>
-            </div>
-          </div>
-          <div class="product">
-            <img src="" />
-            <div>
-              <p class="winter-vegetable-title">冬野菜5</p>
-              <article>
-                <p>aaaaaaaaaaaaa</p>
-              </article>
-            </div>
-          </div>
-          <div class="product">
-            <img src="" />
-            <div>
-              <p class="winter-vegetable-title">冬野菜6</p>
-              <article>
-                <p>aaaaaaaaaaaaa</p>
-              </article>
-            </div>
-          </div>
         </div>
         <div>
           <div class="flex justify-center">
@@ -300,13 +210,9 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
     }
 
     .product-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-
-    .product {
-      width: 23%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+      gap: 40px 6%;
       margin-bottom: 40px;
     }
 
