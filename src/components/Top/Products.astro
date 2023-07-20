@@ -3,37 +3,46 @@ import Heading from "./Heading.astro";
 import ProductCard from "./ProductCard.astro";
 ---
 
-<div class="products w-11/12 max-w-screen-xl mx-auto rounded-xl my-20 md:p-14 p-4">
-	<Heading en="PRODUCT INTRODUCTION" ja="取り扱い商品の紹介" decoration={true} />
-	<div class="CenteredCardList">
-		<ProductCard
-			title="夏野菜"
-			text="これらの夏野菜は、さくらいとれとれ市場で新鮮な状態で提供されています。夏の味覚をお楽しみください。"
-			color="#ff9300"
-		/>
-		<ProductCard
-			title="冬野菜"
-			text="これらの冬野菜は、寒さによって甘みが増し、栄養価が高まります。さくらいとれとれ市場で新鮮な冬野菜をお楽しみください。"
-			color="#93a8ff"
-		/>
-		<ProductCard
-			title="地元特産品"
-			text="さくらいとれとれ市場では地元の野菜のほか、三輪そうめん、奈良漬け、大和高原ピクルスなど地元の特産品も多く取り扱っています。"
-			color="#5f8934"
-		/>
-	</div>
+<div
+  class="products w-11/12 max-w-screen-xl mx-auto rounded-xl my-20 md:p-14 p-4"
+>
+  <Heading
+    en="PRODUCT INTRODUCTION"
+    ja="取り扱い商品の紹介"
+    decoration={true}
+  />
+  <div class="CenteredCardList">
+    <ProductCard
+      title="夏野菜"
+      text="これらの夏野菜は、さくらいとれとれ市場で新鮮な状態で提供されています。夏の味覚をお楽しみください。"
+      color="#ff9300"
+      link="/product/#section-0"
+    />
+    <ProductCard
+      title="冬野菜"
+      text="これらの冬野菜は、寒さによって甘みが増し、栄養価が高まります。さくらいとれとれ市場で新鮮な冬野菜をお楽しみください。"
+      color="#93a8ff"
+      link="/product/#section-1"
+    />
+    <ProductCard
+      title="地元特産品"
+      text="さくらいとれとれ市場では地元の野菜のほか、三輪そうめん、奈良漬け、大和高原ピクルスなど地元の特産品も多く取り扱っています。"
+      color="#5f8934"
+      link="/product/#section-2"
+    />
+  </div>
 </div>
 
 <style lang="scss">
-	.products {
-		background: url("svgs/texture-bg.svg");
-	}
-	.CenteredCardList {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
-		gap: 2rem;
-		justify-content: center;
-		align-items: start;
-		padding: 2%;
-	}
+  .products {
+    background: url("svgs/texture-bg.svg");
+  }
+  .CenteredCardList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    gap: 2rem;
+    justify-content: center;
+    align-items: start;
+    padding: 2%;
+  }
 </style>
