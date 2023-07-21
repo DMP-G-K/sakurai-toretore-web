@@ -189,7 +189,7 @@ import OpenModalButton from "../../components/OpenModalButton.vue";
               第13条　この契約に疑義が生じた場合または定めのない事項については、契約者と当市場が協議して定めるものとします。
             </p>
           </OpenModalButton>
-          <OpenModalButton text="販売不向き商品について">
+          <OpenModalButton text="販売不向き商品について" client:only>
             <p>
               平素は、当市場の活動にご協力いただきましてありがとうございます。
               当市場の発展はその特異性の発揮なくしては考えられません。
@@ -352,6 +352,7 @@ import OpenModalButton from "../../components/OpenModalButton.vue";
             size="lg"
             outlined={true}
             input="入力内容確認"
+            link="/shippers/confirm"
           />
         </div>
       </div>
@@ -512,29 +513,35 @@ import OpenModalButton from "../../components/OpenModalButton.vue";
   .name,
   .kana {
     width: 50%;
+    padding-left: 10px;
   }
 
   .zip-code {
     width: 13%;
     margin: 0 10px;
+    padding-left: 10px;
   }
 
   .address {
     width: 100%;
+    padding-left: 10px;
   }
 
   .tel,
   .fax {
     width: 43%;
+    padding-left: 10px;
   }
 
   .email,
   .email-confirm {
     width: 71%;
+    padding-left: 10px;
   }
 
   .age {
     width: 14%;
+    padding-left: 10px;
   }
 
   .gender-wrapper {
@@ -557,30 +564,37 @@ import OpenModalButton from "../../components/OpenModalButton.vue";
 
   .account-number-wrapper > input {
     margin-right: 15px;
+    padding-left: 10px;
   }
 
   .branch-number {
     width: 15%;
+    padding-left: 10px;
   }
 
   .account-number {
     width: 24%;
+    padding-left: 10px;
   }
 
   .agricultural-products {
     width: 100%;
+    padding-left: 10px;
   }
 
   .planted-area {
     width: 43%;
+    padding-left: 10px;
   }
 
   .planted-area {
     margin-right: 15px;
+    padding-left: 10px;
   }
 
   .other-irectly-managed-store {
     width: 100%;
+    padding-left: 10px;
   }
 
   .agreement {

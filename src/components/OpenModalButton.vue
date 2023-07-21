@@ -19,7 +19,7 @@ const closeModal = () => {
   <div class="wrap">
     <button class="button" @click="openModal">
       <span class="button-text">{{ text }}</span>
-      <img class="button-icon" src="svgs/right-arrow.svg" alt="" />
+      <img class="button-icon" src="/svgs/right-arrow.svg" alt="" />
     </button>
     <Modal :isOpen="isModalOpen" @close="closeModal"> <slot></slot> </Modal>
   </div>

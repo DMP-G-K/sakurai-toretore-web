@@ -76,13 +76,20 @@ import Button from "../../components/Button.astro";
           <p>他に出荷している直営店が入ります。</p>
         </div>
         <div class="flex justify-around">
-          <Button bg="gray" text="white" size="lg" input="修正する" />
+          <Button
+            bg="gray"
+            text="white"
+            size="lg"
+            input="修正する"
+            link="/shippers"
+          />
           <Button
             bg="white"
             text="primary"
             size="lg"
             outlined={true}
             input="送信する"
+            link="/shippers/complete"
           />
         </div>
       </div>
