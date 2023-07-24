@@ -26,7 +26,7 @@ const emitClose = () => emit("close");
 /* モーダルの背景 */
 .modal {
   position: fixed;
-  z-index: 1;
+  z-index: 200;
   top: 0;
   left: 0;
   display: flex;
@@ -80,7 +80,9 @@ const emitClose = () => emit("close");
 }
 
 .modal-content-body::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-color); /* スクロールバーのハンドルをマウスオーバーしたときの色を設定 */
+  background: var(
+    --primary-color
+  ); /* スクロールバーのハンドルをマウスオーバーしたときの色を設定 */
 }
 
 /* 閉じるボタン */
