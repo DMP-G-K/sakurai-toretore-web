@@ -25,6 +25,10 @@ const { breadcrumb } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css"
+      rel="stylesheet"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
@@ -86,6 +90,7 @@ const { breadcrumb } = Astro.props;
     font-size: 2.625rem;
     font-weight: bold;
     margin-bottom: 25px;
+    letter-spacing: 5.04px;
   }
 
   .page-title > p {
@@ -93,6 +98,7 @@ const { breadcrumb } = Astro.props;
     font-weight: bold;
     color: #5f8934;
     margin-bottom: 100px;
+    letter-spacing: 1.44px;
   }
 
   @media screen and (max-width: 767px) {

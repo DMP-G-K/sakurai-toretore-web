@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout2.astro";
 import Footer from "../../components/Footer.vue";
 import Button from "../../components/Button.astro";
 import OpenModalButton from "../../components/OpenModalButton.vue";
+import Subtitle from "../../components/Subtitle.astro";
 ---
 
 <Layout
@@ -13,11 +14,7 @@ import OpenModalButton from "../../components/OpenModalButton.vue";
 >
   <main>
     <div class="inquiry">
-      <div class="sub-title flex justify-around">
-        <img src="/svgs/green-leaf.svg" />
-        <h2>お問い合わせ</h2>
-        <img src="/svgs/green-leaf.svg" />
-      </div>
+      <Subtitle ja="お問い合わせ" decoration={true} />
       <div class="inquiry-contents">
         <div class="confirm-link">
           <OpenModalButton text="出荷要領を確認する" client:only>
@@ -218,11 +215,7 @@ import OpenModalButton from "../../components/OpenModalButton.vue";
       </div>
     </div>
     <div class="form">
-      <div class="sub-title flex justify-around">
-        <img src="/svgs/green-leaf.svg" />
-        <h2>出荷者仮登録フォーム</h2>
-        <img src="/svgs/green-leaf.svg" />
-      </div>
+      <Subtitle ja="出荷者仮登録フォーム" decoration={true} />
       <div class="input">
         <div>
           <label class="form-label"
@@ -374,17 +367,6 @@ import OpenModalButton from "../../components/OpenModalButton.vue";
     margin: auto;
     margin-bottom: 60px;
     padding: 60px 0 80px;
-  }
-
-  .sub-title > img {
-    width: 24%;
-  }
-
-  .sub-title > h2 {
-    font-size: 1.875rem;
-    font-weight: bold;
-    margin: 0 20px;
-    text-align: center;
   }
 
   .inquiry-contents {
