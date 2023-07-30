@@ -102,6 +102,8 @@ type PickedNews = Pick<
     justify-content: space-around;
     align-items: flex-start;
     margin-bottom: 60px;
+    letter-spacing: 0.1em;
+    line-height: 2;
   }
 
   .news-detail {
@@ -118,11 +120,16 @@ type PickedNews = Pick<
     padding-left: 30px;
     position: relative;
     color: #5f8934;
+    font-weight: bold;
   }
 
   .back-list::before {
     content: "";
     position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url("/svgs/arrow_back.svg") no-repeat;
+    color: #5f8934;
   }
 
   .news-detail-title-wrapper {
