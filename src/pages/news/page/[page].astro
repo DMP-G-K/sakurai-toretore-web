@@ -1,6 +1,8 @@
 ---
 import Layout from "../../../layouts/Layout2.astro";
 import Footer from "../../../components/Footer.vue";
+import Subtitle from "../../../components/Subtitle.astro";
+import PaginationList from "../../../components/PaginationList.svelte";
 
 // microCMS呼び出し
 import { News, getNews } from "../../../library/microcms";
@@ -27,16 +29,9 @@ export const getStaticPaths = async ({ paginate }: GetStaticPathsOptions) => {
   return paginate(response.contents, { pageSize: 9 });
 };
 
-let category = null;
-
 const { page } = Astro.props;
 ---
 
-<!-- 
-  TODO
-  文字サイズ
-  ページング処理
- -->
 <Layout
   title="NEWS"
   pageTitle="お知らせ"
@@ -46,11 +41,7 @@ const { page } = Astro.props;
   <main>
     <div class="news">
       <div class="result">
-        <div class="sub-title flex justify-around">
-          <img src="/svgs/green-leaf.svg" />
-          <h2>お知らせ</h2>
-          <img src="/svgs/green-leaf.svg" />
-        </div>
+        <Subtitle ja="お知らせ" decoration={true} />
         <ul class="category-link">
           <li><a href="#">すべて</a></li>
           <li><a href="#">ブログ</a></li>
@@ -85,12 +76,7 @@ const { page } = Astro.props;
         </div>
       </div>
     </div>
-    <ul class="page-number">
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-    </ul>
+    <PaginationList {page} />
     <Footer client:load />
   </main>
 </Layout>
@@ -128,7 +114,7 @@ const { page } = Astro.props;
   .category-link {
     display: flex;
     justify-content: center;
-    margin-bottom: 35px;
+    margin-top: 35px;
   }
 
   .category-link > li {
@@ -136,6 +122,7 @@ const { page } = Astro.props;
   }
 
   .news-list {
+    margin-top: 35px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
     gap: 24px 6%;
@@ -188,29 +175,6 @@ const { page } = Astro.props;
     font-weight: bold;
   }
 
-  .page-number {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 140px;
-  }
-
-  .page-number > li {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    color: #5f8934;
-    line-height: 60px;
-    text-align: center;
-    margin: 0 20px;
-    font-weight: bold;
-  }
-
-  .page-number > li:hover {
-    background-color: #5f8934;
-    color: #ffffff;
-  }
-
   @media screen and (max-width: 767px) {
     .news {
       width: 90%;
@@ -237,24 +201,6 @@ const { page } = Astro.props;
       padding-bottom: 0;
       border-bottom: none;
       margin-bottom: 0;
-      font-weight: bold;
-    }
-
-    .page-number {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 130px;
-    }
-
-    .page-number > li {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background-color: #ffffff;
-      color: #5f8934;
-      line-height: 44px;
-      text-align: center;
-      margin: 0 7px;
       font-weight: bold;
     }
   }

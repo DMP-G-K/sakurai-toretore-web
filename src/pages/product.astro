@@ -4,6 +4,7 @@ import TableOfContents from "../components/TableOfContents.astro";
 import Footer from "../components/Footer.vue";
 import { Product, getProducts } from "../library/microcms";
 import Button from "../components/Button.astro";
+import Subtitle from "../components/Subtitle.astro";
 
 const contents = ["夏野菜", "冬野菜", "地元特産品"];
 
@@ -34,11 +35,7 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
       <TableOfContents contents={contents} />
     </div>
     <div class="season">
-      <div class="sub-title">
-        <img src="/svgs/green-leaf.svg" />
-        <h2>旬の野菜</h2>
-        <img src="/svgs/green-leaf.svg" />
-      </div>
+      <Subtitle ja="旬の野菜" decoration={true} />
       <div id="section-0" class="summer-vegetable">
         <h3>夏野菜</h3>
         <p>
@@ -100,9 +97,7 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
     </div>
     <div id="section-2" class="special">
       <div class="sub-title">
-        <img src="/svgs/green-leaf.svg" />
-        <h2>地元特産品</h2>
-        <img src="/svgs/green-leaf.svg" />
+        <Subtitle ja="地元特産品" decoration={true} />
       </div>
       <div class="special-info">
         <p class="special-detail">
@@ -161,22 +156,6 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
 
     .page-title {
       font-size: 2rem;
-    }
-
-    .sub-title {
-      display: flex;
-      justify-content: space-around;
-    }
-
-    .sub-title > img {
-      width: 24%;
-    }
-
-    .sub-title > h2 {
-      font-size: 30px;
-      font-weight: bold;
-      margin: 0 20px;
-      text-align: center;
     }
 
     .summer-vegetable {
