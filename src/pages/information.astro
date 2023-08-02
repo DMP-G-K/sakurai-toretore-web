@@ -58,7 +58,7 @@ const contents = [
     </div>
     <div id="section-1" class="parking">
       <div class="sub-title">
-        <Subtitle ja="駐車場" decoration={true} />
+        <Subtitle ja="お知らせ" decoration={true} />
       </div>
       <div class="detail">
         <div
@@ -285,15 +285,15 @@ const contents = [
       <div class="employee-guidelines">
         <h3 class="employee-guidelines-title">社員行動指針</h3>
         <ul>
-          <li>1. 常に「生理」「整頓」「清潔」を心掛ける。</li>
-          <li>2. 訪れるすべての方々に、笑顔と真心を込めて接する。</li>
-          <li>3. 自分自身の行動を客観的にみつめる。</li>
-          <li>4. 他社からの指摘には感謝し、成長の糧とする。</li>
-          <li>5. 自分の役割をよく考え、その役割に徹底集中する。</li>
-          <li>6. 上司の指示命令を遵守し、率先して行動する。</li>
-          <li>7. お客さま、生産者さま、組織人としての目線で物事を考える。</li>
-          <li>8. 個人で判断せず、上司へ連絡、相談、報告を徹底する。</li>
-          <li>9. 知恵と工夫をもって職務にあたる。</li>
+          <li><span class="employee-guidelines-number">1.</span> 常に「生理」「整頓」「清潔」を心掛ける。</li>
+          <li><span class="employee-guidelines-number">2.</span> 訪れるすべての方々に、笑顔と真心を込めて接する。</li>
+          <li><span class="employee-guidelines-number">3.</span> 自分自身の行動を客観的にみつめる。</li>
+          <li><span class="employee-guidelines-number">4.</span> 他社からの指摘には感謝し、成長の糧とする。</li>
+          <li><span class="employee-guidelines-number">5.</span> 自分の役割をよく考え、その役割に徹底集中する。</li>
+          <li><span class="employee-guidelines-number">6.</span> 上司の指示命令を遵守し、率先して行動する。</li>
+          <li><span class="employee-guidelines-number">7.</span> お客さま、生産者さま、組織人としての目線で物事を考える。</li>
+          <li><span class="employee-guidelines-number">8.</span> 個人で判断せず、上司へ連絡、相談、報告を徹底する。</li>
+          <li><span class="employee-guidelines-number">9.</span> 知恵と工夫をもって職務にあたる。</li>
         </ul>
       </div>
       <div class="representative-message">
@@ -677,6 +677,10 @@ const contents = [
       margin-bottom: 10px;
     }
 
+    .employee-guidelines-number {
+      color: #5f8934;
+    }
+
     .representative-message {
       margin-bottom: 50px;
       letter-spacing: 0.1em;
@@ -782,10 +786,13 @@ const contents = [
         padding-bottom: 20px;
       }
 
-      .parking-image-wrapper {
-        border-bottom: 1px solid #5f8934;
-        width: 100%;
+      #controls-carousel {
         padding-bottom: 30px;
+        border-bottom: 1px solid #5f8934;
+      }
+
+      .parking-image-wrapper {
+        width: 100%;
       }
 
       .parking-image-wrapper > img {
@@ -882,7 +889,7 @@ const contents = [
         border-radius: 15px;
         width: 84%;
         margin: 60px auto;
-        padding: 40px 0 80px;
+        padding: 40px 0 40px;
       }
 
       .company-image {
@@ -917,6 +924,7 @@ const contents = [
       .company-philosophy {
         width: 88%;
         margin: auto;
+        padding: 20px;
       }
 
       .company-detail {
@@ -963,6 +971,11 @@ const contents = [
         width: 100%;
         padding: 0;
         padding-bottom: 20px;
+      }
+
+      .birth {
+        padding-bottom: 30px;
+        border-bottom: 1px solid #5f8934
       }
     }
   </style>
