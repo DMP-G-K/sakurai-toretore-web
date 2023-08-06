@@ -14,21 +14,31 @@ const { bgColor } = Astro.props;
   </a>
 
   <ul class="nav">
-    <li class="nav-text">
-      <a href="/information">店舗情報<p class="nav-text-sub">INFORMATION</p></a>
-    </li>
-    <li class="nav-text">
-      <a href="/product">取り扱い商品<p class="nav-text-sub">PRODUCT</p></a>
-    </li>
-    <li class="nav-text">
-      <a href="/news/page/1">お知らせ<p class="nav-text-sub">NEWS</p></a>
-    </li>
-    <li class="nav-text">
-      <a href="/shippers">出品者募集<p class="nav-text-sub">SHIPPERS</p></a>
-    </li>
-    <li class="nav-text">
-      <a href="/contacts">お問い合わせ<p class="nav-text-sub">CONTACT US</p></a>
-    </li>
+    <a href="/information">
+      <li class="nav-text">
+        店舗情報<p class="nav-text-sub">INFORMATION</p>
+      </li>
+    </a>
+    <a href="/product">
+      <li class="nav-text">
+        取り扱い商品<p class="nav-text-sub">PRODUCT</p>
+      </li>
+    </a>
+    <a href="/news/page/1">
+      <li class="nav-text">
+        お知らせ<p class="nav-text-sub">NEWS</p>
+      </li>
+    </a>
+    <a href="/shippers">
+      <li class="nav-text">
+        出品者募集<p class="nav-text-sub">SHIPPERS</p>
+      </li>
+    </a>
+    <a href="/contacts">
+      <li class="nav-text">
+        お問い合わせ<p class="nav-text-sub">CONTACT US</p>
+      </li>
+    </a>
   </ul>
 
   <div class="icon">
@@ -46,7 +56,7 @@ const { bgColor } = Astro.props;
 </header>
 
 <style>
-  .nav > .nav-text {
+  .nav-text {
 		position: relative;
 		/*リンクの形状*/
 		text-decoration: none;
@@ -54,7 +64,7 @@ const { bgColor } = Astro.props;
 	}
 
 	/*波形の設定*/
-	.nav > .nav-text:hover::before {
+	.nav-text:hover::before {
 		content: '';
 		/*絶対配置で波形の位置を決める*/
 		position: absolute;
