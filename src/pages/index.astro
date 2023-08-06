@@ -18,7 +18,7 @@ import Access from "../components/Top/Access.astro";
       <HeaderSP bgColor="none" client:load />
     </div>
     <Hero />
-    <div class="hidden md:block">
+    <div class="hidden md:block header-wrapper">
       <Header bgColor="white" />
     </div>
     <Features />
@@ -31,6 +31,12 @@ import Access from "../components/Top/Access.astro";
 </Layout>
 
 <style lang="scss">
+  .header-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  
   .sp-header {
     display: none;
     @media screen and (max-width: 767px) {
