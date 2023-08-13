@@ -19,7 +19,7 @@
           <li class="nav-text">
             <a href="/information">
               店舗情報
-              <p class="nav-text-sub">INFORMATIN</p>
+              <p class="nav-text-sub">INFORMATION</p>
             </a>
           </li>
           <li class="nav-text">

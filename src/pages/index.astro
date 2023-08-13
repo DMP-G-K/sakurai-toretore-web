@@ -10,6 +10,7 @@ import Products from "../components/Top/Products.astro";
 import Services from "../components/Top/Services.astro";
 import News from "../components/Top/News.astro";
 import Access from "../components/Top/Access.astro";
+import Movetop from "../components/Movetop.astro";
 ---
 
 <Layout title="さくらいとれとれ市場">
@@ -21,11 +22,13 @@ import Access from "../components/Top/Access.astro";
     <div class="hidden md:block">
       <Header bgColor="white" />
     </div>
+
     <Features />
     <Products />
     <Services />
     <News />
     <Access />
+    <Movetop />
     <Footer client:load />
   </main>
 </Layout>
