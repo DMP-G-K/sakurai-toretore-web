@@ -1,273 +1,348 @@
 <div class="hero">
-	<div class="hero-slideShow">
-		<img src="" />
-		<div class="hero-slideShow-scroll">
-			<p class="hero-slideShow-scroll-text">SCROLL</p>
-			<span class="hero-slideShow-scroll-line"></span>
-		</div>
-	</div>
-	<div class="hero-nav">
-		<div class="hero-nav-title">
-			<div class="hero-nav-title-logo">
-				<img src="/svgs/logo.svg" alt="#" />
-			</div>
-			<p class="hero-nav-title-en">Sakurai Toretore Market</p>
-			<p class="hero-nav-title-discription">
-				<span class="hero-nav-title-discription-decoration">
-					新鮮な野菜</span
-				>の恵みを家庭にお届け！
-			</p>
-			<div class="hero-nav-title-png">
-				<img src="/images/4d0939b9579d64f2.png" alt="" />
-				<span class="hero-nav-title-png-underbar"></span>
-			</div>
-		</div>
-		<ul class="hero-nav-list">
-			<a href="/information">
-				<li class="hero-nav-list-item">
-					店舗情報<p class="hero-nav-list-item-sub">INFOMATION</p>
-				</li>
-			</a>
-			<a href="/product">
-				<li class="hero-nav-list-item">
-					取り扱い商品<p class="hero-nav-list-item-sub">PRODUCT</p>
-				</li>
-			</a>
-			<a href="/news/page/1">
-				<li class="hero-nav-list-item">
-					お知らせ<p class="hero-nav-list-item-sub">NEWS</p>
-				</li>
-			</a>
-			<a href="/shippers">
-				<li class="hero-nav-list-item">
-					出品者募集<p class="hero-nav-list-item-sub">SHIPPERS</p>
-				</li>
-			</a>
-			<a href="/contacts">
-				<li class="hero-nav-list-item">
-					お問い合わせ<p class="hero-nav-list-item-sub">CONTACT US</p>
-				</li>
-			</a>
-		</ul>
+  <div class="hero-slideShow">
+    <img src="" />
+    <div class="hero-slideShow-scroll">
+      <p class="hero-slideShow-scroll-text">SCROLL</p>
+      <span class="hero-slideShow-scroll-line"></span>
+    </div>
+  </div>
+  <div class="hero-nav">
+    <div class="hero-nav-title">
+      <div class="hero-nav-title-logo">
+        <img src="/svgs/logo.svg" alt="#" />
+      </div>
+      <p class="hero-nav-title-en">Sakurai Toretore Market</p>
+      <p class="hero-nav-title-discription">
+        <span class="hero-nav-title-discription-decoration">
+          新鮮な野菜</span
+        >の恵みを家庭にお届け！
+      </p>
+      <div class="hero-nav-title-png">
+        <img src="/images/4d0939b9579d64f2.png" alt="" />
+        <span class="hero-nav-title-png-underbar"></span>
+      </div>
+    </div>
+    <ul class="hero-nav-list">
+      <a href="/information">
+        <li class="hero-nav-list-item">
+          店舗情報<p class="hero-nav-list-item-sub">INFORMATION</p>
+        </li>
+      </a>
+      <a href="/product">
+        <li class="hero-nav-list-item">
+          取り扱い商品<p class="hero-nav-list-item-sub">PRODUCT</p>
+        </li>
+      </a>
+      <a href="/news/page/1">
+        <li class="hero-nav-list-item">
+          お知らせ<p class="hero-nav-list-item-sub">NEWS</p>
+        </li>
+      </a>
+      <a href="/shippers">
+        <li class="hero-nav-list-item">
+          出品者募集<p class="hero-nav-list-item-sub">SHIPPERS</p>
+        </li>
+      </a>
+      <a href="/contacts">
+        <li class="hero-nav-list-item">
+          お問い合わせ<p class="hero-nav-list-item-sub">CONTACT US</p>
+        </li>
+      </a>
+    </ul>
 
-		<!-- 装飾画像 -->
-		<div>
-			<div class="blue-flower-right">
-				<img width="50px" src="/svgs/blue-flower.svg" alt="#" />
-			</div>
-			<div class="blue-flower-left">
-				<img width="50px" src="/svgs/blue-flower.svg" alt="#" />
-			</div>
-			<div class="pink-flower">
-				<img width="150px" src="/svgs/pink-flower.svg" alt="#" />
-			</div>
-		</div>
-	</div>
+    <!-- 装飾画像 -->
+    <div>
+      <div class="blue-flower-right">
+        <img width="50px" src="/svgs/blue-flower.svg" alt="#" />
+      </div>
+      <div class="blue-flower-left">
+        <img width="50px" src="/svgs/blue-flower.svg" alt="#" />
+      </div>
+      <div class="pink-flower">
+        <img width="150px" src="/svgs/pink-flower.svg" alt="#" />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="scroll">
+  <div class="scrolldown1"><span>SCROLL</span></div>
 </div>
 
 <style lang="scss">
-	.hero-nav-list > a {
-		position: relative;
-		/*リンクの形状*/
-		text-decoration: none;
-		outline: none;
-	}
+  .hero-nav-list > a {
+    position: relative;
+    /*リンクの形状*/
+    text-decoration: none;
+    outline: none;
+  }
 
-	/*波形の設定*/
-	.hero-nav-list > a:hover::before {
-		content: '';
-		/*絶対配置で波形の位置を決める*/
-		position: absolute;
-		left:30%;
-		top:0;
-		/*波形の形状*/
-		border: 1px solid #333;
-		width: 60px;
-		height: 60px;
-		border-radius: 50%;
-		/*はじめは不透明*/
-		opacity:1;
-		/*アニメーションの設定*/
-		animation:1s circleanime2 forwards;
-	}
+  /*波形の設定*/
+  .hero-nav-list > a:hover::before {
+    content: "";
+    /*絶対配置で波形の位置を決める*/
+    position: absolute;
+    left: 30%;
+    top: 0;
+    /*波形の形状*/
+    border: 1px solid #333;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    /*はじめは不透明*/
+    opacity: 1;
+    /*アニメーションの設定*/
+    animation: 1s circleanime2 forwards;
+  }
 
-	/*波形が広がるアニメーション*/
-	@keyframes circleanime2{
-		0%{
-			transform: scale(0);
-		}
-		100%{
-			transform:scale(2);
-			opacity: 0;
-		}
-	}
+  /*波形が広がるアニメーション*/
+  @keyframes circleanime2 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
 
-	.hero {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin: 2rem 2rem 0 2rem;
-		height: 100vh;
-		gap: 3rem;
-		@media screen and (max-width: 767px) {
-			display: flex;
-			flex-direction: column;
-			height: 80vh;
-			margin: 1rem;
-		}
-		&-slideShow {
-			position: relative;
-			top: -6%;
-			width: 640px;
-			height: 650px;
-			border-radius: 20px;
-			background-color: aqua;
-			@media screen and (max-width: 767px) {
-				width: 100%;
-				top: 0;
-			}
-			&-scroll {
-				position: absolute;
-				bottom: 1%;
-				left: -2rem;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-				&-text {
-					font-family: var(--josefin-sans);
-					font-size: 0.7rem;
-					font-weight: 400;
-					writing-mode: vertical-rl;
-					letter-spacing: 0.045rem;
-				}
-				&-line {
-					display: inline-block;
-					width: 1px;
-					height: 2rem;
-					background-color: #b2b2b2;
-				}
-			}
-		}
-		&-nav {
-			position: relative;
-			width: 470px;
-			display: flex;
-			position: relative;
-			flex-direction: column;
-			align-items: center;
-			padding-left: 2%;
-			padding-right: 2%;
-			background-color: white;
-			border-radius: 15px;
-			@media screen and (max-width: 767px) {
-				width: 100%;
-				padding: 2%;
-			}
-			&-title {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				&-logo {
-					position: absolute;
-					top: -10%;
-					@media screen and (max-width: 767px) {
-						width: 120px;
-						top: -65%;
-					}
-				}
-				&-en {
-					font-size: 1.1rem;
-					font-weight: 400;
-					font-family: var(--josefin-sans);
-					letter-spacing: 0.03rem;
-					color: #5f8934;
-					margin-top: 8.3rem;
-					@media screen and (max-width: 767px) {
-						display: none;
-					}
-				}
-				&-discription {
-					font-size: 1.1rem;
-					font-weight: 500;
-					text-align: center;
-					margin: 1rem 0 1rem 0;
-					letter-spacing: 0.0675rem;
-					&-decoration {
-						background: linear-gradient(
-							transparent 60%,
-							yellow 30%
-						);
-					}
-				}
-				&-png {
-					display: inline-block;
-					position: relative;
-					margin-bottom: 0.8125rem;
-					width: 100%;
-					padding-bottom: 1rem;
-					&-underbar {
-						position: absolute;
-						bottom: 0;
-						left: 0;
-						width: 100%;
-						border-bottom: dashed 2px #5f8934;
-					}
-				}
-			}
-			&-list {
-				position: relative;
-				z-index: 1;
-				@media screen and (max-width: 767px) {
-					display: none;
-				}
-				&-item {
-					text-align: center;
-					font-weight: 500;
-					font-size: 1rem;
-					text-align: center;
-					letter-spacing: 0.06rem;
-					&-sub {
-						font-family: var(--josefin-sans);
-						font-size: 0.8rem;
-						color: #5f8934;
-						letter-spacing: 0.0975rem;
-						font-weight: 400;
-						margin: 0.625rem 0 1.56rem 0;
-					}
-				}
-			}
-			.blue-flower-left {
-				position: absolute;
-				top: 5%;
-				left: 0;
-				overflow: hidden;
-				opacity: 0.5;
-				@media screen and (max-width: 767px) {
-					display: none;
-				}
-			}
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 2rem 0 2rem;
+    height: 100vh;
+    gap: 3rem;
+    @media screen and (max-width: 767px) {
+      display: flex;
+      flex-direction: column;
+      height: 80vh;
+      margin: 1rem;
+    }
+    &-slideShow {
+      position: relative;
+      top: -6%;
+      width: 640px;
+      height: 650px;
+      border-radius: 20px;
+      background-color: aqua;
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        top: 0;
+      }
+      &-scroll {
+        position: absolute;
+        bottom: 1%;
+        left: -2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        &-text {
+          font-family: var(--josefin-sans);
+          font-size: 0.7rem;
+          font-weight: 400;
+          writing-mode: vertical-rl;
+          letter-spacing: 0.045rem;
+        }
+        &-line {
+          display: inline-block;
+          width: 1px;
+          height: 2rem;
+          background-color: #b2b2b2;
+        }
+      }
+    }
+    &-nav {
+      position: relative;
+      width: 470px;
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      align-items: center;
+      padding-left: 2%;
+      padding-right: 2%;
+      background-color: white;
+      border-radius: 15px;
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        padding: 2%;
+      }
+      &-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &-logo {
+          position: absolute;
+          top: -10%;
+          @media screen and (max-width: 767px) {
+            width: 120px;
+            top: -65%;
+          }
+        }
+        &-en {
+          font-size: 1.1rem;
+          font-weight: 400;
+          font-family: var(--josefin-sans);
+          letter-spacing: 0.03rem;
+          color: #5f8934;
+          margin-top: 8.3rem;
+          @media screen and (max-width: 767px) {
+            display: none;
+          }
+        }
+        &-discription {
+          font-size: 1.1rem;
+          font-weight: 500;
+          text-align: center;
+          margin: 1rem 0 1rem 0;
+          letter-spacing: 0.0675rem;
+          &-decoration {
+            background: linear-gradient(transparent 60%, yellow 30%);
+          }
+        }
+        &-png {
+          display: inline-block;
+          position: relative;
+          margin-bottom: 0.8125rem;
+          width: 100%;
+          padding-bottom: 1rem;
+          &-underbar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            border-bottom: dashed 2px #5f8934;
+          }
+        }
+      }
+      &-list {
+        position: relative;
+        z-index: 1;
+        @media screen and (max-width: 767px) {
+          display: none;
+        }
+        &-item {
+          text-align: center;
+          font-weight: 500;
+          font-size: 1rem;
+          text-align: center;
+          letter-spacing: 0.06rem;
+          &-sub {
+            font-family: var(--josefin-sans);
+            font-size: 0.8rem;
+            color: #5f8934;
+            letter-spacing: 0.0975rem;
+            font-weight: 400;
+            margin: 0.625rem 0 1.56rem 0;
+          }
+        }
+      }
+      .blue-flower-left {
+        position: absolute;
+        top: 5%;
+        left: 0;
+        overflow: hidden;
+        opacity: 0.5;
+        @media screen and (max-width: 767px) {
+          display: none;
+        }
+      }
 
-			.blue-flower-right {
-				position: absolute;
-				top: 6%;
-				right: -1rem;
-				overflow: hidden;
-				opacity: 0.5;
-				@media screen and (max-width: 767px) {
-					display: none;
-				}
-			}
-			.pink-flower {
-				position: absolute;
-				bottom: -2rem;
-				right: -1rem;
-				z-index: 0;
-				opacity: 0.5;
-				@media screen and (max-width: 767px) {
-					display: none;
-				}
-			}
-		}
-	}
+      .blue-flower-right {
+        position: absolute;
+        top: 6%;
+        right: -1rem;
+        overflow: hidden;
+        opacity: 0.5;
+        @media screen and (max-width: 767px) {
+          display: none;
+        }
+      }
+      .pink-flower {
+        position: absolute;
+        bottom: -2rem;
+        right: -1rem;
+        z-index: 0;
+        opacity: 0.5;
+        @media screen and (max-width: 767px) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .scroll {
+    display: none;
+  }
+
+  .scrolldown1 {
+    display: none;
+  }
+
+  @media screen and (max-width: 767px) {
+    .scroll {
+      display: block;
+      width: 100%;
+      height: 10rem;
+      margin-top: 3rem;
+    }
+
+    .scrolldown1 {
+      /*描画位置※位置は適宜調整してください*/
+      display: block;
+      position: relative;
+      top: 3rem;
+      right: 5px;
+      margin-left: 50%;
+
+      /*全体の高さ*/
+      height: 50px;
+    }
+
+    /*Scrollテキストの描写*/
+    .scrolldown1 span {
+      /*描画位置*/
+      position: relative;
+      left: -20px;
+      top: 3.5rem;
+      /*テキストの形状*/
+      color: black;
+      font-size: 10px;
+      letter-spacing: 0.6px;
+    }
+
+    /* 線の描写 */
+    .scrolldown1::after {
+      content: "";
+      /*描画位置*/
+      position: absolute;
+      left: 0px;
+      top: -15px;
+      /*線の形状*/
+      width: 1px;
+      height: 30px;
+      background: black;
+      /*線の動き1.4秒かけて動く。永遠にループ*/
+      animation: pathmove 1.4s ease-in-out infinite;
+      opacity: 0;
+    }
+
+    /*高さ・位置・透過が変化して線が上から下に動く*/
+    @keyframes pathmove {
+      0% {
+        height: 0;
+        top: 0;
+        opacity: 0;
+      }
+      30% {
+        height: 30px;
+        opacity: 1;
+      }
+      100% {
+        height: 0;
+        top: 50px;
+        opacity: 0;
+      }
+    }
+  }
 </style>

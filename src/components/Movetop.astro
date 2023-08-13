@@ -1,0 +1,48 @@
+---
+---
+
+<div class="top-move-button">
+  <div class="top-move-button-text">
+    <img src="public/svgs/up-arrow.svg" alt="#" />TOP PAGE
+  </div>
+</div>
+
+<style>
+  .top-move-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12.125rem;
+    height: 3rem;
+    background-color: #648a45;
+    border-radius: 15px 0 0 0;
+    margin-left: auto;
+  }
+
+  .top-move-button-text {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    font-size: 1.325rem;
+    font-family: var(--josefin-sans);
+    font-weight: normal;
+    letter-spacing: 1.05px;
+    color: #ffffff;
+  }
+
+  @media screen and (max-width: 389px) {
+    .top-move-button {
+      width: 50%;
+      height: 2.5rem;
+    }
+
+    .top-move-button-text {
+      font-size: 1rem;
+      gap: 0.6rem;
+      letter-spacing: 0.76px;
+    }
+    .top-move-button-text img {
+      height: 0.9rem;
+    }
+  }
+</style>

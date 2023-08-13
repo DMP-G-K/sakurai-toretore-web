@@ -9,7 +9,15 @@ export interface Props {
   link?: string;
 }
 
-let { bg = "gray", text = "black", outlined = false, icon = false, size = "lg", input = "", link = "#" } = Astro.props;
+let {
+  bg = "gray",
+  text = "black",
+  outlined = false,
+  icon = false,
+  size = "lg",
+  input = "",
+  link = "#",
+} = Astro.props;
 
 let sizeClass = size === "sm" ? "small-button" : "large-button";
 let borderClass = outlined ? "bordered" : "borderless";
@@ -74,5 +82,15 @@ let iconClass = icon ? "icon-visible" : "icon-hidden";
   }
   .icon-hidden {
     display: none;
+  }
+
+  @media screen and (max-width: 389px) {
+    .small-button {
+      width: 9rem;
+    }
+
+    .large-button {
+      width: 10rem;
+    }
   }
 </style>
