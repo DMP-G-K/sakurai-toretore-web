@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout2.astro";
 import TableOfContents from "../components/TableOfContents.astro";
 import Footer from "../components/Footer.vue";
 import Subtitle from "../components/Subtitle.astro";
+import ParkingCarousel from "../components/ParkingCarousel.vue";
 
 const contents = [
   "店舗情報・アクセス",
@@ -33,7 +34,7 @@ const contents = [
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <div class="detail">
-        <div>
+        <div class="detail-content-wrapper">
           <p class="detail-title">所在地</p>
           <p class="detail-content">
             〒633-0062 奈良県桜井市大字粟殿72番地 (<a
@@ -42,15 +43,15 @@ const contents = [
             >)
           </p>
         </div>
-        <div>
+        <div class="detail-content-wrapper">
           <p class="detail-title">営業時間</p>
           <p class="detail-content">8：45～18：00（年末年始を除く）</p>
         </div>
-        <div>
+        <div class="detail-content-wrapper">
           <p class="detail-title">TEL</p>
           <p class="detail-content">0744- 45-1011</p>
         </div>
-        <div>
+        <div class="detail-content-wrapper">
           <p class="detail-title">FAX</p>
           <p class="detail-content">050-3588-2346</p>
         </div>
@@ -58,91 +59,17 @@ const contents = [
     </div>
     <div id="section-1" class="parking">
       <div class="sub-title">
-        <Subtitle ja="お知らせ" decoration={true} />
+        <Subtitle ja="駐車場" decoration={true} />
       </div>
       <div class="detail">
-        <div
-          id="controls-carousel"
-          class="relative w-full"
-          data-carousel="static"
-        >
-          <div class="parking-image-wrapper relative h-56 overflow-hidden">
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-              <img
-                src="/svgs/test.jpg"
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              />
-            </div>
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-              <img
-                src="/svgs/test.jpg"
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              />
-            </div>
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-              <img
-                src="/svgs/test.jpg"
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              />
-            </div>
-          </div>
-          <button
-            type="button"
-            class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-            data-carousel-prev
-          >
-            <span
-              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
-            >
-              <svg
-                class="w-4 h-4 text-white dark:text-gray-800"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 6 10"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 1 1 5l4 4"></path>
-              </svg>
-              <span class="sr-only">Previous</span>
-            </span>
-          </button>
-          <button
-            type="button"
-            class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-            data-carousel-next
-          >
-            <span
-              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
-            >
-              <svg
-                class="w-4 h-4 text-white dark:text-gray-800"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 6 10"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="m1 9 4-4-4-4"></path>
-              </svg>
-              <span class="sr-only">Next</span>
-            </span>
-          </button>
+        <div class="parking-image-wrapper">
+          <ParkingCarousel />
         </div>
-
-        <div>
+        <div class="detail-content-wrapper">
           <p class="detail-title">駐車場</p>
           <p class="detail-content">50台</p>
         </div>
-        <div>
+        <div class="detail-content-wrapper">
           <p class="detail-title">お支払方法</p>
           <p class="detail-content">
             キャッシュレス対応（paypay・メルペイ・d払い）
@@ -236,7 +163,7 @@ const contents = [
         <Subtitle ja="運営会社" decoration={true} />
       </div>
       <div class="company-image">
-        <img src="#" />
+        <img src="https://source.unsplash.com/F6-U5fGAOik" />
       </div>
       <div class="company-info">
         <div>
@@ -285,15 +212,33 @@ const contents = [
       <div class="employee-guidelines">
         <h3 class="employee-guidelines-title">社員行動指針</h3>
         <ul>
-          <li><span class="employee-guidelines-number">1.</span> 常に「生理」「整頓」「清潔」を心掛ける。</li>
-          <li><span class="employee-guidelines-number">2.</span> 訪れるすべての方々に、笑顔と真心を込めて接する。</li>
-          <li><span class="employee-guidelines-number">3.</span> 自分自身の行動を客観的にみつめる。</li>
-          <li><span class="employee-guidelines-number">4.</span> 他社からの指摘には感謝し、成長の糧とする。</li>
-          <li><span class="employee-guidelines-number">5.</span> 自分の役割をよく考え、その役割に徹底集中する。</li>
-          <li><span class="employee-guidelines-number">6.</span> 上司の指示命令を遵守し、率先して行動する。</li>
-          <li><span class="employee-guidelines-number">7.</span> お客さま、生産者さま、組織人としての目線で物事を考える。</li>
-          <li><span class="employee-guidelines-number">8.</span> 個人で判断せず、上司へ連絡、相談、報告を徹底する。</li>
-          <li><span class="employee-guidelines-number">9.</span> 知恵と工夫をもって職務にあたる。</li>
+          <li>
+            <span class="employee-guidelines-number">1.</span> 常に「生理」「整頓」「清潔」を心掛ける。
+          </li>
+          <li>
+            <span class="employee-guidelines-number">2.</span> 訪れるすべての方々に、笑顔と真心を込めて接する。
+          </li>
+          <li>
+            <span class="employee-guidelines-number">3.</span> 自分自身の行動を客観的にみつめる。
+          </li>
+          <li>
+            <span class="employee-guidelines-number">4.</span> 他社からの指摘には感謝し、成長の糧とする。
+          </li>
+          <li>
+            <span class="employee-guidelines-number">5.</span> 自分の役割をよく考え、その役割に徹底集中する。
+          </li>
+          <li>
+            <span class="employee-guidelines-number">6.</span> 上司の指示命令を遵守し、率先して行動する。
+          </li>
+          <li>
+            <span class="employee-guidelines-number">7.</span> お客さま、生産者さま、組織人としての目線で物事を考える。
+          </li>
+          <li>
+            <span class="employee-guidelines-number">8.</span> 個人で判断せず、上司へ連絡、相談、報告を徹底する。
+          </li>
+          <li>
+            <span class="employee-guidelines-number">9.</span> 知恵と工夫をもって職務にあたる。
+          </li>
         </ul>
       </div>
       <div class="representative-message">
@@ -371,9 +316,6 @@ const contents = [
     <Footer client:load />
   </main>
 
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"
-  ></script>
   <style>
     main {
       background-color: #fff9e0;
@@ -416,11 +358,12 @@ const contents = [
     }
 
     .detail {
-      padding: 0 140px;
+      width: 74%;
+      margin: auto;
       text-align: center;
     }
 
-    .detail > div {
+    .detail-content-wrapper {
       display: flex;
     }
 
@@ -458,15 +401,7 @@ const contents = [
     }
 
     .parking-image-wrapper {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 40px;
-    }
-
-    .parking-image-wrapper > img {
-      width: 23%;
-      height: 200px;
-      border-radius: 10px;
+      margin-top: 30px;
     }
 
     .friend {
@@ -768,7 +703,7 @@ const contents = [
         margin: auto;
       }
 
-      .detail > div {
+      .detail-content-wrapper {
         display: block;
       }
 
@@ -789,14 +724,6 @@ const contents = [
       #controls-carousel {
         padding-bottom: 30px;
         border-bottom: 1px solid #5f8934;
-      }
-
-      .parking-image-wrapper {
-        width: 100%;
-      }
-
-      .parking-image-wrapper > img {
-        width: 100%;
       }
 
       .friend {
@@ -975,7 +902,7 @@ const contents = [
 
       .birth {
         padding-bottom: 30px;
-        border-bottom: 1px solid #5f8934
+        border-bottom: 1px solid #5f8934;
       }
     }
   </style>
