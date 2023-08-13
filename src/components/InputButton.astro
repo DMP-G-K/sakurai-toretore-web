@@ -1,0 +1,167 @@
+---
+---
+
+<div id="display-input-button">
+  <div class="flex justify-center">
+    <a href="javascript:void(0)" onclick="displayConfirm();">
+      <div class="default large-button bordered white primary">
+        <img class="icon-hidden" src="svgs/shopping-cart.svg" alt="" />
+        <p>入力内容確認</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div id="display-confirm-button" class="hidden">
+  <div class="justify-around md:flex">
+    <a class="my-4" href="javascript:void(0)" onclick="displayInput();">
+      <div class="default large-button borderless gray white m-auto my-3">
+        <img class="icon-hidden" src="svgs/shopping-cart.svg" alt="" />
+        <p>修正する</p>
+      </div>
+    </a>
+
+    <a class="my-4" href="javascript:void(0)" onclick="sendData();">
+      <div class="default large-button bordered white primary mx-auto my-3">
+        <img class="icon-hidden" src="svgs/shopping-cart.svg" alt="" />
+        <p>送信する</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<script is:inline>
+  function displayConfirm() {
+    document.querySelectorAll("input").forEach((element) => {
+      element.style.border = "none";
+      element.style.padding = "0";
+
+      element.disabled = true;
+    });
+
+    document.querySelectorAll("textarea").forEach((element) => {
+      element.style.border = "none";
+      element.style.padding = "0";
+      element.style.resize = "none";
+
+      element.disabled = true;
+    });
+
+    document.querySelectorAll("select").forEach((element) => {
+      element.style.border = "none";
+      element.style.padding = "0";
+      element.style.backgroundImage = "none";
+
+      element.disabled = true;
+    });
+
+    document.querySelectorAll(".required").forEach((element) => {
+      element.style.display = "none";
+    });
+
+    document.querySelectorAll(".confirm-hidden-area").forEach((element) => {
+      element.style.display = "none";
+    });
+
+    document.getElementById("display-input-button").style.display = "none";
+    document.getElementById("display-confirm-button").style.display = "block";
+    return false;
+  }
+
+  function displayInput() {
+    document.querySelectorAll("input").forEach((element) => {
+      element.style.border = "1px solid #dddddd";
+      element.style.padding = "0 0 0 10px";
+
+      element.disabled = false;
+    });
+
+    document.querySelectorAll("textarea").forEach((element) => {
+      element.style.border = "1px solid #dddddd";
+      element.style.padding = "0 0 0 10px";
+      element.style.resize = "vertical";
+
+      element.disabled = false;
+    });
+
+    document.querySelectorAll("select").forEach((element) => {
+      element.style.border = "1px solid #dddddd";
+      element.style.padding = "0 10px";
+      element.style.backgroundImage = "";
+
+      element.disabled = false;
+    });
+
+    document.querySelectorAll(".required").forEach((element) => {
+      element.style.display = "inline-block";
+    });
+
+    document.querySelectorAll(".confirm-hidden-area").forEach((element) => {
+      element.style.display = "block";
+    });
+
+    document.getElementById("display-input-button").style.display = "block";
+    document.getElementById("display-confirm-button").style.display = "none";
+    return false;
+  }
+
+  function sendData() {
+    document.inputForm.submit();
+
+    return false;
+  }
+</script>
+
+<style>
+  .default {
+    height: 3rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .default:hover {
+    opacity: 0.8;
+  }
+
+  .small-button {
+    width: 12rem;
+  }
+  .large-button {
+    width: 16rem;
+  }
+  .bordered {
+    border: 1px solid var(--primary-color);
+  }
+  .borderless {
+    border: none;
+  }
+  .white {
+    background-color: var(--white-color);
+  }
+  .primary-variant {
+    background-color: var(--primary-variant-color);
+  }
+  .gray {
+    background-color: var(--gray-color);
+  }
+  .white {
+    color: var(--white-color);
+  }
+  .black {
+    color: var(--black-color);
+  }
+  .primary {
+    color: var(--primary-color);
+  }
+  .icon-visible {
+    display: block;
+    margin-right: 1rem;
+  }
+  .icon-hidden {
+    display: none;
+  }
+</style>

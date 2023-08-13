@@ -1,9 +1,9 @@
 ---
 import Layout from "../../layouts/Layout2.astro";
 import Footer from "../../components/Footer.vue";
-import Button from "../../components/Button.astro";
 import OpenModalButton from "../../components/OpenModalButton.vue";
 import Subtitle from "../../components/Subtitle.astro";
+import InputButton from "../../components/InputButton.astro";
 ---
 
 <Layout
@@ -327,7 +327,7 @@ import Subtitle from "../../components/Subtitle.astro";
             name="other_irectly_managed_store"
           />
         </div>
-        <div>
+        <div class="confirm-hidden-area">
           <label class="form-label"
             >同意事項<span class="required">必須</span></label
           >
@@ -338,16 +338,7 @@ import Subtitle from "../../components/Subtitle.astro";
             >
           </div>
         </div>
-        <div class="flex justify-center">
-          <Button
-            bg="white"
-            text="primary"
-            size="lg"
-            outlined={true}
-            input="入力内容確認"
-            link="/shippers/confirm"
-          />
-        </div>
+        <InputButton />
       </div>
     </div>
   </main>
@@ -434,28 +425,22 @@ import Subtitle from "../../components/Subtitle.astro";
     border-radius: 15px;
     width: 84%;
     margin: 60px auto;
-    padding: 60px 0 20px;
+    padding: 60px 0 60px;
     letter-spacing: 0.1em;
     line-height: 2;
   }
 
   input {
-    border: 1px solid #dddddd !important;
     height: 45px;
-    border-radius: 5px !important;
   }
 
   select {
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
-    background: none;
-    border: none;
     color: #333;
-    font-size: 16px;
     width: 100%;
     height: 100%;
-    padding: 0 10px;
   }
 
   .form-label {
@@ -500,34 +485,46 @@ import Subtitle from "../../components/Subtitle.astro";
   .kana {
     width: 50%;
     padding-left: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
   }
 
   .zip-code {
     width: 13%;
     margin: 0 10px;
     padding-left: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
   }
 
   .address {
     width: 100%;
     padding-left: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
   }
 
   .tel,
   .fax {
     width: 43%;
     padding-left: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
   }
 
   .email,
   .email-confirm {
     width: 71%;
     padding-left: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
   }
 
   .age {
     width: 14%;
     padding-left: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
   }
 
   .gender-wrapper {
@@ -535,8 +532,12 @@ import Subtitle from "../../components/Subtitle.astro";
     z-index: 1;
     height: 45px;
     width: 60%;
-    border-radius: 5px;
+  }
+
+  .gender {
     border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 0 10px;
   }
 
   .account-number-wrapper {
@@ -551,6 +552,8 @@ import Subtitle from "../../components/Subtitle.astro";
   .account-number-wrapper > input {
     margin-right: 15px;
     padding-left: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
   }
 
   .branch-number {
@@ -566,21 +569,23 @@ import Subtitle from "../../components/Subtitle.astro";
   .agricultural-products {
     width: 100%;
     padding-left: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
   }
 
   .planted-area {
     width: 43%;
     padding-left: 10px;
-  }
-
-  .planted-area {
+    border: 1px solid #dddddd;
+    border-radius: 5px;
     margin-right: 15px;
-    padding-left: 10px;
   }
 
   .other-irectly-managed-store {
     width: 100%;
     padding-left: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
   }
 
   .agreement {

@@ -1,8 +1,12 @@
 ---
 import Layout from "../../layouts/Layout2.astro";
 import Footer from "../../components/Footer.vue";
-import Button from "../../components/Button.astro";
 import Subtitle from "../../components/Subtitle.astro";
+import InputButton from "../../components/InputButton.astro";
+
+if (Astro.request.method === "POST") {
+  const formData = await Astro.request.formData();
+}
 ---
 
 <Layout
@@ -14,57 +18,56 @@ import Subtitle from "../../components/Subtitle.astro";
   <main>
     <div class="contacts">
       <Subtitle ja="お問い合わせ" decoration={true} />
-      <div class="input">
-        <div>
-          <label>お名前<span class="required">必須</span></label>
-          <input class="name" type="text" name="name" />
-        </div>
-        <div>
-          <label>ふりがな<span class="required">必須</span></label>
-          <input class="kana" type="text" name="kana" />
-        </div>
-        <div>
-          <label>郵便番号<span class="required">必須</span></label>
+      <form
+        action="/contacts/complete"
+        method="post"
+        name="inputForm"
+        data-netlify="true"
+      >
+        <div class="input">
           <div>
-            〒 <input class="zip_code" type="text" name="zip_code1" /> - <input
-              class="zip_code"
-              type="text"
-              name="zip_code2"
-            />
+            <label>お名前<span class="required">必須</span></label>
+            <input class="name" type="text" name="name" />
           </div>
+          <div>
+            <label>ふりがな<span class="required">必須</span></label>
+            <input class="kana" type="text" name="kana" />
+          </div>
+          <div>
+            <label>郵便番号<span class="required">必須</span></label>
+            <div>
+              〒 <input class="zip_code" type="text" name="zip_code1" /> - <input
+                class="zip_code"
+                type="text"
+                name="zip_code2"
+              />
+            </div>
+          </div>
+          <div>
+            <label>住所<span class="required">必須</span></label>
+            <input class="address" type="text" name="address" />
+          </div>
+          <div>
+            <label>電話番号<span class="required">必須</span></label>
+            <input class="tel" type="text" name="tel" />
+          </div>
+          <div>
+            <label>メールアドレス<span class="required">必須</span></label>
+            <input class="email" type="text" name="email" />
+          </div>
+          <div>
+            <label>確認用メールアドレス<span class="required">必須</span></label
+            >
+            <input class="email-confirm" type="text" name="email_confirm" />
+          </div>
+          <div>
+            <label>お問い合わせ内容<span class="required">必須</span></label>
+            <textarea class="content" name="content" rows="10" cols="50"
+            ></textarea>
+          </div>
+          <InputButton />
         </div>
-        <div>
-          <label>住所<span class="required">必須</span></label>
-          <input class="address" type="text" name="address" />
-        </div>
-        <div>
-          <label>電話番号<span class="required">必須</span></label>
-          <input class="tel" type="text" name="tel" />
-        </div>
-        <div>
-          <label>メールアドレス<span class="required">必須</span></label>
-          <input class="email" type="text" name="email" />
-        </div>
-        <div>
-          <label>確認用メールアドレス<span class="required">必須</span></label>
-          <input class="email-confirm" type="text" name="email_confirm" />
-        </div>
-        <div>
-          <label>お問い合わせ内容<span class="required">必須</span></label>
-          <textarea class="content" name="content" rows="10" cols="50"
-          ></textarea>
-        </div>
-        <div class="flex justify-center">
-          <Button
-            bg="white"
-            text="primary"
-            size="lg"
-            outlined={true}
-            input="入力内容確認"
-            link="/contacts/confirm"
-          />
-        </div>
-      </div>
+      </form>
     </div>
     <Footer client:load />
   </main>
@@ -78,37 +81,45 @@ import Subtitle from "../../components/Subtitle.astro";
   }
 
   input {
-    border: 1px solid #dddddd !important;
     height: 45px;
-    border-radius: 5px !important;
   }
 
   .name,
   .kana {
     width: 50%;
     padding-left: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
   }
 
   .zip_code {
     width: 13%;
     margin: 0 10px;
     padding-left: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
   }
 
   .address {
     width: 100%;
     padding-left: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
   }
 
   .tel {
     width: 43%;
     padding-left: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
   }
 
   .email,
   .email-confirm {
     width: 71%;
     padding-left: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
   }
 
   .content {
@@ -116,6 +127,8 @@ import Subtitle from "../../components/Subtitle.astro";
     border: 1px solid #dddddd;
     border-radius: 5px;
     padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
   }
 
   .input > div {
@@ -143,7 +156,7 @@ import Subtitle from "../../components/Subtitle.astro";
     border-radius: 15px;
     width: 84%;
     margin: 60px auto;
-    padding: 60px 0 20px;
+    padding: 60px 0 60px;
     letter-spacing: 0.1em;
     line-height: 2;
   }
