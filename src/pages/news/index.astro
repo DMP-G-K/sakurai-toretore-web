@@ -16,7 +16,11 @@ type PickedNews = Pick<News, "id" | "title" | "eyecatch">;
           <li>
             <a href={`news/${content.id}`}>{content.title}</a>
             <div>
-              <img src={content.eyecatch.url} width="200" alt="アイキャッチ画像" />
+              <img
+                src={content.eyecatch.url}
+                width="200"
+                alt="アイキャッチ画像"
+              />
             </div>
           </li>
         ))
