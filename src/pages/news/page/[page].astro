@@ -3,6 +3,7 @@ import Layout from "../../../layouts/Layout2.astro";
 import Footer from "../../../components/Footer.vue";
 import Subtitle from "../../../components/Subtitle.astro";
 import PaginationList from "../../../components/PaginationList.svelte";
+import Movetop from "../../../components/Movetop.astro";
 
 // microCMS呼び出し
 import { News, getNews } from "../../../library/microcms";
@@ -77,6 +78,7 @@ const { page } = Astro.props;
       </div>
     </div>
     <PaginationList {page} />
+    <Movetop />
     <Footer client:load />
   </main>
 </Layout>
