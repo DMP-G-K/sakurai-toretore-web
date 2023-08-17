@@ -31,8 +31,43 @@
 </div>
 
 <script is:inline>
+  function errorCheck() {
+    result = true;
+    document.querySelectorAll("input[type='text']").forEach((element) => {
+      if (element.value === "") {
+        result = false;
+      }
+    });
+
+    document.querySelectorAll("textarea").forEach((element) => {
+      if (element.value === "") {
+        result = false;
+      }
+    });
+
+    document.querySelectorAll("select").forEach((element) => {
+      if (element.value === "") {
+        result = false;
+      }
+    });
+
+    document.querySelectorAll("input[type='checkbox']").forEach((element) => {
+      if (element.checked === false) {
+        result = false;
+      }
+    });
+
+    return result;
+  }
+
   function displayConfirm() {
-    document.querySelectorAll("input").forEach((element) => {
+    errorFlg = errorCheck();
+    if (errorFlg === false) {
+      confirm("未入力の項目があります。");
+      return false;
+    }
+
+    document.querySelectorAll("input[type='text']").forEach((element) => {
       element.style.border = "none";
       element.style.padding = "0";
 
