@@ -13,9 +13,18 @@
   </div>
   <div class="hidden md:block">
     <div class="flex justify-between">
-      <img class="parking-image" src="/svgs/test.jpg" />
-      <img class="parking-image" src="/svgs/test.jpg" />
-      <img class="parking-image" src="/svgs/test.jpg" />
+      <img
+        class="parking-image rounded-xl"
+        src="https://source.unsplash.com/NRK0scYosqc"
+      />
+      <img
+        class="parking-image rounded-xl"
+        src="https://source.unsplash.com/X-3CqrZd6R0"
+      />
+      <img
+        class="parking-image rounded-xl"
+        src="https://source.unsplash.com/DkGUn0Y1VzA"
+      />
     </div>
   </div>
 </template>

@@ -13,7 +13,12 @@ const { contents } = Astro.props;
       contents.map((item, index) => (
         <li class="items-center">
           <a href={`#section-${index}`}>
-            <img class="inline" src="svgs/down-arrow.svg" alt="" />
+            <img
+              class="inline"
+              src="/svgs/down-arrow.svg"
+              alt=""
+              width="25px"
+            />
             {item}
           </a>
         </li>
