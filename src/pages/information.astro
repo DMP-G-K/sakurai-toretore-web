@@ -29,6 +29,7 @@ const contents = [
       <div class="google-map">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1643.7121982738595!2d135.85046854912122!3d34.51747418585241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6006cb31180a31b5%3A0x97acdb702587bd7e!2z44GV44GP44KJ44GE44Go44KM44Go44KM5biC5aC0!5e0!3m2!1sja!2sjp!4v1689658589968!5m2!1sja!2sjp"
+          class="rounded-xl"
           style="border:0;"
           allowfullscreen=""
           loading="lazy"
@@ -88,7 +89,12 @@ const contents = [
           奈良県で一番リピート率の高いという整骨院です。一般診療、交通事故治療、実費治療と様々なメニューがあります。
         </p>
         <div class="friend-info-wrapper">
-          <img src="#" />
+          <div class="friend-info-image">
+            <img
+              class="object-cover rounded-xl"
+              src="https://source.unsplash.com/P1IhmLjxW5M"
+            />
+          </div>
           <div class="friend-info">
             <div>
               <p class="friend-info-title">電話</p>
@@ -113,7 +119,12 @@ const contents = [
           2019年10月にオープン。山形産の牛肉を中心に、質のよいお肉をリーズナブルな価格で提供。丁寧に処理しており、肉のおいしさを堪能できます。揚げたてのコロッケ、串カツ、民地活をはじめ焼きステーキの販売も行っています。
         </p>
         <div class="friend-info-wrapper">
-          <img src="#" />
+          <div class="friend-info-image">
+            <img
+              class="object-cover rounded-xl"
+              src="https://source.unsplash.com/hf_i6mm88pM"
+            />
+          </div>
           <div class="friend-info">
             <div>
               <p class="friend-info-title">電話</p>
@@ -133,7 +144,12 @@ const contents = [
           もちろん、とれとれ市場の朝どり野菜を使ったランチメニューも豊富で、地元の味を満喫できます。
         </p>
         <div class="friend-info-wrapper">
-          <img src="#" />
+          <div class="friend-info-image">
+            <img
+              class="object-cover rounded-xl"
+              src="https://source.unsplash.com/tKN1WXrzQ3s"
+            />
+          </div>
           <div class="friend-info">
             <div>
               <p class="friend-info-title">予算</p>
@@ -153,10 +169,22 @@ const contents = [
         </div>
       </div>
       <div class="friend-image-wrapper">
-        <img src="#" />
-        <img src="#" />
-        <img src="#" />
-        <img src="#" />
+        <img
+          class="object-cover"
+          src="https://source.unsplash.com/jUOaONoXJQk"
+        />
+        <img
+          class="object-cover"
+          src="https://source.unsplash.com/UMUCQcDdLws"
+        />
+        <img
+          class="object-cover"
+          src="https://source.unsplash.com/xCK8kr0R0JE"
+        />
+        <img
+          class="object-cover"
+          src="https://source.unsplash.com/TD4DBagg2wE"
+        />
       </div>
     </div>
     <div id="section-3" class="company">
@@ -164,7 +192,10 @@ const contents = [
         <Subtitle ja="運営会社" decoration={true} />
       </div>
       <div class="company-image">
-        <img src="https://source.unsplash.com/F6-U5fGAOik" />
+        <img
+          class="object-cover"
+          src="https://source.unsplash.com/4LJMXRR4pU0"
+        />
       </div>
       <div class="company-info">
         <div>
@@ -454,10 +485,8 @@ const contents = [
       display: flex;
     }
 
-    .friend-info-wrapper > img {
+    .friend-info-image {
       width: 27%;
-      height: 217px;
-      border-radius: 10px;
     }
 
     .friend-info {
@@ -736,7 +765,7 @@ const contents = [
         padding: 40px 0 80px;
       }
 
-      .friend-info-wrapper > img {
+      .friend-info-image {
         width: 100%;
         border-bottom: 1px solid #5f8934;
         padding-bottom: 25px;
@@ -824,6 +853,12 @@ const contents = [
       .company-image {
         width: 88%;
         margin: 50px auto;
+        border-bottom: 1px solid #5f8934;
+        padding-bottom: 25px;
+      }
+
+      .company-image > img {
+        height: auto;
       }
 
       .company-info {

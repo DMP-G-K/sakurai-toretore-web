@@ -111,9 +111,18 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
               <img src={content.mainVisual.url} alt="メインビジュアル" />
             ))
           }
-          <img src="" />
-          <img src="" />
-          <img src="" />
+          <img
+            class="object-cover"
+            src="https://source.unsplash.com/Y5n8mCpvlZU"
+          />
+          <img
+            class="object-cover"
+            src="https://source.unsplash.com/2GiRcLP_jkI"
+          />
+          <img
+            class="object-cover"
+            src="https://source.unsplash.com/OPZzH1WJ6jQ"
+          />
         </div>
         <div class="flex justify-center">
           <Button
@@ -279,7 +288,6 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
 
     .special-img-wrapper > img {
       width: 28%;
-      height: 230px;
     }
 
     @media screen and (max-width: 767px) {
