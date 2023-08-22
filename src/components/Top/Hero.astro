@@ -1,6 +1,9 @@
 <div class="hero">
   <div class="hero-slideShow">
-    <img src="" />
+    <img
+      class="hero-slideShow-image"
+      src="https://source.unsplash.com/k7EjzzK1uhk"
+    />
     <div class="hero-slideShow-scroll">
       <p class="hero-slideShow-scroll-text">SCROLL</p>
       <span class="hero-slideShow-scroll-line"></span>
@@ -124,10 +127,13 @@
       width: 640px;
       height: 650px;
       border-radius: 20px;
-      background-color: aqua;
       @media screen and (max-width: 767px) {
         width: 100%;
         top: 0;
+      }
+      &-image {
+        border-radius: 20px;
+        object-fit: cover;
       }
       &-scroll {
         position: absolute;
@@ -284,7 +290,6 @@
       display: block;
       width: 100%;
       height: 10rem;
-      margin-top: 3rem;
     }
 
     .scrolldown1 {
