@@ -62,29 +62,44 @@ type PickedNews = Pick<
           </div>
         </div>
         <article set:html={news.content} />
-        <p class="back-list">一覧に戻る</p>
+        <p class="back-list">
+          <a href="/news/page/1">
+            <svg
+              class="inline"
+              xmlns="http://www.w3.org/2000/svg"
+              height="20"
+              viewBox="0 -960 960 960"
+              width="20"
+              ><path d="M400-80 0-480l400-400 56 57-343 343 343 343-56 57Z"
+              ></path></svg
+            >一覧に戻る
+          </a>
+        </p>
       </div>
 
       <div class="news-list">
         {
           newsList.contents.map((content: PickedNews) => (
-            <div>
-              <a href={`news/${content.id}`} />
-              <img src={content.eyecatch.url} alt="アイキャッチ画像" />
-              <div class="news-list-category-wrapper">
-                <p class="news-list-date">
-                  {new Date(content.publishedAt).getFullYear() +
-                    "." +
-                    ("00" + new Date(content.publishedAt).getMonth()).slice(
-                      -2
-                    ) +
-                    "." +
-                    ("00" + new Date(content.publishedAt).getDate()).slice(-2)}
-                </p>
-                <p class="news-list-category">{content.category}</p>
+            <a href={`/news/${content.id}`}>
+              <div>
+                <img src={content.eyecatch.url} alt="アイキャッチ画像" />
+                <div class="news-list-category-wrapper">
+                  <p class="news-list-date">
+                    {new Date(content.publishedAt).getFullYear() +
+                      "." +
+                      ("00" + new Date(content.publishedAt).getMonth()).slice(
+                        -2
+                      ) +
+                      "." +
+                      ("00" + new Date(content.publishedAt).getDate()).slice(
+                        -2
+                      )}
+                  </p>
+                  <p class="news-list-category">{content.category}</p>
+                </div>
+                <p>{content.title}</p>
               </div>
-              <p>{content.title}</p>
-            </div>
+            </a>
           ))
         }
       </div>
@@ -118,20 +133,23 @@ type PickedNews = Pick<
 
   .back-list {
     margin-top: 50px;
-    padding-bottom: 60px;
+    margin-bottom: 60px;
     padding-left: 30px;
     position: relative;
     color: #5f8934;
     font-weight: bold;
   }
 
-  .back-list::before {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: url("/svgs/arrow_back.svg") no-repeat;
-    color: #5f8934;
+  .back-list > a {
+    fill: #5f8934;
+  }
+
+  .back-list > a:hover {
+    opacity: 0.7;
+  }
+
+  .back-list > a > svg {
+    margin-bottom: 3px;
   }
 
   .news-detail-title-wrapper {
@@ -167,7 +185,11 @@ type PickedNews = Pick<
     padding-top: 60px;
   }
 
-  .news-list > div {
+  .news-list > a:hover {
+    opacity: 0.7;
+  }
+
+  .news-list > a > div {
     width: 87%;
     margin: auto;
     padding-bottom: 30px;

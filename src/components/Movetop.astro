@@ -1,13 +1,36 @@
 ---
 ---
 
-<div class="top-move-button">
+<div id="page-top" class="top-move-button">
   <div class="top-move-button-text">
     <img src="public/svgs/up-arrow.svg" alt="#" />TOP PAGE
   </div>
 </div>
 
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/8-1-1/js/8-1-1.js"
+></script>
+<script>
+  $("#page-top").click(function () {
+    $("body,html").animate(
+      {
+        scrollTop: 0, //ページトップまでスクロール
+      },
+      500
+    ); //ページトップスクロールの速さ。数字が大きいほど遅くなる
+    return false; //リンク自体の無効化
+  });
+</script>
 <style>
+  #page-top:hover {
+    cursor: pointer;
+  }
+
   .top-move-button {
     display: flex;
     align-items: center;
