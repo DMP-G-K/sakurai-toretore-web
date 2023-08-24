@@ -1,4 +1,9 @@
 <div class="hero">
+  <div>
+    <img class="bg-circle-a" src="public/svgs/bg-circle.svg" alt="" />
+    <img class="bg-circle-b" src="public/svgs/bg-circle.svg" alt="" />
+    <img class="bg-circle-c" src="public/svgs/bg-circle.svg" alt="" />
+  </div>
   <div class="hero-slideShow">
     <img
       class="hero-slideShow-image"
@@ -120,6 +125,7 @@
       flex-direction: column;
       height: 80vh;
       margin: 1rem;
+      margin-top: 180px;
     }
     &-slideShow {
       position: relative;
@@ -130,10 +136,13 @@
       @media screen and (max-width: 767px) {
         width: 100%;
         top: 0;
+        margin-bottom: 35px;
       }
       &-image {
         border-radius: 20px;
         object-fit: cover;
+        height: 700px;
+        width: 100%;
       }
       &-scroll {
         position: absolute;
@@ -284,8 +293,46 @@
   .scrolldown1 {
     display: none;
   }
+  .bg-circle-a {
+    position: absolute;
+    right: -5rem;
+    top: -12rem;
+  }
+  .bg-circle-b {
+    position: absolute;
+    left: 50%;
+    top: 27rem;
+    width: 23%;
+    height: auto;
+  }
+
+  .bg-circle-c {
+    position: absolute;
+    width: 20%;
+    height: auto;
+    left: 40%;
+    top: 2rem;
+  }
 
   @media screen and (max-width: 767px) {
+    .bg-circle-a {
+      position: absolute;
+      left: -5rem;
+      top: -12rem;
+    }
+    .bg-circle-b {
+      display: none;
+    }
+
+    .bg-circle-c {
+      position: absolute;
+      width: 35%;
+      height: auto;
+      right: -5rem;
+      top: 45rem;
+      left: auto;
+    }
+
     .scroll {
       display: block;
       width: 100%;
