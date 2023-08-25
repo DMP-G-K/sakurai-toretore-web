@@ -90,7 +90,7 @@ const emitClose = () => emit("close");
   position: absolute;
   top: -4rem;
   right: -5rem;
-  overflow: auto;
+  line-height: 1px;
   display: grid;
   justify-content: center;
   align-items: center;

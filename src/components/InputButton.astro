@@ -15,10 +15,10 @@
 <div id="display-confirm-button" class="hidden">
   <div class="justify-around md:flex">
     <a class="my-4" href="javascript:void(0)" onclick="displayInput();">
-          <di  v class="default large-button borderless gray white m-auto my-3">
+      <div class="default large-button borderless gray white m-auto my-3">
         <img class="icon-hidden" src="svgs/shopping-cart.svg" alt="" />
         <p>修正する</p>
-      </di>
+      </div>
     </a>
 
     <a class="my-4" href="javascript:void(0)" onclick="sendData();">
@@ -31,120 +31,129 @@
 </div>
 
 <script is:inline>
-function errorCheck() {
-  result = true;
-  document.querySelectorAll("input[type='text']").forEach((element) => {
-    if (element.value === "") {
-      result = false;
+  function errorCheck() {
+    result = true;
+    document.querySelectorAll("input[type='text']").forEach((element) => {
+      if (
+        element.classList.contains("required-input") === true &&
+        element.value === ""
+      ) {
+        result = false;
+      }
+    });
+
+    document.querySelectorAll("textarea").forEach((element) => {
+      if (
+        element.classList.contains("required-input") === true &&
+        element.value === ""
+      ) {
+        result = false;
+      }
+    });
+
+    document.querySelectorAll("select").forEach((element) => {
+      if (
+        element.classList.contains("required-input") === true &&
+        element.value === ""
+      ) {
+        result = false;
+      }
+    });
+
+    document.querySelectorAll("input[type='checkbox']").forEach((element) => {
+      if (element.checked === false) {
+        result = false;
+      }
+    });
+
+    return result;
+  }
+
+  function displayConfirm() {
+    errorFlg = errorCheck();
+    if (errorFlg === false) {
+      confirm("未入力の項目があります。");
+      return false;
     }
-  });
 
-  document.querySelectorAll("textarea").forEach((element) => {
-    if (element.value === "") {
-      result = false;
-    }
-  });
+    document.querySelectorAll("input[type='text']").forEach((element) => {
+      element.style.border = "none";
+      element.style.padding = "0";
 
-  document.querySelectorAll("select").forEach((element) => {
-    if (element.value === "") {
-      result = false;
-    }
-  });
+      element.disabled = true;
+    });
 
-  document.querySelectorAll("input[type='checkbox']").forEach((element) => {
-    if (element.checked === false) {
-      result = false;
-    }
-  });
+    document.querySelectorAll("textarea").forEach((element) => {
+      element.style.border = "none";
+      element.style.padding = "0";
+      element.style.resize = "none";
 
-  return result;
-}
+      element.disabled = true;
+    });
 
-function displayConfirm() {
-  errorFlg = errorCheck();
-  if (errorFlg === false) {
-    confirm("未入力の項目があります。");
+    document.querySelectorAll("select").forEach((element) => {
+      element.style.border = "none";
+      element.style.padding = "0";
+      element.style.backgroundImage = "none";
+
+      element.disabled = true;
+    });
+
+    document.querySelectorAll(".required").forEach((element) => {
+      element.style.display = "none";
+    });
+
+    document.querySelectorAll(".confirm-hidden-area").forEach((element) => {
+      element.style.display = "none";
+    });
+
+    document.getElementById("display-input-button").style.display = "none";
+    document.getElementById("display-confirm-button").style.display = "block";
     return false;
   }
 
-  document.querySelectorAll("input[type='text']").forEach((element) => {
-    element.style.border = "none";
-    element.style.padding = "0";
+  function displayInput() {
+    document.querySelectorAll("input").forEach((element) => {
+      element.style.border = "1px solid #dddddd";
+      element.style.padding = "0 0 0 10px";
 
-    element.disabled = true;
-  });
+      element.disabled = false;
+    });
 
-  document.querySelectorAll("textarea").forEach((element) => {
-    element.style.border = "none";
-    element.style.padding = "0";
-    element.style.resize = "none";
+    document.querySelectorAll("textarea").forEach((element) => {
+      element.style.border = "1px solid #dddddd";
+      element.style.padding = "0 0 0 10px";
+      element.style.resize = "vertical";
 
-    element.disabled = true;
-  });
+      element.disabled = false;
+    });
 
-  document.querySelectorAll("select").forEach((element) => {
-    element.style.border = "none";
-    element.style.padding = "0";
-    element.style.backgroundImage = "none";
+    document.querySelectorAll("select").forEach((element) => {
+      element.style.border = "1px solid #dddddd";
+      element.style.padding = "0 10px";
+      element.style.backgroundImage = "";
 
-    element.disabled = true;
-  });
+      element.disabled = false;
+    });
 
-  document.querySelectorAll(".required").forEach((element) => {
-    element.style.display = "none";
-  });
+    document.querySelectorAll(".required").forEach((element) => {
+      element.style.display = "inline-block";
+    });
 
-  document.querySelectorAll(".confirm-hidden-area").forEach((element) => {
-    element.style.display = "none";
-  });
+    document.querySelectorAll(".confirm-hidden-area").forEach((element) => {
+      element.style.display = "block";
+    });
 
-  document.getElementById("display-input-button").style.display = "none";
-  document.getElementById("display-confirm-button").style.display = "block";
-  return false;
-}
+    document.getElementById("display-input-button").style.display = "block";
+    document.getElementById("display-confirm-button").style.display = "none";
+    return false;
+  }
 
-function displayInput() {
-  document.querySelectorAll("input").forEach((element) => {
-    element.style.border = "1px solid #dddddd";
-    element.style.padding = "0 0 0 10px";
+  function sendData() {
+    document.inputForm.submit();
 
-    element.disabled = false;
-  });
-
-  document.querySelectorAll("textarea").forEach((element) => {
-    element.style.border = "1px solid #dddddd";
-    element.style.padding = "0 0 0 10px";
-    element.style.resize = "vertical";
-
-    element.disabled = false;
-  });
-
-  document.querySelectorAll("select").forEach((element) => {
-    element.style.border = "1px solid #dddddd";
-    element.style.padding = "0 10px";
-    element.style.backgroundImage = "";
-
-    element.disabled = false;
-  });
-
-  document.querySelectorAll(".required").forEach((element) => {
-    element.style.display = "inline-block";
-  });
-
-  document.querySelectorAll(".confirm-hidden-area").forEach((element) => {
-    element.style.display = "block";
-  });
-
-  document.getElementById("display-input-button").style.display = "block";
-  document.getElementById("display-confirm-button").style.display = "none";
-  return false;
-}
-
-function sendData() {
-  document.inputForm.submit();
-
-  return false;
-}
+    return false;
+  }
 </script>
 
 <style>

@@ -28,17 +28,21 @@ if (Astro.request.method === "POST") {
         <div class="input">
           <div>
             <label>お名前<span class="required">必須</span></label>
-            <input class="name" type="text" name="name" />
+            <input class="required-input name" type="text" name="name" />
           </div>
           <div>
             <label>ふりがな<span class="required">必須</span></label>
-            <input class="kana" type="text" name="kana" />
+            <input class="required-input kana" type="text" name="kana" />
           </div>
           <div>
             <label>郵便番号<span class="required">必須</span></label>
             <div>
-              〒 <input class="zip_code" type="text" name="zip_code1" /> - <input
-                class="zip_code"
+              〒 <input
+                class="required-input zip_code"
+                type="text"
+                name="zip_code1"
+              /> - <input
+                class="required-input zip_code"
                 type="text"
                 name="zip_code2"
               />
@@ -46,25 +50,32 @@ if (Astro.request.method === "POST") {
           </div>
           <div>
             <label>住所<span class="required">必須</span></label>
-            <input class="address" type="text" name="address" />
+            <input class="required-input address" type="text" name="address" />
           </div>
           <div>
             <label>電話番号<span class="required">必須</span></label>
-            <input class="tel" type="text" name="tel" />
+            <input class="required-input tel" type="text" name="tel" />
           </div>
           <div>
             <label>メールアドレス<span class="required">必須</span></label>
-            <input class="email" type="text" name="email" />
+            <input class="required-input email" type="text" name="email" />
           </div>
           <div>
             <label>確認用メールアドレス<span class="required">必須</span></label
             >
-            <input class="email-confirm" type="text" name="email_confirm" />
+            <input
+              class="required-input email-confirm"
+              type="text"
+              name="email_confirm"
+            />
           </div>
           <div>
             <label>お問い合わせ内容<span class="required">必須</span></label>
-            <textarea class="content" name="content" rows="10" cols="50"
-            ></textarea>
+            <textarea
+              class="required-input content"
+              name="content"
+              rows="10"
+              cols="50"></textarea>
           </div>
           <InputButton />
         </div>
