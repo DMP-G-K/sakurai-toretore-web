@@ -24,7 +24,7 @@ const contents = [
     <div class="table-of-contents">
       <TableOfContents contents={contents} />
     </div>
-    <div id="section-0" class="access">
+    <div id="section-0" class="access fadeUpTrigger">
       <Subtitle ja="店舗情報・アクセス" decoration={true} />
       <div class="google-map">
         <iframe
@@ -59,7 +59,7 @@ const contents = [
         </div>
       </div>
     </div>
-    <div id="section-1" class="parking">
+    <div id="section-1" class="parking fadeUpTrigger">
       <div class="sub-title">
         <Subtitle ja="駐車場" decoration={true} />
       </div>
@@ -79,7 +79,7 @@ const contents = [
         </div>
       </div>
     </div>
-    <div id="section-2" class="friend">
+    <div id="section-2" class="friend fadeUpTrigger">
       <div class="sub-title">
         <Subtitle ja="さくらいとれとれ市場の仲間たち" decoration={true} />
       </div>
@@ -166,7 +166,7 @@ const contents = [
         <img class="object-cover" src="/images/sol5.jpg" />
       </div>
     </div>
-    <div id="section-3" class="company">
+    <div id="section-3" class="company fadeUpTrigger">
       <div class="sub-title">
         <Subtitle ja="運営会社" decoration={true} />
       </div>
@@ -325,7 +325,57 @@ const contents = [
     <Footer client:load />
   </main>
 
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"
+  ></script>
+  <script is:inline>
+    function fadeAnime() {
+      $(".fadeUpTrigger").each(function () {
+        var elemPos = $(this).offset().top - 50;
+        var scroll = $(window).scrollTop();
+        var windowHeight = $(window).height();
+        if (scroll >= elemPos - windowHeight) {
+          $(this).addClass("fadeUp");
+        } else {
+          $(this).removeClass("fadeUp");
+        }
+      });
+    }
+
+    $(window).scroll(function () {
+      fadeAnime();
+    });
+
+    $(window).on("load", function () {
+      fadeAnime();
+    });
+  </script>
   <style>
+    .fadeUp {
+      animation-name: fadeUpAnime;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeUpAnime {
+      from {
+        opacity: 0;
+        transform: translateY(100px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fadeUpTrigger {
+      opacity: 0;
+    }
+
     main {
       background-color: #fff9e0;
       margin: auto;

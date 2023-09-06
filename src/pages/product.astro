@@ -35,7 +35,7 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
     <div class="table-of-contents">
       <TableOfContents contents={contents} />
     </div>
-    <div class="season">
+    <div class="season fadeUpTrigger">
       <Subtitle ja="旬の野菜" decoration={true} />
       <div id="section-0" class="summer-vegetable">
         <h3>夏野菜</h3>
@@ -96,7 +96,7 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
         </div>
       </div>
     </div>
-    <div id="section-2" class="special">
+    <div id="section-2" class="special fadeUpTrigger">
       <div class="sub-title">
         <Subtitle ja="地元特産品" decoration={true} />
       </div>
@@ -139,7 +139,58 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
     <Footer client:load />
   </main>
 
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"
+  ></script>
+  <script is:inline>
+    function fadeAnime() {
+      $(".fadeUpTrigger").each(function () {
+        var elemPos = $(this).offset().top - 50;
+        var scroll = $(window).scrollTop();
+        var windowHeight = $(window).height();
+        if (scroll >= elemPos - windowHeight) {
+          $(this).addClass("fadeUp");
+        } else {
+          $(this).removeClass("fadeUp");
+        }
+      });
+    }
+
+    $(window).scroll(function () {
+      fadeAnime();
+    });
+
+    $(window).on("load", function () {
+      fadeAnime();
+    });
+  </script>
+
   <style>
+    .fadeUp {
+      animation-name: fadeUpAnime;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeUpAnime {
+      from {
+        opacity: 0;
+        transform: translateY(100px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fadeUpTrigger {
+      opacity: 0;
+    }
+
     .table-of-contents {
       background-color: #ffffff;
       margin: auto;
