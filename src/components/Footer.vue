@@ -53,13 +53,7 @@
       <div class="address">
         <p class="address-text">〒633-0062</p>
         <p class="address-text">奈良県桜井市大字粟殿72番地</p>
-        <a
-          href="https://goo.gl/maps/Tv1WS7mGV4ooRfpM9"
-          target="_blank"
-          class="address-map"
-        >
-          Google map →
-        </a>
+        <a href="/information#section-0" class="address-map"> Google map → </a>
       </div>
       <div class="shopping-cart">
         <a href="#"

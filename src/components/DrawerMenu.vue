@@ -23,7 +23,7 @@
       </li>
       <li class="nav-text">
         <a href="/shippers"
-          >出品者募集
+          >出荷者募集
           <p class="nav-text-sub">SHIPPERS</p>
         </a>
       </li>
