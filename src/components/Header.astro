@@ -31,7 +31,7 @@ const { bgColor } = Astro.props;
     </a>
     <a href="/shippers">
       <li class="nav-text">
-        出品者募集<p class="nav-text-sub">SHIPPERS</p>
+        出荷者募集<p class="nav-text-sub">SHIPPERS</p>
       </li>
     </a>
     <a href="/contacts">
@@ -57,29 +57,29 @@ const { bgColor } = Astro.props;
 
 <style>
   .nav-text {
-		position: relative;
-		/*リンクの形状*/
-		text-decoration: none;
-		outline: none;
-	}
+    position: relative;
+    /*リンクの形状*/
+    text-decoration: none;
+    outline: none;
+  }
 
-	/*波形の設定*/
-	.nav-text:hover::before {
-		content: '';
-		/*絶対配置で波形の位置を決める*/
-		position: absolute;
-		left:30%;
-		top:0;
-		/*波形の形状*/
-		border: 1px solid #333;
-		width: 60px;
-		height: 60px;
-		border-radius: 50%;
-		/*はじめは不透明*/
-		opacity:1;
-		/*アニメーションの設定*/
-		animation:1s circleanime2 forwards;
-	}
+  /*波形の設定*/
+  .nav-text:hover::before {
+    content: "";
+    /*絶対配置で波形の位置を決める*/
+    position: absolute;
+    left: 30%;
+    top: 0;
+    /*波形の形状*/
+    border: 1px solid #333;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    /*はじめは不透明*/
+    opacity: 1;
+    /*アニメーションの設定*/
+    animation: 1s circleanime2 forwards;
+  }
 
   header {
     display: flex;
