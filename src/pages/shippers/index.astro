@@ -12,6 +12,7 @@ import Movetop from "../../components/Movetop.astro";
   pageTitle="出荷者募集"
   pageTitleEng="RECRUITMENT OF SHIPPERS"
   breadcrumb={[["出荷者募集", "/shippers"]]}
+  mainVisual="/images/shippers.png"
 >
   <main>
     <div class="inquiry">
@@ -471,148 +472,155 @@ import Movetop from "../../components/Movetop.astro";
     </div>
     <div class="form">
       <Subtitle ja="出荷者仮登録フォーム" decoration={true} />
-      <div class="input">
-        <div>
-          <label class="form-label"
-            >お名前<span class="required">必須</span></label
-          >
-          <input class="required-input name" type="text" name="name" />
-        </div>
-        <div>
-          <label class="form-label"
-            >ふりがな<span class="required">必須</span></label
-          >
-          <input class="required-input kana" type="text" name="kana" />
-        </div>
-        <div>
-          <label class="form-label"
-            >郵便番号<span class="required">必須</span></label
-          >
+      <form
+        action="/shippers/complete"
+        method="post"
+        name="inputForm"
+        data-netlify="true"
+      >
+        <div class="input">
           <div>
-            〒 <input
-              class="required-input zip-code"
-              type="text"
-              name="zip_code1"
-            /> - <input
-              class="required-input zip-code"
-              type="text"
-              name="zip_code2"
-            />
-          </div>
-        </div>
-        <div>
-          <label class="form-label"
-            >住所<span class="required">必須</span></label
-          >
-          <input class="required-input address" type="text" name="address" />
-        </div>
-        <div>
-          <label class="form-label"
-            >電話番号<span class="required">必須</span></label
-          >
-          <input class="required-input tel" type="text" name="tel" />
-        </div>
-        <div>
-          <label class="form-label"
-            >メールアドレス<span class="required">必須</span></label
-          >
-          <input class="required-input email" type="text" name="email" />
-        </div>
-        <div>
-          <label class="form-label"
-            >確認用メールアドレス<span class="required">必須</span></label
-          >
-          <input
-            class="required-input email-confirm"
-            type="text"
-            name="email_confirm"
-          />
-        </div>
-        <div>
-          <label class="form-label">FAX</label>
-          <input class="fax" type="text" name="fax" />
-        </div>
-        <div>
-          <label class="form-label"
-            >年齢<span class="required">必須</span></label
-          >
-          <input class="required-input age" type="text" name="age" />
-        </div>
-        <div>
-          <label class="form-label"
-            >性別<span class="required">必須</span></label
-          >
-          <div class="gender-wrapper">
-            <select class="required-input gender">
-              <option value="">選択してください</option>
-              <option value="men">男性</option>
-              <option value="women">女性</option>
-              <option value="else">その他</option>
-            </select>
-          </div>
-        </div>
-        <div>
-          <label class="form-label"
-            >JA奈良の口座番号<span class="required">必須</span></label
-          >
-          <div class="account-number-wrapper">
-            <p>支店番号</p>
-            <input
-              class="required-input branch-number"
-              type="text"
-              name="branch_number"
-            />
-            <p>口座番号</p>
-            <input
-              class="required-input account-number"
-              type="text"
-              name="account_number"
-            />
-          </div>
-        </div>
-        <div>
-          <label class="form-label"
-            >主に作っている農産物<span class="required">必須</span></label
-          >
-          <input
-            class="required-input agricultural-products"
-            type="text"
-            name="agricultural_products"
-          />
-        </div>
-        <div>
-          <label class="form-label"
-            >作付面積<span class="required">必須</span></label
-          >
-          <input
-            class="required-input planted-area"
-            type="text"
-            name="planted_area"
-          /><span>㎡</span>
-        </div>
-        <div>
-          <label class="form-label"
-            >他に出荷している直営店<span class="required">必須</span></label
-          >
-          <input
-            class="required-input other-irectly-managed-store"
-            type="text"
-            name="other_irectly_managed_store"
-          />
-        </div>
-        <div class="confirm-hidden-area">
-          <label class="form-label"
-            >同意事項<span class="required">必須</span></label
-          >
-          <div>
-            <input id="agreement" type="checkbox" name="agreement" />
-            <label for="agreement" class="agreement"
-              >出荷要領・販売委託契約約款・販売不向き商品について・それぞれに同意する。</label
+            <label class="form-label"
+              >お名前<span class="required">必須</span></label
             >
+            <input class="required-input name" type="text" name="name" />
           </div>
+          <div>
+            <label class="form-label"
+              >ふりがな<span class="required">必須</span></label
+            >
+            <input class="required-input kana" type="text" name="kana" />
+          </div>
+          <div>
+            <label class="form-label"
+              >郵便番号<span class="required">必須</span></label
+            >
+            <div>
+              〒 <input
+                class="required-input zip-code"
+                type="text"
+                name="zip_code1"
+              /> - <input
+                class="required-input zip-code"
+                type="text"
+                name="zip_code2"
+              />
+            </div>
+          </div>
+          <div>
+            <label class="form-label"
+              >住所<span class="required">必須</span></label
+            >
+            <input class="required-input address" type="text" name="address" />
+          </div>
+          <div>
+            <label class="form-label"
+              >電話番号<span class="required">必須</span></label
+            >
+            <input class="required-input tel" type="text" name="tel" />
+          </div>
+          <div>
+            <label class="form-label"
+              >メールアドレス<span class="required">必須</span></label
+            >
+            <input class="required-input email" type="text" name="email" />
+          </div>
+          <div>
+            <label class="form-label"
+              >確認用メールアドレス<span class="required">必須</span></label
+            >
+            <input
+              class="required-input email-confirm"
+              type="text"
+              name="email_confirm"
+            />
+          </div>
+          <div>
+            <label class="form-label">FAX</label>
+            <input class="fax" type="text" name="fax" />
+          </div>
+          <div>
+            <label class="form-label"
+              >年齢<span class="required">必須</span></label
+            >
+            <input class="required-input age" type="text" name="age" />
+          </div>
+          <div>
+            <label class="form-label"
+              >性別<span class="required">必須</span></label
+            >
+            <div class="gender-wrapper">
+              <select class="required-input gender">
+                <option value="">選択してください</option>
+                <option value="men">男性</option>
+                <option value="women">女性</option>
+                <option value="else">その他</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="form-label"
+              >JA奈良の口座番号<span class="required">必須</span></label
+            >
+            <div class="account-number-wrapper">
+              <p>支店番号</p>
+              <input
+                class="required-input branch-number"
+                type="text"
+                name="branch_number"
+              />
+              <p>口座番号</p>
+              <input
+                class="required-input account-number"
+                type="text"
+                name="account_number"
+              />
+            </div>
+          </div>
+          <div>
+            <label class="form-label"
+              >主に作っている農産物<span class="required">必須</span></label
+            >
+            <input
+              class="required-input agricultural-products"
+              type="text"
+              name="agricultural_products"
+            />
+          </div>
+          <div>
+            <label class="form-label"
+              >作付面積<span class="required">必須</span></label
+            >
+            <input
+              class="required-input planted-area"
+              type="text"
+              name="planted_area"
+            /><span>㎡</span>
+          </div>
+          <div>
+            <label class="form-label"
+              >他に出荷している直営店<span class="required">必須</span></label
+            >
+            <input
+              class="required-input other-irectly-managed-store"
+              type="text"
+              name="other_irectly_managed_store"
+            />
+          </div>
+          <div class="confirm-hidden-area">
+            <label class="form-label"
+              >同意事項<span class="required">必須</span></label
+            >
+            <div>
+              <input id="agreement" type="checkbox" name="agreement" />
+              <label for="agreement" class="agreement"
+                >出荷要領・販売委託契約約款・販売不向き商品について・それぞれに同意する。</label
+              >
+            </div>
+          </div>
+          <InputButton />
         </div>
-        <InputButton />
-      </div>
+      </form>
     </div>
   </main>
   <Movetop />

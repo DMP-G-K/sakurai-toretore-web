@@ -8,6 +8,7 @@ export interface Props {
   pageTitle: string;
   pageTitleEng: string;
   breadcrumb: [string, string][];
+  mainVisual: string;
 }
 
 const { title } = Astro.props;
@@ -17,6 +18,8 @@ const { pageTitle } = Astro.props;
 const { pageTitleEng } = Astro.props;
 
 const { breadcrumb } = Astro.props;
+
+const { mainVisual } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -52,7 +55,7 @@ const { breadcrumb } = Astro.props;
           <Breadcrumb breadcrumb={breadcrumb} />
         </div>
         <div class="mainv-visual-image">
-          <img src="/svgs/mainvisual-dammy.svg" />
+          <img src={mainVisual} />
         </div>
       </div>
     </main>
