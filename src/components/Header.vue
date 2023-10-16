@@ -18,7 +18,7 @@ const openClass = computed(() => {
   return { "-open": isOpen.value };
 });
 const headerStyle = computed(() => {
-  return { "--background-color": props.bgColor };
+  return { "--background-color": "none" };
 });
 </script>
 
