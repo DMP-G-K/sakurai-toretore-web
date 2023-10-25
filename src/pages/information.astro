@@ -333,26 +333,26 @@ const contents = [
     crossorigin="anonymous"
   ></script>
   <script is:inline>
-    function fadeAnime() {
-      $(".fadeUpTrigger").each(function () {
-        var elemPos = $(this).offset().top - 50;
-        var scroll = $(window).scrollTop();
-        var windowHeight = $(window).height();
-        if (scroll >= elemPos - windowHeight) {
-          $(this).addClass("fadeUp");
-        } else {
-          $(this).removeClass("fadeUp");
-        }
-      });
-    }
-
-    $(window).scroll(function () {
-      fadeAnime();
+  function fadeAnime() {
+    $(".fadeUpTrigger").each(function () {
+      var elemPos = $(this).offset().top - 50;
+      var scroll = $(window).scrollTop();
+      var windowHeight = $(window).height();
+      if (scroll >= elemPos - windowHeight) {
+        $(this).addClass("fadeUp");
+      } else {
+        $(this).removeClass("fadeUp");
+      }
     });
+  }
 
-    $(window).on("load", function () {
-      fadeAnime();
-    });
+  $(window).scroll(function () {
+    fadeAnime();
+  });
+
+  $(window).on("load", function () {
+    fadeAnime();
+  });
   </script>
   <style>
     .fadeUp {
@@ -379,7 +379,6 @@ const contents = [
     }
 
     main {
-      background-color: #fff9e0;
       margin: auto;
       font-size: 1rem;
       letter-spacing: 0.96px;
