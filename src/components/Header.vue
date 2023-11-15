@@ -26,7 +26,7 @@ const headerStyle = computed(() => {
   <header :class="openClass" :style="headerStyle">
     <a href="/" class="logo">
       <div class="logo-icon">
-        <img src="/images/toretore.png" alt="logo" />
+        <img src="/svgs/logo.svg" alt="logo" />
       </div>
       <div>
         <p class="logo-text">さくらいとれとれ市場</p>

@@ -5,7 +5,7 @@
         <a href="/">
           <div class="logo">
             <div class="logo-icon">
-              <img src="/images/toretore.png" alt="logo" />
+              <img src="/svgs/logo.svg" alt="logo" />
             </div>
             <div>
               <p class="logo-text">さくらいとれとれ市場</p>
