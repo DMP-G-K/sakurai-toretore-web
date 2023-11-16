@@ -115,7 +115,7 @@ const contents = [
       <div class="friend-detail">
         <h3 class="friend-detail-title">肉のきしもと</h3>
         <p class="friend-content">
-          2019年10月にオープン。山形産の牛肉を中心に、質のよいお肉をリーズナブルな価格で提供。丁寧に処理しており、肉のおいしさを堪能できます。揚げたてのコロッケ、串カツ、民地活をはじめ焼きステーキの販売も行っています。
+          2019年10月にオープン。山形産の牛肉を中心に、質のよいお肉をリーズナブルな価格で提供。丁寧に処理しており、肉のおいしさを堪能できます。揚げたてのコロッケ、串カツ、ミンチカツをはじめ焼きステーキの販売も行っています。
         </p>
         <div class="friend-info-wrapper">
           <div class="friend-info-image">
@@ -136,20 +136,13 @@ const contents = [
       <div class="friend-detail">
         <h3 class="friend-detail-title">SOL CAFÉ</h3>
         <p class="friend-content">
-          市内で評判のスイーツCafé。ハンドメイドのケーキや焼き菓子、ぜいたくな豆を使ったコーヒーを求めて橿原市や宇陀市から通う常連さんもいます。瀟洒な椅子やテーブルを揃え、店員の接客マナーもよいことから、ゆっくりとくつろげます。
-          もちろん、とれとれ市場の朝どり野菜を使ったランチメニューも豊富で、地元の味を満喫できます。
+          市内で人気のスイーツカフェは、ハンドメイドのケーキや焼き菓子、高品質のコーヒーを提供しており、近隣の橿原市や宇陀市からも多くのリピーターを獲得しています。店内は洗練された家具で装飾され、店員の丁寧な接客により、訪れた客はリラックスした時間を過ごせます。
         </p>
         <div class="friend-info-wrapper">
           <div class="friend-info-image">
             <img class="object-cover rounded-xl" src="/images/sol1.jpg" />
           </div>
           <div class="friend-info">
-            <div>
-              <p class="friend-info-title">予算</p>
-              <p class="friend-info-content">
-                モーニング　 550円～<br />ランチ　　　1100円～
-              </p>
-            </div>
             <div>
               <p class="friend-info-title">営業時間</p>
               <p class="friend-info-content">8時～17時（土曜定休）</p>
@@ -333,26 +326,26 @@ const contents = [
     crossorigin="anonymous"
   ></script>
   <script is:inline>
-  function fadeAnime() {
-    $(".fadeUpTrigger").each(function () {
-      var elemPos = $(this).offset().top - 50;
-      var scroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
-      if (scroll >= elemPos - windowHeight) {
-        $(this).addClass("fadeUp");
-      } else {
-        $(this).removeClass("fadeUp");
-      }
+    function fadeAnime() {
+      $(".fadeUpTrigger").each(function () {
+        var elemPos = $(this).offset().top - 50;
+        var scroll = $(window).scrollTop();
+        var windowHeight = $(window).height();
+        if (scroll >= elemPos - windowHeight) {
+          $(this).addClass("fadeUp");
+        } else {
+          $(this).removeClass("fadeUp");
+        }
+      });
+    }
+
+    $(window).scroll(function () {
+      fadeAnime();
     });
-  }
 
-  $(window).scroll(function () {
-    fadeAnime();
-  });
-
-  $(window).on("load", function () {
-    fadeAnime();
-  });
+    $(window).on("load", function () {
+      fadeAnime();
+    });
   </script>
   <style>
     .fadeUp {

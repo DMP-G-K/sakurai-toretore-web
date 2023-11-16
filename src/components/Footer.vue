@@ -56,7 +56,7 @@
         <a href="/information#section-0" class="address-map"> Google map → </a>
       </div>
       <div class="shopping-cart">
-        <a href="#"
+        <a target="_blank" href="https://toretore72.thebase.in/"
           ><svg
             id="グループ_9013"
             data-name="グループ 9013"
