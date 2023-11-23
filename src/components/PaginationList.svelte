@@ -10,7 +10,7 @@
     const pager = [...Array(page.lastPage).keys()].map((i) => ++i);
     // リンク先のパスを生成する関数
     const getPath = (page: number) => {
-      return `./${page}`;
+      return `/news/page/${page}`;
     };
   </script>
   
