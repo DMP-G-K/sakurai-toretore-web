@@ -78,7 +78,6 @@ if (Astro.request.method === "POST") {
               rows="10"
               cols="50"></textarea>
           </div>
-          <button type="submit">送信</button>
           <InputButton />
         </div>
       </form>
@@ -87,7 +86,142 @@ if (Astro.request.method === "POST") {
     <Footer client:load />
   </main>
 </Layout>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"
+></script>
+<script is:inline>
+  $(function () {
+    $("#confirm").click(function () {
+      var errorFlg = errorCheck();
 
+      if (errorFlg === false) {
+        confirm("未入力の項目があります。");
+        return false;
+      }
+
+      displayConfirm();
+    });
+
+    $("#submit").click(function () {
+      $("form[name='inputForm']").submit();
+    });
+  });
+
+  function displayConfirm() {
+    $('input[type="text"]').each(function (index, value) {
+      $(value).css({
+        border: "none",
+        padding: "0",
+      });
+
+      $(value).prop("disabled", true);
+    });
+
+    $("textarea").each(function (index, value) {
+      $(value).css({
+        border: "none",
+        padding: "0",
+        resize: "none",
+      });
+
+      $(value).prop("disabled", true);
+    });
+
+    $("select").each(function (index, value) {
+      $(value).css({
+        border: "none",
+        padding: "0",
+        backgroundImage: "none",
+      });
+
+      $(value).prop("disabled", true);
+    });
+
+    $(".required").each(function (index, value) {
+      $(value).hide();
+    });
+
+    $(".confirm-hidden-area").each(function (index, value) {
+      $(value).hide();
+    });
+
+    $("#display-input-button").hide();
+    $("#display-confirm-button").show();
+  }
+
+  function displayInput() {
+    $('input[type="text"]').each(function (index, value) {
+      $(value).css({
+        border: "1px solid #dddddd",
+        padding: "0 0 0 10px",
+      });
+
+      $(value).prop("disabled", false);
+    });
+
+    $("textarea").each(function (index, value) {
+      $(value).css({
+        border: "1px solid #dddddd",
+        padding: "0 0 0 10px",
+        resize: "vertical",
+      });
+
+      $(value).prop("disabled", false);
+    });
+
+    $("select").each(function (index, value) {
+      $(value).css({
+        border: "1px solid #dddddd",
+        padding: "0 10px",
+        backgroundImage: "",
+      });
+
+      $(value).prop("disabled", false);
+    });
+
+    $(".required").each(function (index, value) {
+      $(value).show();
+    });
+
+    $(".confirm-hidden-area").each(function (index, value) {
+      $(value).show();
+    });
+
+    $("#display-input-button").show();
+    $("#display-confirm-button").hide();
+  }
+
+  function errorCheck() {
+    var result = true;
+    $('input[type="text"]').each(function (index, value) {
+      if ($(value).hasClass("required-input") && $(value).val() === "") {
+        result = false;
+      }
+    });
+
+    $("textarea").each(function (index, value) {
+      if ($(value).hasClass("required-input") && $(value).val() === "") {
+        result = false;
+      }
+    });
+
+    $("select").each(function (index, value) {
+      if ($(value).hasClass("required-input") && $(value).val() === "") {
+        result = false;
+      }
+    });
+
+    $('input[type="checkbox"]').each(function (index, value) {
+      if ($(value).prop("checked") === false) {
+        result = false;
+      }
+    });
+
+    return result;
+  }
+</script>
 <style>
   main {
     position: relative;
