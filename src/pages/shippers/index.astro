@@ -644,10 +644,25 @@ import Movetop from "../../components/Movetop.astro";
       }
 
       displayConfirm();
+
+      return false;
     });
 
-    $("#submit").click(function () {
-      $("form[name='inputForm']").submit();
+    $("#submit").click(function (e) {
+      e.preventDefault();
+
+      var $form = $("form[name='inputForm']");
+      $.post($form.attr("action"), $form.serialize()).then(function () {
+        location.href = "shippers/complete";
+      });
+
+      return false;
+    });
+
+    $("#correct").click(function () {
+      displayInput();
+
+      return false;
     });
   });
 
