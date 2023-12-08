@@ -27,9 +27,9 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
 
 <Layout
   title="PRODUCT"
-  pageTitle="取り扱い商品の紹介"
+  pageTitle="取り扱い商品"
   pageTitleEng="PRODUCT"
-  breadcrumb={[["取り扱い商品の紹介", ""]]}
+  breadcrumb={[["取り扱い商品", ""]]}
   mainVisual="/images/product.png"
 >
   <main>
@@ -40,18 +40,12 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
       <Subtitle ja="旬の野菜" decoration={true} />
       <div id="section-0" class="summer-vegetable">
         <h3>夏野菜</h3>
-        <p>
-          これらの夏野菜は、さくらいとれとれ市場で新鮮な状態で提供されています。夏の味覚をお楽しみください。
-        </p>
+        <p>これらの夏野菜は、さくらいとれとれ市場で新鮮な状態で提供されています。夏の味覚をお楽しみください。</p>
         <div class="product-wrapper">
           {
             summerVegetable.contents.map((content: PickedProduct) => (
               <div class="product">
-                <img
-                  class="object-cover"
-                  src={content.mainVisual.url}
-                  alt="メインビジュアル"
-                />
+                <img class="object-cover" src={content.mainVisual.url} alt="メインビジュアル" />
                 <div>
                   <p class="summer-vegetable-title">{content.name}</p>
                   <article set:html={content.content} />
@@ -80,11 +74,7 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
           {
             winterVegetable.contents.map((content: PickedProduct) => (
               <div class="product">
-                <img
-                  class="object-cover"
-                  src={content.mainVisual.url}
-                  alt="メインビジュアル"
-                />
+                <img class="object-cover" src={content.mainVisual.url} alt="メインビジュアル" />
                 <div>
                   <p class="winter-vegetable-title">{content.name}</p>
                   <article set:html={content.content} />
@@ -95,13 +85,7 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
         </div>
         <div>
           <div class="flex justify-center">
-            <Button
-              bg="primary-variant"
-              text="white"
-              size="lg"
-              input="購入はこちら"
-              icon={true}
-            />
+            <Button bg="primary-variant" text="white" size="lg" input="購入はこちら" icon={true} />
           </div>
         </div>
       </div>
@@ -118,22 +102,12 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
         <div class="special-img-wrapper">
           {
             specialProduct.contents.map((content: PickedSpecialProduct) => (
-              <img
-                class="object-cover"
-                src={content.mainVisual.url}
-                alt="メインビジュアル"
-              />
+              <img class="object-cover w-md" src={content.mainVisual.url} alt="メインビジュアル" />
             ))
           }
         </div>
         <div class="flex justify-center">
-          <Button
-            bg="primary-variant"
-            text="white"
-            size="lg"
-            input="購入はこちら"
-            icon={true}
-          />
+          <Button bg="primary-variant" text="white" size="lg" input="購入はこちら" icon={true} />
         </div>
       </div>
     </div>
@@ -141,32 +115,25 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
     <Footer client:load />
   </main>
 
-  <script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"
-  ></script>
-  <script is:inline>
+  <script>
     function fadeAnime() {
-      $(".fadeUpTrigger").each(function () {
-        var elemPos = $(this).offset().top - 50;
-        var scroll = $(window).scrollTop();
-        var windowHeight = $(window).height();
+      const fadeUpTriggers = document.querySelectorAll(".fadeUpTrigger");
+
+      fadeUpTriggers.forEach((trigger) => {
+        const elemPos = trigger.getBoundingClientRect().top + window.scrollY - 50;
+        const scroll = window.scrollY;
+        const windowHeight = window.innerHeight;
+
         if (scroll >= elemPos - windowHeight) {
-          $(this).addClass("fadeUp");
+          trigger.classList.add("fadeUp");
         } else {
-          $(this).removeClass("fadeUp");
+          trigger.classList.remove("fadeUp");
         }
       });
     }
 
-    $(window).scroll(function () {
-      fadeAnime();
-    });
-
-    $(window).on("load", function () {
-      fadeAnime();
-    });
+    window.addEventListener("scroll", fadeAnime);
+    window.addEventListener("load", fadeAnime);
   </script>
 
   <style>

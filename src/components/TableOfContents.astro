@@ -7,18 +7,13 @@ const { contents } = Astro.props;
 ---
 
 <div class="max-w-6xl rounded-xl p-5">
-  <p class="text-primary text-xl font-semibold mb-3 font-sans">目録</p>
-  <ul class="flex gap-6">
+  <p class="text-primary text-xl font-semibold mb-3">目録</p>
+  <ul class="flex flex-col gap-6 md:flex-row">
     {
-      contents.map((item, index) => (
+      contents.map((item: string, index: number) => (
         <li class="items-center">
           <a href={`#section-${index}`}>
-            <img
-              class="inline"
-              src="/svgs/down-arrow.svg"
-              alt=""
-              width="25px"
-            />
+            <img class="inline" src="/svgs/down-arrow.svg" alt="" width="25px" />
             {item}
           </a>
         </li>
@@ -26,9 +21,3 @@ const { contents } = Astro.props;
     }
   </ul>
 </div>
-
-<style>
-  .font-sans {
-    font-family: var(--noto-sans);
-  }
-</style>
