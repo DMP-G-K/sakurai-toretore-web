@@ -689,6 +689,46 @@ import Movetop from "../../components/Movetop.astro";
 
       return false;
     });
+
+    $("#submit").click(function () {
+      const xhr = (xmlHttpRequest = new XMLHttpRequest());
+      const fd = new FormData();
+
+      fd.append("お名前", $("input[name='name']").val());
+      fd.append("ふりがな", $("input[name='kana']").val());
+      fd.append(
+        "郵便番号",
+        $("input[name='zip_code1']").val() + $("input[name='zip_code2']").val()
+      );
+      fd.append("住所", $("input[name='address']").val());
+      fd.append("電話番号", $("input[name='tel']").val());
+      fd.append("メールアドレス", $("input[name='email']").val());
+      fd.append("確認用メールアドレス", $("input[name='email_confirm']").val());
+      fd.append("FAX", $("input[name='fax']").val());
+      fd.append("性別", $(".gender option:selected").text());
+      fd.append("支店番号", $("input[name='branch_number']").val());
+      fd.append("口座番号", $("input[name='account_number']").val());
+      fd.append(
+        "主に作っている農産物",
+        $("input[name='agricultural_products']").val()
+      );
+      fd.append("作付面積", $("input[name='planted_area']").val());
+      fd.append(
+        "他に出荷している直営店",
+        $("input[name='other_irectly_managed_store']").val()
+      );
+
+      xhr.open("POST", "https://ssgform.com/s/adGsTDRAnVxg", true);
+      xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+      xhr.send(fd);
+
+      xhr.addEventListener("readystatechange", () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          location.href = "/shippers/complete";
+        }
+      });
+      return false;
+    });
   });
 
   function displayConfirm() {

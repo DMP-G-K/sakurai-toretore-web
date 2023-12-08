@@ -20,12 +20,7 @@ if (Astro.request.method === "POST") {
   <main>
     <div class="contacts">
       <Subtitle ja="お問い合わせ" decoration={true} />
-      <form
-        action="/contacts/complete"
-        method="post"
-        name="お問い合わせ"
-        data-netlify="true"
-      >
+      <form action="/contacts/complete" method="post" name="お問い合わせ">
         <div class="input">
           <div>
             <label>お名前<span class="required">必須</span></label>
@@ -145,6 +140,34 @@ if (Astro.request.method === "POST") {
     $("#correct").click(function () {
       displayInput();
 
+      return false;
+    });
+
+    $("#submit").click(function () {
+      const xhr = (xmlHttpRequest = new XMLHttpRequest());
+      const fd = new FormData();
+
+      fd.append("お名前", $("input[name='name']").val());
+      fd.append("ふりがな", $("input[name='kana']").val());
+      fd.append(
+        "郵便番号",
+        $("input[name='zip_code1']").val() + $("input[name='zip_code2']").val()
+      );
+      fd.append("住所", $("input[name='address']").val());
+      fd.append("電話番号", $("input[name='tel']").val());
+      fd.append("メールアドレス", $("input[name='email']").val());
+      fd.append("確認用メールアドレス", $("input[name='email_confirm']").val());
+      fd.append("お問い合わせ内容", $("textarea[name='content']").val());
+
+      xhr.open("POST", "https://ssgform.com/s/o0ilQXpQQENO", true);
+      xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+      xhr.send(fd);
+
+      xhr.addEventListener("readystatechange", () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          location.href = "/contacts/complete";
+        }
+      });
       return false;
     });
   });
