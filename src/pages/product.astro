@@ -26,7 +26,7 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
 ---
 
 <Layout
-  title="PRODUCT"
+  title="取り扱い商品｜さくらいとれとれ市場"
   pageTitle="取り扱い商品"
   pageTitleEng="PRODUCT"
   breadcrumb={[["取り扱い商品", ""]]}
@@ -40,12 +40,18 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
       <Subtitle ja="旬の野菜" decoration={true} />
       <div id="section-0" class="summer-vegetable">
         <h3>夏野菜</h3>
-        <p>これらの夏野菜は、さくらいとれとれ市場で新鮮な状態で提供されています。夏の味覚をお楽しみください。</p>
+        <p>
+          これらの夏野菜は、さくらいとれとれ市場で新鮮な状態で提供されています。夏の味覚をお楽しみください。
+        </p>
         <div class="product-wrapper">
           {
             summerVegetable.contents.map((content: PickedProduct) => (
               <div class="product">
-                <img class="object-cover" src={content.mainVisual.url} alt="メインビジュアル" />
+                <img
+                  class="object-cover"
+                  src={content.mainVisual.url}
+                  alt="メインビジュアル"
+                />
                 <div>
                   <p class="summer-vegetable-title">{content.name}</p>
                   <article set:html={content.content} />
@@ -74,7 +80,11 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
           {
             winterVegetable.contents.map((content: PickedProduct) => (
               <div class="product">
-                <img class="object-cover" src={content.mainVisual.url} alt="メインビジュアル" />
+                <img
+                  class="object-cover"
+                  src={content.mainVisual.url}
+                  alt="メインビジュアル"
+                />
                 <div>
                   <p class="winter-vegetable-title">{content.name}</p>
                   <article set:html={content.content} />
@@ -85,7 +95,13 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
         </div>
         <div>
           <div class="flex justify-center">
-            <Button bg="primary-variant" text="white" size="lg" input="購入はこちら" icon={true} />
+            <Button
+              bg="primary-variant"
+              text="white"
+              size="lg"
+              input="購入はこちら"
+              icon={true}
+            />
           </div>
         </div>
       </div>
@@ -102,12 +118,22 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
         <div class="special-img-wrapper">
           {
             specialProduct.contents.map((content: PickedSpecialProduct) => (
-              <img class="object-cover w-md" src={content.mainVisual.url} alt="メインビジュアル" />
+              <img
+                class="object-cover w-md"
+                src={content.mainVisual.url}
+                alt="メインビジュアル"
+              />
             ))
           }
         </div>
         <div class="flex justify-center">
-          <Button bg="primary-variant" text="white" size="lg" input="購入はこちら" icon={true} />
+          <Button
+            bg="primary-variant"
+            text="white"
+            size="lg"
+            input="購入はこちら"
+            icon={true}
+          />
         </div>
       </div>
     </div>
@@ -120,7 +146,8 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
       const fadeUpTriggers = document.querySelectorAll(".fadeUpTrigger");
 
       fadeUpTriggers.forEach((trigger) => {
-        const elemPos = trigger.getBoundingClientRect().top + window.scrollY - 50;
+        const elemPos =
+          trigger.getBoundingClientRect().top + window.scrollY - 50;
         const scroll = window.scrollY;
         const windowHeight = window.innerHeight;
 
