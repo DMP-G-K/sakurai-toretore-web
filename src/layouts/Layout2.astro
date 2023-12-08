@@ -8,7 +8,7 @@ export interface Props {
   pageTitle: string;
   pageTitleEng: string;
   breadcrumb: [string, string][];
-  mainVisual: string;
+  mainVisual?: string;
 }
 
 const { title } = Astro.props;
@@ -23,16 +23,16 @@ const { mainVisual } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css"
-      rel="stylesheet"
-    />
     <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="さくらいとれとれ市場株式会社は奈良県桜井市にある野菜直売所で、毎朝農家から届く新鮮な野菜を店頭でご提供。地域の恵みが詰まった季節ごとの多様な野菜をお楽しみください。"
+    />
     <title>{title}</title>
   </head>
   <body>
@@ -102,7 +102,7 @@ const { mainVisual } = Astro.props;
     font-size: 2.625rem;
     font-weight: bold;
     margin-bottom: 25px;
-    letter-spacing: 5.04px;
+    letter-spacing: 1.5px;
   }
 
   .page-title > p {

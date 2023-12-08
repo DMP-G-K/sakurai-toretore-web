@@ -2,14 +2,6 @@
 import DrawerMenu from "./DrawerMenu.vue";
 import { computed, ref } from "vue";
 
-const props = defineProps({
-  bgColor: {
-    type: String,
-    required: false,
-    default: "none",
-  },
-});
-
 const isOpen = ref(false);
 const openMenu = () => {
   isOpen.value = !isOpen.value;
@@ -28,27 +20,20 @@ const headerStyle = computed(() => {
       <div class="logo-icon">
         <img src="/svgs/logo.svg" alt="logo" />
       </div>
-      <div>
+      <div class="logo-text-wrap">
         <p class="logo-text">さくらいとれとれ市場</p>
         <p class="logo-text-sub">Sakurai Toretore Market</p>
       </div>
     </a>
     <div class="icons">
       <div class="line-icon">
-        <a
-          target="_blank"
-          href="https://page.line.me/486gfzum?openQrModal=true"
-        >
+        <a target="_blank" href="https://page.line.me/486gfzum?openQrModal=true">
           <img src="/images/LINE_Brand_icon.png" alt="line-icon" />
         </a>
       </div>
       <div class="shopping-cart">
         <a target="_blank" href="https://toretore72.thebase.in/">
-          <img
-            class="shopping-cart-img"
-            src="/svgs/shopping-cart-black.svg"
-            alt="shoppng-cart"
-          />
+          <img class="shopping-cart-img" src="/svgs/shopping-cart-black.svg" alt="shoppng-cart" />
         </a>
       </div>
       <div class="hamburger-menu" @click.prevent="openMenu">
@@ -112,28 +97,25 @@ header {
   width: 100vw;
   padding: 1% 3% 1% 3%;
   z-index: 100;
-  background-color: var(--background-color);
   &.-open {
-    animation: fadeIn 0.6s ease-out forwards;
-  }
-
-  @keyframes fadeIn {
-    20% {
-      background: #fff;
-    }
-    100% {
-      background: none;
-    }
+    animation: 0.1s ease-in forwards;
   }
 }
 
 .logo {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 }
 .logo-icon {
   width: 4rem;
   height: 4rem;
+}
+
+.logo-text-wrap {
+  padding-top: 0.5rem;
+  @media screen and (max-width: 424px) {
+    display: none;
+  }
 }
 .logo-text {
   font-family: var(--m-plus-rounded-1c);

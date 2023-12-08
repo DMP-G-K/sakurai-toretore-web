@@ -25,9 +25,7 @@
       </div>
       <p class="hero-nav-title-en">Sakurai Toretore Market</p>
       <p class="hero-nav-title-discription">
-        <span class="hero-nav-title-discription-decoration">
-          大和高原の旬の恵み</span
-        >を家庭にお届け！
+        <span class="hero-nav-title-discription-decoration"> 大和高原の旬の恵み</span>を家庭にお届け！
       </p>
       <div class="hero-nav-title-png">
         <img src="/images/4d0939b9579d64f2.png" alt="" />
@@ -76,8 +74,8 @@
     </div>
   </div>
 </div>
-<div class="scroll">
-  <div class="scrolldown1"><span>SCROLL</span></div>
+<div class="scroll-animation">
+  <span>SCROLL</span>
 </div>
 
 <style lang="scss">
@@ -126,18 +124,18 @@
     gap: 3rem;
     overflow: hidden;
     padding-bottom: 80px;
-
     @media screen and (max-width: 767px) {
       display: flex;
       flex-direction: column;
       padding: 1rem;
+      gap: 0;
       padding-top: 100px;
     }
     &-slideShow {
       position: relative;
       top: -6%;
       width: 640px;
-      height: 650px;
+      height: auto;
       border-radius: 20px;
       @media screen and (max-width: 767px) {
         width: 100%;
@@ -147,8 +145,11 @@
       &-image {
         border-radius: 20px;
         object-fit: cover;
-        height: 700px;
+        height: 650px;
         width: 100%;
+        @media screen and (max-width: 767px) {
+          height: 420px;
+        }
       }
       &-scroll {
         position: absolute;
@@ -188,6 +189,7 @@
       @media screen and (max-width: 767px) {
         width: 100%;
         padding: 2%;
+        margin-top: 0;
       }
       &-title {
         display: flex;
@@ -214,12 +216,12 @@
         }
         &-discription {
           font-size: 1.1rem;
-          font-weight: 500;
+          font-weight: 600;
           text-align: center;
           margin: 1rem 0 1rem 0;
           letter-spacing: 0.0675rem;
           &-decoration {
-            background: linear-gradient(transparent 60%, yellow 30%);
+            background: linear-gradient(transparent 60%, #e6d37e 30%);
           }
         }
         &-png {
@@ -299,13 +301,10 @@
     }
   }
 
-  .scroll {
+  .scroll-animation {
     display: none;
   }
 
-  .scrolldown1 {
-    display: none;
-  }
   .bg-circle-a {
     position: fixed;
     z-index: -1;
@@ -372,39 +371,25 @@
       display: none;
     }
 
-    .scroll {
-      display: block;
-      width: 100%;
-      height: 10rem;
-      margin-bottom: 3rem;
-    }
-
-    .scrolldown1 {
-      /*描画位置※位置は適宜調整してください*/
+    .scroll-animation {
       display: block;
       position: relative;
-      top: 3rem;
       right: 5px;
       margin-left: 50%;
-
-      /*全体の高さ*/
-      height: 50px;
+      height: 100px;
     }
 
-    /*Scrollテキストの描写*/
-    .scrolldown1 span {
-      /*描画位置*/
+    .scroll-animation span {
       position: relative;
       left: -20px;
       top: 3.5rem;
-      /*テキストの形状*/
       color: black;
       font-size: 10px;
       letter-spacing: 0.6px;
     }
 
     /* 線の描写 */
-    .scrolldown1::after {
+    .scroll-animation::after {
       content: "";
       /*描画位置*/
       position: absolute;
