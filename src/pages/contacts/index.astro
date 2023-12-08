@@ -20,13 +20,9 @@ if (Astro.request.method === "POST") {
   <main>
     <div class="contacts">
       <Subtitle ja="お問い合わせ" decoration={true} />
-      <form
-        action="/contacts/complete"
-        method="post"
-        name="お問い合わせ"
-        data-netlify="true"
-      >
+      <form action="/contacts/complete" method="POST" name="お問い合わせ" data-netlify="true">
         <div class="input">
+          <input type="hidden" name="form-name" value="お問い合わせ" />
           <div>
             <label>お名前<span class="required">必須</span></label>
             <input class="required-input name" type="text" name="name" />
@@ -38,11 +34,7 @@ if (Astro.request.method === "POST") {
           <div>
             <label>郵便番号<span class="required">必須</span></label>
             <div>
-              〒 <input
-                class="required-input zip_code"
-                type="text"
-                name="zip_code1"
-              /> - <input
+              〒 <input class="required-input zip_code" type="text" name="zip_code1" /> - <input
                 class="required-input zip_code"
                 type="text"
                 name="zip_code2"
@@ -62,31 +54,18 @@ if (Astro.request.method === "POST") {
             <input class="required-input email" type="text" name="email" />
           </div>
           <div>
-            <label>確認用メールアドレス<span class="required">必須</span></label
-            >
-            <input
-              class="required-input email-confirm"
-              type="text"
-              name="email_confirm"
-            />
+            <label>確認用メールアドレス<span class="required">必須</span></label>
+            <input class="required-input email-confirm" type="text" name="email_confirm" />
           </div>
           <div>
             <label>お問い合わせ内容<span class="required">必須</span></label>
-            <textarea
-              class="required-input content"
-              name="content"
-              rows="10"
-              cols="50"></textarea>
+            <textarea class="required-input content" name="content" rows="10" cols="50"></textarea>
           </div>
           <div id="display-input-button">
             <div class="flex justify-center">
               <a href="#" id="confirm">
                 <div class="default large-button bordered white primary">
-                  <img
-                    class="icon-hidden"
-                    src="svgs/shopping-cart.svg"
-                    alt=""
-                  />
+                  <img class="icon-hidden" src="svgs/shopping-cart.svg" alt="" />
                   <p>入力内容確認</p>
                 </div>
               </a>
@@ -97,22 +76,12 @@ if (Astro.request.method === "POST") {
             <div class="justify-around md:flex">
               <a class="my-4" href="#" id="correct">
                 <div class="default large-button borderless gray white m-auto">
-                  <img
-                    class="icon-hidden"
-                    src="svgs/shopping-cart.svg"
-                    alt=""
-                  />
+                  <img class="icon-hidden" src="svgs/shopping-cart.svg" alt="" />
                   <p>修正する</p>
                 </div>
               </a>
 
-              <button
-                type="submit"
-                class="my-4 default large-button bordered white primary"
-                id="submit"
-              >
-                送信する
-              </button>
+              <button type="submit" class="my-4 default large-button bordered white primary">送信する</button>
             </div>
           </div>
         </div>
