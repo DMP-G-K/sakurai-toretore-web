@@ -12,6 +12,7 @@ import Movetop from "../../components/Movetop.astro";
   pageTitle="出荷者募集"
   pageTitleEng="RECRUITMENT OF SHIPPERS"
   breadcrumb={[["出荷者募集", "/shippers"]]}
+  mainVisual="/images/shippers.png"
 >
   <main>
     <div class="inquiry">
@@ -252,7 +253,7 @@ import Movetop from "../../components/Movetop.astro";
                   ■当市場は、年始（１月１日～５日）を除く毎日営業します。都合により常業日を変更する場合は、１週間前までに搬人口の「連絡板」に掲示します。
                 </li>
                 <li>
-                  ■当市場の営業時間は、8：45～18：00です。都合により営業時間を変更する場合は、電子メールで連絡します。
+                  ■当市場の営業時間は、8：45～17：00です。都合により営業時間を変更する場合は、電子メールで連絡します。
                 </li>
               </ul>
             </div>
@@ -296,7 +297,7 @@ import Movetop from "../../components/Movetop.astro";
               <h3>17．引き取り</h3>
               <ul>
                 <li>
-                  ■商品の販売委託期間は、出荷日の営業時間内（9：00～18：00）です。ただし、日持ちの良い農産物・鉢花・加工品・工芸品など、劣化が少なくて保存性の良い商品については、当市場で別に販売委託期間を定めます。
+                  ■商品の販売委託期間は、出荷日の営業時間内（8：45～17：00）です。ただし、日持ちの良い農産物・鉢花・加工品・工芸品など、劣化が少なくて保存性の良い商品については、当市場で別に販売委託期間を定めます。
                 </li>
                 <li>
                   ■売れ残った商品は、販売委託期間後、所定期間内に引き取っていただきます。
@@ -464,161 +465,305 @@ import Movetop from "../../components/Movetop.astro";
         <div class="download-link">
           <div>
             <p>農産物の安全・安心生産に関する誓約書</p>
-            <a href="#">農産物の安全・安心生産に関する誓約書ダウンロード</a>
+            <a href="/pdfs/written_oath.pdf" download
+              >農産物の安全・安心生産に関する誓約書ダウンロード</a
+            >
           </div>
         </div>
       </div>
     </div>
     <div class="form">
       <Subtitle ja="出荷者仮登録フォーム" decoration={true} />
-      <div class="input">
-        <div>
-          <label class="form-label"
-            >お名前<span class="required">必須</span></label
-          >
-          <input class="required-input name" type="text" name="name" />
-        </div>
-        <div>
-          <label class="form-label"
-            >ふりがな<span class="required">必須</span></label
-          >
-          <input class="required-input kana" type="text" name="kana" />
-        </div>
-        <div>
-          <label class="form-label"
-            >郵便番号<span class="required">必須</span></label
-          >
+      <form
+        action="/shippers/complete"
+        method="post"
+        name="inputForm"
+        data-netlify="true"
+      >
+        <div class="input">
           <div>
-            〒 <input
-              class="required-input zip-code"
-              type="text"
-              name="zip_code1"
-            /> - <input
-              class="required-input zip-code"
-              type="text"
-              name="zip_code2"
-            />
-          </div>
-        </div>
-        <div>
-          <label class="form-label"
-            >住所<span class="required">必須</span></label
-          >
-          <input class="required-input address" type="text" name="address" />
-        </div>
-        <div>
-          <label class="form-label"
-            >電話番号<span class="required">必須</span></label
-          >
-          <input class="required-input tel" type="text" name="tel" />
-        </div>
-        <div>
-          <label class="form-label"
-            >メールアドレス<span class="required">必須</span></label
-          >
-          <input class="required-input email" type="text" name="email" />
-        </div>
-        <div>
-          <label class="form-label"
-            >確認用メールアドレス<span class="required">必須</span></label
-          >
-          <input
-            class="required-input email-confirm"
-            type="text"
-            name="email_confirm"
-          />
-        </div>
-        <div>
-          <label class="form-label">FAX</label>
-          <input class="fax" type="text" name="fax" />
-        </div>
-        <div>
-          <label class="form-label"
-            >年齢<span class="required">必須</span></label
-          >
-          <input class="required-input age" type="text" name="age" />
-        </div>
-        <div>
-          <label class="form-label"
-            >性別<span class="required">必須</span></label
-          >
-          <div class="gender-wrapper">
-            <select class="required-input gender">
-              <option value="">選択してください</option>
-              <option value="men">男性</option>
-              <option value="women">女性</option>
-              <option value="else">その他</option>
-            </select>
-          </div>
-        </div>
-        <div>
-          <label class="form-label"
-            >JA奈良の口座番号<span class="required">必須</span></label
-          >
-          <div class="account-number-wrapper">
-            <p>支店番号</p>
-            <input
-              class="required-input branch-number"
-              type="text"
-              name="branch_number"
-            />
-            <p>口座番号</p>
-            <input
-              class="required-input account-number"
-              type="text"
-              name="account_number"
-            />
-          </div>
-        </div>
-        <div>
-          <label class="form-label"
-            >主に作っている農産物<span class="required">必須</span></label
-          >
-          <input
-            class="required-input agricultural-products"
-            type="text"
-            name="agricultural_products"
-          />
-        </div>
-        <div>
-          <label class="form-label"
-            >作付面積<span class="required">必須</span></label
-          >
-          <input
-            class="required-input planted-area"
-            type="text"
-            name="planted_area"
-          /><span>㎡</span>
-        </div>
-        <div>
-          <label class="form-label"
-            >他に出荷している直営店<span class="required">必須</span></label
-          >
-          <input
-            class="required-input other-irectly-managed-store"
-            type="text"
-            name="other_irectly_managed_store"
-          />
-        </div>
-        <div class="confirm-hidden-area">
-          <label class="form-label"
-            >同意事項<span class="required">必須</span></label
-          >
-          <div>
-            <input id="agreement" type="checkbox" name="agreement" />
-            <label for="agreement" class="agreement"
-              >出荷要領・販売委託契約約款・販売不向き商品について・それぞれに同意する。</label
+            <label class="form-label"
+              >お名前<span class="required">必須</span></label
             >
+            <input class="required-input name" type="text" name="name" />
           </div>
+          <div>
+            <label class="form-label"
+              >ふりがな<span class="required">必須</span></label
+            >
+            <input class="required-input kana" type="text" name="kana" />
+          </div>
+          <div>
+            <label class="form-label"
+              >郵便番号<span class="required">必須</span></label
+            >
+            <div>
+              〒 <input
+                class="required-input zip-code"
+                type="text"
+                name="zip_code1"
+              /> - <input
+                class="required-input zip-code"
+                type="text"
+                name="zip_code2"
+              />
+            </div>
+          </div>
+          <div>
+            <label class="form-label"
+              >住所<span class="required">必須</span></label
+            >
+            <input class="required-input address" type="text" name="address" />
+          </div>
+          <div>
+            <label class="form-label"
+              >電話番号<span class="required">必須</span></label
+            >
+            <input class="required-input tel" type="text" name="tel" />
+          </div>
+          <div>
+            <label class="form-label"
+              >メールアドレス<span class="required">必須</span></label
+            >
+            <input class="required-input email" type="text" name="email" />
+          </div>
+          <div>
+            <label class="form-label"
+              >確認用メールアドレス<span class="required">必須</span></label
+            >
+            <input
+              class="required-input email-confirm"
+              type="text"
+              name="email_confirm"
+            />
+          </div>
+          <div>
+            <label class="form-label">FAX</label>
+            <input class="fax" type="text" name="fax" />
+          </div>
+          <div>
+            <label class="form-label"
+              >年齢<span class="required">必須</span></label
+            >
+            <input class="required-input age" type="text" name="age" />
+          </div>
+          <div>
+            <label class="form-label"
+              >性別<span class="required">必須</span></label
+            >
+            <div class="gender-wrapper">
+              <select class="required-input gender">
+                <option value="">選択してください</option>
+                <option value="men">男性</option>
+                <option value="women">女性</option>
+                <option value="else">その他</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="form-label"
+              >JA奈良の口座番号<span class="required">必須</span></label
+            >
+            <div class="account-number-wrapper">
+              <p>支店番号</p>
+              <input
+                class="required-input branch-number"
+                type="text"
+                name="branch_number"
+              />
+              <p>口座番号</p>
+              <input
+                class="required-input account-number"
+                type="text"
+                name="account_number"
+              />
+            </div>
+          </div>
+          <div>
+            <label class="form-label"
+              >主に作っている農産物<span class="required">必須</span></label
+            >
+            <input
+              class="required-input agricultural-products"
+              type="text"
+              name="agricultural_products"
+            />
+          </div>
+          <div>
+            <label class="form-label"
+              >作付面積<span class="required">必須</span></label
+            >
+            <input
+              class="required-input planted-area"
+              type="text"
+              name="planted_area"
+            /><span>㎡</span>
+          </div>
+          <div>
+            <label class="form-label"
+              >他に出荷している直営店<span class="required">必須</span></label
+            >
+            <input
+              class="required-input other-irectly-managed-store"
+              type="text"
+              name="other_irectly_managed_store"
+            />
+          </div>
+          <div class="confirm-hidden-area">
+            <label class="form-label"
+              >同意事項<span class="required">必須</span></label
+            >
+            <div>
+              <input id="agreement" type="checkbox" name="agreement" />
+              <label for="agreement" class="agreement"
+                >出荷要領・販売委託契約約款・販売不向き商品について・それぞれに同意する。</label
+              >
+            </div>
+          </div>
+          <InputButton />
         </div>
-        <InputButton />
-      </div>
+      </form>
     </div>
   </main>
   <Movetop />
   <Footer client:load />
 </Layout>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"
+></script>
+<script is:inline>
+  $(function () {
+    $("#confirm").click(function () {
+      var errorFlg = errorCheck();
 
+      if (errorFlg === false) {
+        confirm("未入力の項目があります。");
+        return false;
+      }
+
+      displayConfirm();
+    });
+
+    $("#submit").click(function () {
+      $("form[name='inputForm']").submit();
+    });
+  });
+
+  function displayConfirm() {
+    $('input[type="text"]').each(function (index, value) {
+      $(value).css({
+        border: "none",
+        padding: "0",
+      });
+
+      $(value).prop("disabled", true);
+    });
+
+    $("textarea").each(function (index, value) {
+      $(value).css({
+        border: "none",
+        padding: "0",
+        resize: "none",
+      });
+
+      $(value).prop("disabled", true);
+    });
+
+    $("select").each(function (index, value) {
+      $(value).css({
+        border: "none",
+        padding: "0",
+        backgroundImage: "none",
+      });
+
+      $(value).prop("disabled", true);
+    });
+
+    $(".required").each(function (index, value) {
+      $(value).hide();
+    });
+
+    $(".confirm-hidden-area").each(function (index, value) {
+      $(value).hide();
+    });
+
+    $("#display-input-button").hide();
+    $("#display-confirm-button").show();
+  }
+
+  function displayInput() {
+    $('input[type="text"]').each(function (index, value) {
+      $(value).css({
+        border: "1px solid #dddddd",
+        padding: "0 0 0 10px",
+      });
+
+      $(value).prop("disabled", false);
+    });
+
+    $("textarea").each(function (index, value) {
+      $(value).css({
+        border: "1px solid #dddddd",
+        padding: "0 0 0 10px",
+        resize: "vertical",
+      });
+
+      $(value).prop("disabled", false);
+    });
+
+    $("select").each(function (index, value) {
+      $(value).css({
+        border: "1px solid #dddddd",
+        padding: "0 10px",
+        backgroundImage: "",
+      });
+
+      $(value).prop("disabled", false);
+    });
+
+    $(".required").each(function (index, value) {
+      $(value).show();
+    });
+
+    $(".confirm-hidden-area").each(function (index, value) {
+      $(value).show();
+    });
+
+    $("#display-input-button").show();
+    $("#display-confirm-button").hide();
+  }
+
+  function errorCheck() {
+    var result = true;
+    $('input[type="text"]').each(function (index, value) {
+      if ($(value).hasClass("required-input") && $(value).val() === "") {
+        result = false;
+      }
+    });
+
+    $("textarea").each(function (index, value) {
+      if ($(value).hasClass("required-input") && $(value).val() === "") {
+        result = false;
+      }
+    });
+
+    $("select").each(function (index, value) {
+      if ($(value).hasClass("required-input") && $(value).val() === "") {
+        result = false;
+      }
+    });
+
+    $('input[type="checkbox"]').each(function (index, value) {
+      if ($(value).prop("checked") === false) {
+        result = false;
+      }
+    });
+
+    return result;
+  }
+</script>
 <style>
   .modal-title {
     font-size: 1.1rem;
@@ -636,7 +781,6 @@ import Movetop from "../../components/Movetop.astro";
   }
 
   main {
-    background-color: #fff9e0;
     margin: auto;
   }
 
@@ -768,6 +912,7 @@ import Movetop from "../../components/Movetop.astro";
     border-radius: 10px;
     text-align: center;
     margin-left: 20px;
+    line-height: normal;
   }
 
   .name,

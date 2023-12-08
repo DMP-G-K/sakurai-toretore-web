@@ -1,14 +1,18 @@
 <div class="hero">
-  <img class="bg-circle-a" src="../svgs/bg-circle.svg" alt="" />
-  <img class="bg-circle-b" src="../svgs/bg-circle.svg" alt="" />
-  <img class="bg-circle-c" src="../svgs/bg-circle.svg" alt="" />
-  <img class="bg-circle-d" src="../svgs/bg-circle.svg" alt="" />
-
+  <div class="bg-position">
+    <div class="bg-circle-a"></div>
+    <div class="bg-circle-b">
+      <div class="bg-circle-height"></div>
+    </div>
+    <div class="bg-circle-c">
+      <div class="bg-circle-height"></div>
+    </div>
+    <div class="bg-circle-d">
+      <div class="bg-circle-height"></div>
+    </div>
+  </div>
   <div class="hero-slideShow">
-    <img
-      class="hero-slideShow-image"
-      src="https://source.unsplash.com/k7EjzzK1uhk"
-    />
+    <img class="hero-slideShow-image" src="/images/hero-slideshow-main.jpg" />
     <div class="hero-slideShow-scroll">
       <p class="hero-slideShow-scroll-text">SCROLL</p>
       <span class="hero-slideShow-scroll-line"></span>
@@ -118,10 +122,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem 2rem 0 2rem;
+    padding: 0 2rem 0 2rem;
     gap: 3rem;
     overflow: hidden;
     padding-bottom: 80px;
+
     @media screen and (max-width: 767px) {
       display: flex;
       flex-direction: column;
@@ -175,6 +180,7 @@
       position: relative;
       flex-direction: column;
       align-items: center;
+      margin-top: 120px;
       padding-left: 2%;
       padding-right: 2%;
       background-color: white;
@@ -228,6 +234,12 @@
             left: 0;
             width: 100%;
             border-bottom: dashed 2px #5f8934;
+          }
+        }
+        &-logo {
+          width: 190px;
+          @media screen and (max-width: 767px) {
+            width: 120px;
           }
         }
       }
@@ -295,37 +307,52 @@
     display: none;
   }
   .bg-circle-a {
-    position: absolute;
+    position: fixed;
+    z-index: -1;
     right: -5rem;
     top: -12rem;
+    width: 390px;
+    height: 420px;
+    background-color: #efe9d4;
+    border-radius: 50%;
   }
   .bg-circle-b {
-    position: absolute;
+    position: fixed;
+    z-index: -1;
     left: 50%;
     top: 27rem;
     width: 23%;
-    height: auto;
+    background-color: #efe9d4;
+    border-radius: 50%;
   }
 
   .bg-circle-c {
-    position: absolute;
+    position: fixed;
+    z-index: -1;
     width: 20%;
-    height: auto;
     left: 40%;
     top: 2rem;
+    background-color: #efe9d4;
+    border-radius: 50%;
   }
 
   .bg-circle-d {
-    position: absolute;
+    position: fixed;
+    z-index: -1;
     width: 20%;
-    height: auto;
     left: -5rem;
     top: 15rem;
+    background-color: #efe9d4;
+    border-radius: 50%;
+  }
+
+  .bg-circle-height {
+    padding-top: 100%;
+    height: 0;
   }
 
   @media screen and (max-width: 767px) {
     .bg-circle-a {
-      position: absolute;
       left: -5rem;
       top: -12rem;
     }
@@ -334,12 +361,15 @@
     }
 
     .bg-circle-c {
-      position: absolute;
       width: 35%;
       height: auto;
       right: -5rem;
       top: 45rem;
       left: auto;
+    }
+
+    .bg-circle-d {
+      display: none;
     }
 
     .scroll {

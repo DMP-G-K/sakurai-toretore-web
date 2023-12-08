@@ -3,7 +3,7 @@
 
 <div id="display-input-button">
   <div class="flex justify-center">
-    <a href="javascript:void(0)" onclick="displayConfirm(); ">
+    <a href="javascript:void(0)" id="confirm">
       <div class="default large-button bordered white primary">
         <img class="icon-hidden" src="svgs/shopping-cart.svg" alt="" />
         <p>入力内容確認</p>
@@ -21,7 +21,7 @@
       </div>
     </a>
 
-    <a class="my-4" href="javascript:void(0)" onclick="sendData();">
+    <a class="my-4" href="javascript:void(0)" id="submit">
       <div class="default large-button bordered white primary mx-auto my-3">
         <img class="icon-hidden" src="svgs/shopping-cart.svg" alt="" />
         <p>送信する</p>
@@ -29,132 +29,6 @@
     </a>
   </div>
 </div>
-
-<script is:inline>
-  function errorCheck() {
-    result = true;
-    document.querySelectorAll("input[type='text']").forEach((element) => {
-      if (
-        element.classList.contains("required-input") === true &&
-        element.value === ""
-      ) {
-        result = false;
-      }
-    });
-
-    document.querySelectorAll("textarea").forEach((element) => {
-      if (
-        element.classList.contains("required-input") === true &&
-        element.value === ""
-      ) {
-        result = false;
-      }
-    });
-
-    document.querySelectorAll("select").forEach((element) => {
-      if (
-        element.classList.contains("required-input") === true &&
-        element.value === ""
-      ) {
-        result = false;
-      }
-    });
-
-    document.querySelectorAll("input[type='checkbox']").forEach((element) => {
-      if (element.checked === false) {
-        result = false;
-      }
-    });
-
-    return result;
-  }
-
-  function displayConfirm() {
-    errorFlg = errorCheck();
-    if (errorFlg === false) {
-      confirm("未入力の項目があります。");
-      return false;
-    }
-
-    document.querySelectorAll("input[type='text']").forEach((element) => {
-      element.style.border = "none";
-      element.style.padding = "0";
-
-      element.disabled = true;
-    });
-
-    document.querySelectorAll("textarea").forEach((element) => {
-      element.style.border = "none";
-      element.style.padding = "0";
-      element.style.resize = "none";
-
-      element.disabled = true;
-    });
-
-    document.querySelectorAll("select").forEach((element) => {
-      element.style.border = "none";
-      element.style.padding = "0";
-      element.style.backgroundImage = "none";
-
-      element.disabled = true;
-    });
-
-    document.querySelectorAll(".required").forEach((element) => {
-      element.style.display = "none";
-    });
-
-    document.querySelectorAll(".confirm-hidden-area").forEach((element) => {
-      element.style.display = "none";
-    });
-
-    document.getElementById("display-input-button").style.display = "none";
-    document.getElementById("display-confirm-button").style.display = "block";
-    return false;
-  }
-
-  function displayInput() {
-    document.querySelectorAll("input").forEach((element) => {
-      element.style.border = "1px solid #dddddd";
-      element.style.padding = "0 0 0 10px";
-
-      element.disabled = false;
-    });
-
-    document.querySelectorAll("textarea").forEach((element) => {
-      element.style.border = "1px solid #dddddd";
-      element.style.padding = "0 0 0 10px";
-      element.style.resize = "vertical";
-
-      element.disabled = false;
-    });
-
-    document.querySelectorAll("select").forEach((element) => {
-      element.style.border = "1px solid #dddddd";
-      element.style.padding = "0 10px";
-      element.style.backgroundImage = "";
-
-      element.disabled = false;
-    });
-
-    document.querySelectorAll(".required").forEach((element) => {
-      element.style.display = "inline-block";
-    });
-
-    document.querySelectorAll(".confirm-hidden-area").forEach((element) => {
-      element.style.display = "block";
-    });
-
-    document.getElementById("display-input-button").style.display = "block";
-    document.getElementById("display-confirm-button").style.display = "none";
-    return false;
-  }
-
-  function sendData() {
-    document.inputForm.submit();
-
-    return false;
-  }
-</script>
 
 <style>
   .default {

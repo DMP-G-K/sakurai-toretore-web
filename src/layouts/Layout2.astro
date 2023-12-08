@@ -8,6 +8,7 @@ export interface Props {
   pageTitle: string;
   pageTitleEng: string;
   breadcrumb: [string, string][];
+  mainVisual: string;
 }
 
 const { title } = Astro.props;
@@ -17,6 +18,8 @@ const { pageTitle } = Astro.props;
 const { pageTitleEng } = Astro.props;
 
 const { breadcrumb } = Astro.props;
+
+const { mainVisual } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -39,9 +42,13 @@ const { breadcrumb } = Astro.props;
         <Header client:load bgColor="" />
       </div>
       <div>
-        <img class="bg-circle-a" src="/svgs/bg-circle.svg" alt="" />
-        <img class="bg-circle-b" src="/svgs/bg-circle.svg" alt="" />
-        <img class="bg-circle-c" src="/svgs/bg-circle.svg" alt="" />
+        <div class="bg-circle-a"></div>
+        <div class="bg-circle-b">
+          <div class="bg-circle-height"></div>
+        </div>
+        <div class="bg-circle-c">
+          <div class="bg-circle-height"></div>
+        </div>
       </div>
       <div class="main-visual-wrapper">
         <div>
@@ -52,7 +59,7 @@ const { breadcrumb } = Astro.props;
           <Breadcrumb breadcrumb={breadcrumb} />
         </div>
         <div class="mainv-visual-image">
-          <img src="/svgs/mainvisual-dammy.svg" />
+          <img src={mainVisual} />
         </div>
       </div>
     </main>
@@ -107,32 +114,43 @@ const { breadcrumb } = Astro.props;
   }
 
   .bg-circle-a {
-    position: absolute;
+    position: fixed;
     left: 20%;
     top: -5rem;
+    width: 390px;
+    height: 420px;
     z-index: -1;
+    background-color: #efe9d4;
+    border-radius: 50%;
   }
   .bg-circle-b {
-    position: absolute;
+    position: fixed;
     left: 20%;
     top: 27rem;
     width: 18%;
     height: auto;
     z-index: -1;
+    background-color: #efe9d4;
+    border-radius: 50%;
   }
 
   .bg-circle-c {
-    position: absolute;
+    position: fixed;
     width: 24%;
-    height: auto;
     left: -3rem;
     top: 11rem;
     z-index: -1;
+    background-color: #efe9d4;
+    border-radius: 50%;
+  }
+
+  .bg-circle-height {
+    padding-top: 100%;
+    height: 0;
   }
 
   @media screen and (max-width: 767px) {
     .bg-circle-a {
-      position: absolute;
       left: -5rem;
       top: -12rem;
     }
@@ -141,7 +159,6 @@ const { breadcrumb } = Astro.props;
     }
 
     .bg-circle-c {
-      position: absolute;
       width: 45%;
       height: auto;
       right: auto;

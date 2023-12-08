@@ -18,7 +18,7 @@ const openClass = computed(() => {
   return { "-open": isOpen.value };
 });
 const headerStyle = computed(() => {
-  return { "--background-color": props.bgColor };
+  return { "--background-color": "none" };
 });
 </script>
 
@@ -34,8 +34,16 @@ const headerStyle = computed(() => {
       </div>
     </a>
     <div class="icons">
+      <div class="line-icon">
+        <a
+          target="_blank"
+          href="https://page.line.me/486gfzum?openQrModal=true"
+        >
+          <img src="/images/LINE_Brand_icon.png" alt="line-icon" />
+        </a>
+      </div>
       <div class="shopping-cart">
-        <a href="#">
+        <a target="_blank" href="https://toretore72.thebase.in/">
           <img
             class="shopping-cart-img"
             src="/svgs/shopping-cart-black.svg"
@@ -165,6 +173,10 @@ header {
   display: none;
 }
 
+.line-icon {
+  display: none;
+}
+
 @media screen and (max-width: 767px) {
   header {
     align-items: flex-end;
@@ -194,6 +206,12 @@ header {
   .shopping-cart-img {
     width: 1.5rem;
     height: 1.5rem;
+  }
+
+  .line-icon {
+    display: flex;
+    width: 2.5rem;
+    height: 2.5rem;
   }
   .hamburger-menu {
     display: flex;

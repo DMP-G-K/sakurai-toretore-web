@@ -30,6 +30,7 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
   pageTitle="取り扱い商品の紹介"
   pageTitleEng="PRODUCT"
   breadcrumb={[["取り扱い商品の紹介", ""]]}
+  mainVisual="/images/product.png"
 >
   <main>
     <div class="table-of-contents">
@@ -46,7 +47,11 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
           {
             summerVegetable.contents.map((content: PickedProduct) => (
               <div class="product">
-                <img src={content.mainVisual.url} alt="メインビジュアル" />
+                <img
+                  class="object-cover"
+                  src={content.mainVisual.url}
+                  alt="メインビジュアル"
+                />
                 <div>
                   <p class="summer-vegetable-title">{content.name}</p>
                   <article set:html={content.content} />
@@ -62,6 +67,7 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
             size="lg"
             input="購入はこちら"
             icon={true}
+            link="https://toretore72.thebase.in/"
           />
         </div>
       </div>
@@ -74,7 +80,11 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
           {
             winterVegetable.contents.map((content: PickedProduct) => (
               <div class="product">
-                <img src={content.mainVisual.url} alt="メインビジュアル" />
+                <img
+                  class="object-cover"
+                  src={content.mainVisual.url}
+                  alt="メインビジュアル"
+                />
                 <div>
                   <p class="winter-vegetable-title">{content.name}</p>
                   <article set:html={content.content} />
@@ -108,21 +118,13 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
         <div class="special-img-wrapper">
           {
             specialProduct.contents.map((content: PickedSpecialProduct) => (
-              <img src={content.mainVisual.url} alt="メインビジュアル" />
+              <img
+                class="object-cover"
+                src={content.mainVisual.url}
+                alt="メインビジュアル"
+              />
             ))
           }
-          <img
-            class="object-cover"
-            src="https://source.unsplash.com/Y5n8mCpvlZU"
-          />
-          <img
-            class="object-cover"
-            src="https://source.unsplash.com/2GiRcLP_jkI"
-          />
-          <img
-            class="object-cover"
-            src="https://source.unsplash.com/OPZzH1WJ6jQ"
-          />
         </div>
         <div class="flex justify-center">
           <Button
@@ -332,13 +334,10 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
     }
 
     .special-img-wrapper {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+      gap: 40px 6%;
       margin-bottom: 50px;
-    }
-
-    .special-img-wrapper > img {
-      width: 28%;
     }
 
     @media screen and (max-width: 767px) {
@@ -356,7 +355,6 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
         width: 88%;
         margin: 0;
         display: flex;
-        justify-content: space-between;
         margin-bottom: 25px;
       }
 
@@ -379,9 +377,12 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
         margin: auto;
         margin-top: 30px;
       }
-      .special-img-wrapper > img {
-        width: 27%;
-        height: 73px;
+
+      .special-img-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
+        gap: 30px 6%;
+        margin-bottom: 20px;
       }
     }
   </style>
