@@ -29,6 +29,10 @@ const { mainVisual } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <meta
+      name="”description”"
+      content="”奈良県桜井市で野菜直売所をおこなっているさくらいとれとれ市場株式会社のホームページです。朝に農家から直送されてくる新鮮な野菜を多く取り揃えています。宅配サービスや、レシピ提案などもおこなっています。”"
+    />
     <title>{title}</title>
   </head>
   <body>
@@ -65,7 +69,12 @@ const { mainVisual } = Astro.props;
 <style is:global>
   :root {
     --accent: 124, 58, 237;
-    --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      #da62c4 30%,
+      white 60%
+    );
   }
   html {
     font-family: var(--noto-sans);
