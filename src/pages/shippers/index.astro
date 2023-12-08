@@ -477,7 +477,7 @@ import Movetop from "../../components/Movetop.astro";
       <form
         action="/shippers/complete"
         method="post"
-        name="inputForm"
+        name="出荷者仮登録"
         data-netlify="true"
       >
         <div class="input">
@@ -638,9 +638,7 @@ import Movetop from "../../components/Movetop.astro";
           <div id="display-confirm-button" class="hidden">
             <div class="justify-around md:flex">
               <a class="my-4" href="#" id="correct">
-                <div
-                  class="default large-button borderless gray white m-auto my-3"
-                >
+                <div class="default large-button borderless gray white m-auto">
                   <img
                     class="icon-hidden"
                     src="svgs/shopping-cart.svg"
@@ -650,18 +648,13 @@ import Movetop from "../../components/Movetop.astro";
                 </div>
               </a>
 
-              <a class="my-4" href="#" id="submit">
-                <div
-                  class="default large-button bordered white primary mx-auto my-3"
-                >
-                  <img
-                    class="icon-hidden"
-                    src="svgs/shopping-cart.svg"
-                    alt=""
-                  />
-                  <p>送信する</p>
-                </div>
-              </a>
+              <button
+                type="submit"
+                class="my-4 default large-button bordered white primary"
+                id="submit"
+              >
+                送信する
+              </button>
             </div>
           </div>
         </div>
@@ -687,17 +680,6 @@ import Movetop from "../../components/Movetop.astro";
       }
 
       displayConfirm();
-
-      return false;
-    });
-
-    $("#submit").click(function (e) {
-      e.preventDefault();
-
-      var $form = $("form[name='inputForm']");
-      $.post($form.attr("action"), $form.serialize()).then(function () {
-        location.href = "/shippers/complete";
-      });
 
       return false;
     });
