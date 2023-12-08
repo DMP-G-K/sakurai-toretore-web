@@ -653,7 +653,7 @@ import Movetop from "../../components/Movetop.astro";
 
       var $form = $("form[name='inputForm']");
       $.post($form.attr("action"), $form.serialize()).then(function () {
-        location.href = "shippers/complete";
+        location.href = "/shippers/complete";
       });
 
       return false;

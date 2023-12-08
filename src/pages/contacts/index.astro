@@ -111,7 +111,7 @@ if (Astro.request.method === "POST") {
 
       var $form = $("form[name='inputForm']");
       $.post($form.attr("action"), $form.serialize()).then(function () {
-        location.href = "contacts/complete";
+        location.href = "/contacts/complete";
       });
 
       return false;
