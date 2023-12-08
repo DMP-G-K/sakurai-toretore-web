@@ -78,8 +78,50 @@ if (Astro.request.method === "POST") {
               rows="10"
               cols="50"></textarea>
           </div>
-          <InputButton />
-          <button type="submit">送信テスト２</button>
+          <div id="display-input-button">
+            <div class="flex justify-center">
+              <a href="#" id="confirm">
+                <div class="default large-button bordered white primary">
+                  <img
+                    class="icon-hidden"
+                    src="svgs/shopping-cart.svg"
+                    alt=""
+                  />
+                  <p>入力内容確認</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div id="display-confirm-button" class="hidden">
+            <div class="justify-around md:flex">
+              <a class="my-4" href="#" id="correct">
+                <div
+                  class="default large-button borderless gray white m-auto my-3"
+                >
+                  <img
+                    class="icon-hidden"
+                    src="svgs/shopping-cart.svg"
+                    alt=""
+                  />
+                  <p>修正する</p>
+                </div>
+              </a>
+
+              <a class="my-4" href="#" id="submit">
+                <div
+                  class="default large-button bordered white primary mx-auto my-3"
+                >
+                  <img
+                    class="icon-hidden"
+                    src="svgs/shopping-cart.svg"
+                    alt=""
+                  />
+                  <p>送信する</p>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </form>
     </div>
@@ -239,6 +281,72 @@ if (Astro.request.method === "POST") {
   }
 </script>
 <style>
+  .default {
+    height: 3rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .default:hover {
+    opacity: 0.8;
+  }
+
+  .small-button {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+  .large-button {
+    padding-left: 4.75rem;
+    padding-right: 4.75rem;
+  }
+  .bordered {
+    border: 1px solid var(--primary-color);
+  }
+  .borderless {
+    border: none;
+  }
+  .white {
+    background-color: var(--white-color);
+  }
+  .primary-variant {
+    background-color: var(--primary-variant-color);
+  }
+  .gray {
+    background-color: var(--gray-color);
+  }
+  .white {
+    color: var(--white-color);
+  }
+  .black {
+    color: var(--black-color);
+  }
+  .primary {
+    color: var(--primary-color);
+  }
+  .icon-visible {
+    display: block;
+    margin-right: 1rem;
+  }
+  .icon-hidden {
+    display: none;
+  }
+
+  @media screen and (max-width: 389px) {
+    .small-button {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .large-button {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
   main {
     position: relative;
     margin: auto;
