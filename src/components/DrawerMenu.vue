@@ -52,11 +52,13 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  align-items: center;
   justify-content: center;
   padding: 8%;
   background: var(--background-color);
   overflow: hidden;
   &-text {
+    width: fit-content;
     z-index: 2;
     font-weight: 600;
     font-size: 1rem;
