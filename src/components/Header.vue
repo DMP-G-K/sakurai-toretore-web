@@ -2,14 +2,6 @@
 import DrawerMenu from "./DrawerMenu.vue";
 import { computed, ref } from "vue";
 
-const props = defineProps({
-  bgColor: {
-    type: String,
-    required: false,
-    default: "none",
-  },
-});
-
 const isOpen = ref(false);
 const openMenu = () => {
   isOpen.value = !isOpen.value;
@@ -28,7 +20,7 @@ const headerStyle = computed(() => {
       <div class="logo-icon">
         <img src="/svgs/logo.svg" alt="logo" />
       </div>
-      <div>
+      <div class="logo-text-wrap">
         <p class="logo-text">さくらいとれとれ市場</p>
         <p class="logo-text-sub">Sakurai Toretore Market</p>
       </div>
@@ -112,11 +104,18 @@ header {
 
 .logo {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 }
 .logo-icon {
   width: 4rem;
   height: 4rem;
+}
+
+.logo-text-wrap {
+  padding-top: 0.5rem;
+  @media screen and (max-width: 424px) {
+    display: none;
+  }
 }
 .logo-text {
   font-family: var(--m-plus-rounded-1c);
