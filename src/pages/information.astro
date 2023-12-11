@@ -40,11 +40,13 @@ const contents = [
         <div class="detail-content-wrapper">
           <p class="detail-title">所在地</p>
           <p class="detail-content">
-            〒633-0062 奈良県桜井市大字粟殿72番地 (<a
-              class="tracking-normal border-b"
-              target="_blank"
-              href="https://goo.gl/maps/Tv1WS7mGV4ooRfpM9">Google map →</a
-            >)
+            〒633-0062 奈良県桜井市大字粟殿72番地 <span class="google-map-link"
+              >(<a
+                class="tracking-normal border-b"
+                target="_blank"
+                href="https://goo.gl/maps/Tv1WS7mGV4ooRfpM9">Google map →</a
+              >)</span
+            >
           </p>
         </div>
         <div class="detail-content-wrapper">
@@ -655,7 +657,15 @@ const contents = [
     }
 
     @media screen and (max-width: 767px) {
+      .table-of-contents {
+        width: 90%;
+      }
+
       .access {
+        width: 90%;
+      }
+
+      .parking {
         width: 90%;
       }
 
@@ -667,6 +677,10 @@ const contents = [
 
       .google-map > iframe {
         height: 200px;
+      }
+
+      .google-map-link {
+        display: none;
       }
 
       .detail {
@@ -701,7 +715,7 @@ const contents = [
       .friend {
         background-color: #ffffff;
         border-radius: 15px;
-        width: 84%;
+        width: 90%;
         margin: 60px auto;
         padding: 40px 0 80px;
       }
@@ -786,7 +800,7 @@ const contents = [
       .company {
         background-color: #ffffff;
         border-radius: 15px;
-        width: 84%;
+        width: 90%;
         margin: 60px auto;
         padding: 40px 0 40px;
       }

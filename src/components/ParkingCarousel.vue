@@ -2,7 +2,7 @@
   <div class="md:hidden">
     <carousel :items-to-show="1">
       <slide v-for="slide in 3" :key="slide">
-        <img src="/svgs/test.jpg" />
+        <img src="/images/toretore3.jpg" />
       </slide>
 
       <template #addons>

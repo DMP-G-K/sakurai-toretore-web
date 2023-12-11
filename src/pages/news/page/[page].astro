@@ -60,9 +60,10 @@ const { page } = Astro.props;
                     <p class="news-detail-date">
                       {new Date(content.publishedAt).getFullYear() +
                         "." +
-                        ("00" + new Date(content.publishedAt).getMonth()).slice(
-                          -2
-                        ) +
+                        (
+                          "00" +
+                          (new Date(content.publishedAt).getMonth() + 1)
+                        ).slice(-2) +
                         "." +
                         ("00" + new Date(content.publishedAt).getDate()).slice(
                           -2
@@ -129,6 +130,7 @@ const { page } = Astro.props;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
     gap: 24px 6%;
+    place-items: center;
     letter-spacing: 0.1em;
     line-height: 2;
   }
@@ -147,8 +149,6 @@ const { page } = Astro.props;
   }
 
   .news-detail-link > img {
-    max-width: 358px;
-    height: 245px;
     border-radius: 10px;
   }
 
@@ -189,9 +189,9 @@ const { page } = Astro.props;
       width: 88%;
     }
 
-    .news-list {
+    /* .news-list {
       display: block;
-    }
+    } */
 
     .category-link {
       display: none;

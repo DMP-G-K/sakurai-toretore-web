@@ -23,15 +23,21 @@ if (Astro.request.method === "POST") {
       <form action="/contacts/complete" method="post" name="お問い合わせ">
         <div class="input">
           <div>
-            <label>お名前<span class="required">必須</span></label>
+            <label class="form-label"
+              >お名前<span class="required">必須</span></label
+            >
             <input class="required-input name" type="text" name="name" />
           </div>
           <div>
-            <label>ふりがな<span class="required">必須</span></label>
+            <label class="form-label"
+              >ふりがな<span class="required">必須</span></label
+            >
             <input class="required-input kana" type="text" name="kana" />
           </div>
           <div>
-            <label>郵便番号<span class="required">必須</span></label>
+            <label class="form-label"
+              >郵便番号<span class="required">必須</span></label
+            >
             <div>
               〒 <input
                 class="required-input zip_code"
@@ -45,19 +51,26 @@ if (Astro.request.method === "POST") {
             </div>
           </div>
           <div>
-            <label>住所<span class="required">必須</span></label>
+            <label class="form-label"
+              >住所<span class="required">必須</span></label
+            >
             <input class="required-input address" type="text" name="address" />
           </div>
           <div>
-            <label>電話番号<span class="required">必須</span></label>
+            <label class="form-label"
+              >電話番号<span class="required">必須</span></label
+            >
             <input class="required-input tel" type="text" name="tel" />
           </div>
           <div>
-            <label>メールアドレス<span class="required">必須</span></label>
+            <label class="form-label"
+              >メールアドレス<span class="required">必須</span></label
+            >
             <input class="required-input email" type="text" name="email" />
           </div>
           <div>
-            <label>確認用メールアドレス<span class="required">必須</span></label
+            <label class="form-label"
+              >確認用メールアドレス<span class="required">必須</span></label
             >
             <input
               class="required-input email-confirm"
@@ -66,7 +79,9 @@ if (Astro.request.method === "POST") {
             />
           </div>
           <div>
-            <label>お問い合わせ内容<span class="required">必須</span></label>
+            <label class="form-label"
+              >お問い合わせ内容<span class="required">必須</span></label
+            >
             <textarea
               class="required-input content"
               name="content"
@@ -353,6 +368,14 @@ if (Astro.request.method === "POST") {
     height: 45px;
   }
 
+  .form-label {
+    font-weight: bold;
+  }
+
+  .form-label > span {
+    font-weight: normal;
+  }
+
   .name,
   .kana {
     width: 50%;
@@ -405,13 +428,15 @@ if (Astro.request.method === "POST") {
   }
 
   .input > div > label {
-    display: block;
+    display: flex;
+    align-items: center;
     margin-bottom: 15px;
   }
 
   .required {
-    display: inline-block;
-    height: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 57px;
     background-color: #ff3c3c;
     color: #ffffff;

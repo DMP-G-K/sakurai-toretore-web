@@ -18,33 +18,22 @@ import Movetop from "../../components/Movetop.astro";
       <Subtitle ja="出荷者仮登録フォーム" decoration={true} />
       <p class="text-confirmed">お問い合わせフォームの送信を完了致しました。</p>
       <p class="text-confirmation">
-        この度はお問い合わせいただきまして誠にありがとうございます。<br
-        />ご確認メールをお送りしておりますのでご確認ください。
+        この度はお問い合わせいただきまして誠にありがとうございます。
       </p>
-      <p>
-        <p class="text-attention">
-          ※ご送信後、ご確認メールが届かない場合は、フォームご入力のメールアドレスの誤り、<br
-          />もしくはシステム等の不具合が考えられます。その際にはお手数ですが<br
-          />もう一度ご送信下さいますか、<br
-          />お電話にてお問い合わせくださいますようお願い申し上げます。<br
-          />また、まれに迷惑メールフォルダへ入っている場合がございますので、<br
-          />合わせてご確認ください。
-        </p>
-        <div class="flex justify-center">
-          <Button
-            bg="white"
-            text="primary"
-            size="lg"
-            outlined={true}
-            input="トップページへ戻る"
-            link="/"
-          />
-        </div>
-      </p>
+      <div class="flex justify-center">
+        <Button
+          bg="white"
+          text="primary"
+          size="lg"
+          outlined={true}
+          input="トップページへ戻る"
+          link="/"
+        />
+      </div>
     </div>
-    <Movetop />
-    <Footer client:load />
   </main>
+  <Movetop />
+  <Footer client:load />
 </Layout>
 
 <style>

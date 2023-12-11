@@ -258,6 +258,7 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
     .product > img {
       height: 200px;
       width: 100%;
+      border-radius: 10px;
     }
 
     .summer-vegetable-title {
@@ -334,7 +335,15 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
       margin-bottom: 50px;
     }
 
+    .special-img-wrapper > img {
+      border-radius: 10px;
+    }
+
     @media screen and (max-width: 767px) {
+      .table-of-contents {
+        width: 90%;
+      }
+
       .season {
         width: 90%;
       }
@@ -347,13 +356,16 @@ type PickedSpecialProduct = Pick<Product, "mainVisual">;
 
       .product {
         width: 88%;
-        margin: 0;
-        display: flex;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        justify-items: center;
+        align-items: center;
         margin-bottom: 25px;
+        grid-gap: 10px;
       }
 
       .product > img {
-        width: 33%;
         height: 165px;
         margin-right: 4%;
       }

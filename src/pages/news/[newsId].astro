@@ -55,7 +55,9 @@ type PickedNews = Pick<
               {
                 new Date(news.publishedAt).getFullYear() +
                   "." +
-                  ("00" + new Date(news.publishedAt).getMonth()).slice(-2) +
+                  ("00" + (new Date(news.publishedAt).getMonth() + 1)).slice(
+                    -2
+                  ) +
                   "." +
                   ("00" + new Date(news.publishedAt).getDate()).slice(-2)
               }
@@ -88,9 +90,10 @@ type PickedNews = Pick<
                   <p class="news-list-date">
                     {new Date(content.publishedAt).getFullYear() +
                       "." +
-                      ("00" + new Date(content.publishedAt).getMonth()).slice(
-                        -2
-                      ) +
+                      (
+                        "00" +
+                        (new Date(content.publishedAt).getMonth() + 1)
+                      ).slice(-2) +
                       "." +
                       ("00" + new Date(content.publishedAt).getDate()).slice(
                         -2
