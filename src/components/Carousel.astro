@@ -23,9 +23,9 @@ export const news = await getNews({
       >
         {
           news.contents.map((content: PickedNews) => (
-            <div class="news slide aspect-square h-full flex-shrink-0 snap-center rounded overflow-hidden">
+            <div class="news slide aspect-square h-full flex-shrink-0 snap-center overflow-hidden">
               <img
-                class="w-full object-cover"
+                class="w-full object-cover rounded"
                 src={content.eyecatch.url}
                 alt="mountain_image"
               />
