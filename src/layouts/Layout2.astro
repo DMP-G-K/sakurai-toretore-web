@@ -52,6 +52,9 @@ const { mainVisual } = Astro.props;
       </div>
       <div class="main-visual-wrapper">
         <div>
+          <div class="pink-flower">
+            <img src="/svgs/pink-flower.svg" alt="" />
+          </div>
           <div class="page-title">
             <h1>{pageTitle}</h1>
             <p>{pageTitleEng}</p>
@@ -89,6 +92,7 @@ const { mainVisual } = Astro.props;
   }
 
   .main-visual-wrapper {
+    position: relative;
     display: flex;
     align-items: center;
     width: 84%;
@@ -147,6 +151,12 @@ const { mainVisual } = Astro.props;
   .bg-circle-height {
     padding-top: 100%;
     height: 0;
+  }
+
+  .pink-flower {
+    padding-top: 2rem;
+    position: absolute;
+    right: -10rem;
   }
 
   @media screen and (max-width: 767px) {
