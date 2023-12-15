@@ -1,6 +1,7 @@
 <template>
   <div class="md:hidden">
-    <carousel :items-to-show="1">
+    <img src="/images/toretore3.jpg" />
+    <!-- <carousel :items-to-show="1">
       <slide v-for="slide in 3" :key="slide">
         <img src="/images/toretore3.jpg" />
       </slide>
@@ -9,7 +10,7 @@
         <navigation />
         <pagination />
       </template>
-    </carousel>
+    </carousel> -->
   </div>
   <div class="hidden md:block">
     <div class="flex justify-between">
@@ -21,7 +22,6 @@
 </template>
 
 <script>
-// If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
 import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 

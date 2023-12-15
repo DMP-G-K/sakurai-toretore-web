@@ -24,24 +24,28 @@ export const news = await getNews({
         {
           news.contents.map((content: PickedNews) => (
             <div class="news slide aspect-square h-full flex-shrink-0 snap-center overflow-hidden">
-              <img
-                class="w-full object-cover rounded"
-                src={content.eyecatch.url}
-                alt="mountain_image"
-              />
-              <div class="news-list-category-wrapper">
-                <p class="news-detail-date">
-                  {new Date(content.publishedAt).getFullYear() +
-                    "." +
-                    (
-                      "00" +
-                      (new Date(content.publishedAt).getMonth() + 1)
-                    ).slice(-2) +
-                    "." +
-                    ("00" + new Date(content.publishedAt).getDate()).slice(-2)}
-                </p>
-              </div>
-              <p class="news-title">{content.title}</p>
+              <a href={`/news/${content.id}`}>
+                <img
+                  class="w-full object-cover rounded"
+                  src={content.eyecatch.url}
+                  alt="mountain_image"
+                />
+                <div class="news-list-category-wrapper">
+                  <p class="news-detail-date">
+                    {new Date(content.publishedAt).getFullYear() +
+                      "." +
+                      (
+                        "00" +
+                        (new Date(content.publishedAt).getMonth() + 1)
+                      ).slice(-2) +
+                      "." +
+                      ("00" + new Date(content.publishedAt).getDate()).slice(
+                        -2
+                      )}
+                  </p>
+                </div>
+                <p class="news-title">{content.title}</p>
+              </a>
             </div>
           ))
         }
