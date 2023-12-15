@@ -51,152 +51,170 @@ const { mainVisual } = Astro.props;
         </div>
       </div>
       <div class="main-visual-wrapper">
-        <div>
+        <div class="page-title">
+          <h1>{pageTitle}</h1>
+
+          <p>{pageTitleEng}</p>
           <div class="pink-flower">
             <img src="/svgs/pink-flower.svg" alt="" />
           </div>
-          <div class="page-title">
-            <h1>{pageTitle}</h1>
-            <p>{pageTitleEng}</p>
-          </div>
           <Breadcrumb breadcrumb={breadcrumb} />
         </div>
-        <div class="mainv-visual-image">
+
+        <div class="main-visual-image">
           <img src={mainVisual} />
         </div>
       </div>
     </main>
     <slot />
   </body>
-</html>
-<style is:global>
-  :root {
-    --accent: 124, 58, 237;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      #da62c4 30%,
-      white 60%
-    );
-  }
-  html {
-    font-family: var(--noto-sans);
-    background-color: #fff9e0;
-    color: #464646;
-  }
-  code {
-    font-family: var(--noto-sans);
-  }
-  main {
-    font-family: var(--noto-sans);
-  }
 
-  .main-visual-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 84%;
-    margin: auto;
-    margin-top: 150px;
-    margin-bottom: 50px;
-    justify-content: space-between;
-  }
-
-  .page-title > h1 {
-    font-size: 2.625rem;
-    font-weight: bold;
-    margin-bottom: 25px;
-    letter-spacing: 1.5px;
-  }
-
-  .page-title > p {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #5f8934;
-    margin-bottom: 100px;
-    letter-spacing: 1.44px;
-  }
-
-  .bg-circle-a {
-    position: fixed;
-    left: 20%;
-    top: -5rem;
-    width: 390px;
-    height: 420px;
-    z-index: -1;
-    background-color: #efe9d4;
-    border-radius: 50%;
-  }
-  .bg-circle-b {
-    position: fixed;
-    left: 20%;
-    top: 27rem;
-    width: 18%;
-    height: auto;
-    z-index: -1;
-    background-color: #efe9d4;
-    border-radius: 50%;
-  }
-
-  .bg-circle-c {
-    position: fixed;
-    width: 24%;
-    left: -3rem;
-    top: 11rem;
-    z-index: -1;
-    background-color: #efe9d4;
-    border-radius: 50%;
-  }
-
-  .bg-circle-height {
-    padding-top: 100%;
-    height: 0;
-  }
-
-  .pink-flower {
-    padding-top: 2rem;
-    position: absolute;
-    right: -10rem;
-  }
-
-  @media screen and (max-width: 767px) {
-    .bg-circle-a {
-      left: -5rem;
-      top: -12rem;
+  <style is:global>
+    :root {
+      --accent: 124, 58, 237;
+      --accent-gradient: linear-gradient(
+        45deg,
+        rgb(var(--accent)),
+        #da62c4 30%,
+        white 60%
+      );
     }
-    .bg-circle-b {
-      display: none;
+    html {
+      font-family: var(--noto-sans);
+      background-color: #fff9e0;
+      color: #464646;
     }
-
-    .bg-circle-c {
-      width: 45%;
-      height: auto;
-      right: auto;
-      top: 20rem;
-      left: -2rem;
+    code {
+      font-family: var(--noto-sans);
+    }
+    main {
+      font-family: var(--noto-sans);
     }
 
     .main-visual-wrapper {
-      margin-top: 100px;
-      flex-direction: column-reverse;
-      align-items: baseline;
-      width: 90%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 84%;
+      margin: auto;
+      margin-top: 150px;
+      margin-bottom: 50px;
+      justify-content: space-between;
     }
+
+    .page-title {
+      position: relative;
+    }
+
     .page-title > h1 {
-      font-size: 1.56rem;
+      font-size: 2.625rem;
+      font-weight: bold;
+      margin-bottom: 25px;
+      letter-spacing: 1.5px;
     }
 
     .page-title > p {
-      font-size: 0.875rem;
-      margin-bottom: 30px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #5f8934;
+      margin-bottom: 100px;
+      letter-spacing: 1.44px;
     }
 
-    .main-visual-image {
-      margin-left: 12%;
+    .bg-circle-a {
+      position: fixed;
+      left: 20%;
+      top: -5rem;
+      width: 390px;
+      height: 420px;
+      z-index: -1;
+      background-color: #efe9d4;
+      border-radius: 50%;
+    }
+    .bg-circle-b {
+      position: fixed;
+      left: 20%;
+      top: 27rem;
+      width: 18%;
+      height: auto;
+      z-index: -1;
+      background-color: #efe9d4;
+      border-radius: 50%;
+    }
+
+    .bg-circle-c {
+      position: fixed;
+      width: 24%;
+      left: -3rem;
+      top: 11rem;
+      z-index: -1;
+      background-color: #efe9d4;
+      border-radius: 50%;
+    }
+
+    .bg-circle-height {
+      padding-top: 100%;
+      height: 0;
     }
 
     .pink-flower {
-      display: none;
+      padding-left: 70%;
+      width: 150%;
+      height: auto;
     }
-  }
-</style>
+
+    @media screen and (max-width: 767px) {
+      .bg-circle-a {
+        left: -5rem;
+        top: -12rem;
+      }
+      .bg-circle-b {
+        display: none;
+      }
+
+      .bg-circle-c {
+        width: 45%;
+        height: auto;
+        right: auto;
+        top: 20rem;
+        left: -2rem;
+      }
+
+      .main-visual-wrapper {
+        margin-top: 100px;
+        flex-direction: column-reverse;
+        align-items: start;
+        width: 90%;
+      }
+      .page-title > h1 {
+        font-size: 1.56rem;
+      }
+
+      .page-title > p {
+        font-size: 0.875rem;
+        margin-bottom: 30px;
+      }
+
+      .page-title {
+      }
+
+      .main-visual-image {
+        margin-left: 12%;
+      }
+
+      .pink-flower {
+        top: -2rem;
+        left: 90%;
+        position: absolute;
+        padding-left: 0;
+        width: 100%;
+      }
+
+      .pink-flower > img {
+        max-width: none;
+        width: 110%;
+        height: auto;
+      }
+    }
+  </style>
+</html>
