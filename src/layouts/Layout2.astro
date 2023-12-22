@@ -161,6 +161,7 @@ const { mainVisual } = Astro.props;
       padding-left: 70%;
       width: 150%;
       height: auto;
+      z-index: -1;
     }
 
     @media screen and (max-width: 767px) {
@@ -204,16 +205,15 @@ const { mainVisual } = Astro.props;
 
       .pink-flower {
         top: -2rem;
-        left: 90%;
+        left: 50%;
         position: absolute;
         padding-left: 0;
-        width: 100%;
+        max-width: 100%;
       }
 
       .pink-flower > img {
+        width: 100%;
         max-width: none;
-        width: 110%;
-        height: auto;
       }
     }
   </style>
